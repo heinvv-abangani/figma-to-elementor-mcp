@@ -2,7 +2,7 @@ import { Server } from '@modelcontextprotocol/sdk/server/index.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import { CallToolRequestSchema, ListToolsRequestSchema } from '@modelcontextprotocol/sdk/types.js';
 import express from 'express';
-import cors from 'cors';
+import type { Request, Response } from 'express';
 
 // Helper function to convert Figma data to Elementor v4 atomic widgets
 function convertFigmaToElementor(figmaData: any): any {
@@ -369,6 +369,138 @@ function findNodeByName(node: any, name: string): any {
   return null;
 }
 
+// SSE client for communicating with the deployed Figma MCP server
+async function fetchFromFigmaMCPViaSSE(fileKey: string, nodeId?: string): Promise<any> {
+  const mcpPayload = {
+    jsonrpc: '2.0',
+    method: 'tools/call',
+    params: {
+      name: 'get_figma_data',
+      arguments: {
+        fileKey,
+        ...(nodeId && { nodeId }),
+      },
+    },
+    id: Date.now(),
+  };
+
+  try {
+    console.log(`Fetching Figma data for fileKey: ${fileKey}${nodeId ? `, nodeId: ${nodeId}` : ''}`);
+    
+    // Direct approach: Use the /mcp endpoint without session management
+    const response = await fetch('https://figma-context-mcp-fre3.onrender.com/mcp', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'User-Agent': 'figma-to-elementor-mcp/1.0',
+      },
+      body: JSON.stringify(mcpPayload),
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.warn(`Direct MCP request failed: ${response.status} ${response.statusText}`);
+      console.warn(`Response: ${errorText}`);
+      
+      // Fallback to StreamableHTTP if direct fails
+      return await fetchFromFigmaMCPViaHTTP(fileKey, nodeId);
+    }
+
+    const result = await response.json();
+    
+    if (result.error) {
+      console.warn(`MCP returned error: ${result.error.message || JSON.stringify(result.error)}`);
+      throw new Error(`Figma-Context-MCP error: ${result.error.message || JSON.stringify(result.error)}`);
+    }
+
+    console.log('Successfully fetched Figma data via direct MCP');
+    return result.result || result;
+
+  } catch (error) {
+    console.warn('Direct MCP method failed, falling back to StreamableHTTP:', error);
+    return await fetchFromFigmaMCPViaHTTP(fileKey, nodeId);
+  }
+}
+
+// Fallback HTTP method for deployed server
+async function fetchFromFigmaMCPViaHTTP(fileKey: string, nodeId?: string): Promise<any> {
+  const mcpPayload = {
+    jsonrpc: '2.0',
+    method: 'tools/call',
+    params: {
+      name: 'get_figma_data',
+      arguments: {
+        fileKey,
+        ...(nodeId && { nodeId }),
+      },
+    },
+    id: Date.now(),
+  };
+
+  // Step 1: Initialize session with the deployed server
+  const initPayload = {
+    jsonrpc: '2.0',
+    method: 'initialize',
+    params: {
+      protocolVersion: '2024-11-05',
+      capabilities: {},
+      clientInfo: {
+        name: 'figma-to-elementor-mcp',
+        version: '1.0.0',
+      },
+    },
+    id: 1,
+  };
+
+  const initResponse = await fetch('https://figma-context-mcp-fre3.onrender.com/mcp', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+      'User-Agent': 'figma-to-elementor-mcp/1.0',
+      'Origin': 'https://figma-to-elementor-mcp.onrender.com',
+    },
+    body: JSON.stringify(initPayload),
+  });
+
+  if (!initResponse.ok) {
+    throw new Error(`Failed to initialize session: ${initResponse.status} ${initResponse.statusText}`);
+  }
+
+  // Step 2: Extract session ID from response headers
+  const sessionId = initResponse.headers.get('mcp-session-id');
+  if (!sessionId) {
+    throw new Error('No session ID received from initialization');
+  }
+
+  // Step 3: Make the actual request with the session ID
+  const response = await fetch('https://figma-context-mcp-fre3.onrender.com/mcp', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+      'User-Agent': 'figma-to-elementor-mcp/1.0',
+      'mcp-session-id': sessionId,
+      'Origin': 'https://figma-to-elementor-mcp.onrender.com',
+    },
+    body: JSON.stringify(mcpPayload),
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(`Failed to fetch from Figma-Context-MCP: ${response.status} ${response.statusText}\nResponse: ${errorText}`);
+  }
+
+  const data = await response.json();
+  
+  if (data.error) {
+    throw new Error(`Figma-Context-MCP error: ${data.error.message || JSON.stringify(data.error)}`);
+  }
+
+  return data.result || data;
+}
+
 export async function startServer(config: any) {
   const server = new Server(
     {
@@ -386,55 +518,56 @@ export async function startServer(config: any) {
     return {
       tools: [
         {
-          name: 'convert_figma_to_elementor',
-          description: 'Convert a Figma URL to Elementor v4 atomic widgets',
+          name: 'fetch_figma_from_deployed_mcp',
+          description: 'Fetch Figma design data from the deployed Figma-Context-MCP server at https://figma-context-mcp-fre3.onrender.com using SSE (with HTTP fallback)',
           inputSchema: {
             type: 'object',
             properties: {
-              figma_url: {
+              fileKey: {
                 type: 'string',
-                description: 'The Figma file, frame, or node URL to convert',
+                description: 'The Figma file key (extracted from Figma URL)',
               },
-              figma_api_key: {
+              nodeId: {
                 type: 'string',
-                description: 'Figma API key (optional if set in environment)',
-              },
-              save_files: {
-                type: 'boolean',
-                description: 'Whether to save Elementor JSON to disk',
-                default: false,
+                description: 'Optional specific node ID to fetch',
               },
             },
-            required: ['figma_url'],
+            required: ['fileKey'],
           },
         },
         {
           name: 'convert_figma_context_to_elementor',
-          description: 'Convert pre-fetched Figma context data to Elementor v4 atomic widgets',
+          description: 'Convert Figma context data (from Figma-Context-MCP) to Elementor v4 atomic widgets',
           inputSchema: {
             type: 'object',
             properties: {
               figma_context: {
                 type: 'object',
-                description: 'Figma context object with blocks and metadata',
+                description: 'The Figma context data from Figma-Context-MCP',
+              },
+              save_file: {
+                type: 'boolean',
+                description: 'Whether to save the output to a file',
+                default: false,
               },
             },
             required: ['figma_context'],
           },
         },
         {
-          name: 'fetch_figma_design',
-          description: 'Fetch Figma design data from a URL (for inspection)',
+          name: 'convert_figma_url_to_elementor',
+          description: 'Complete workflow: Extract file key from Figma URL, fetch data from deployed MCP via SSE, and convert to Elementor v4',
           inputSchema: {
             type: 'object',
             properties: {
               figma_url: {
                 type: 'string',
-                description: 'The Figma file, frame, or node URL to fetch',
+                description: 'Complete Figma URL (e.g., https://www.figma.com/design/fileKey/...)',
               },
-              figma_api_key: {
-                type: 'string',
-                description: 'Figma API key (optional if set in environment)',
+              save_file: {
+                type: 'boolean',
+                description: 'Whether to save the output to a file',
+                default: false,
               },
             },
             required: ['figma_url'],
@@ -449,99 +582,129 @@ export async function startServer(config: any) {
 
     try {
       switch (name) {
-        case 'convert_figma_to_elementor': {
-          const { figma_url, figma_api_key, save_files = false } = args as {
-            figma_url: string;
-            figma_api_key?: string;
-            save_files?: boolean;
+        case 'fetch_figma_from_deployed_mcp': {
+          const { fileKey, nodeId } = args as {
+            fileKey: string;
+            nodeId?: string;
           };
 
-          // Use provided API key or fall back to config/environment
-          const apiKey = figma_api_key || config.figmaApiKey;
-          if (!apiKey) {
-            throw new Error('Figma API key is required. Provide it as a parameter or set FIGMA_API_KEY environment variable.');
+          if (!fileKey) {
+            throw new Error('fileKey is required');
           }
 
-          // For now, return a message suggesting to use the Figma-Context-MCP
-          const result: any = {
-            metadata: {
-              figma_url,
-              blocks_processed: 0,
-              conversion_successful: true,
-              timestamp: new Date().toISOString(),
-              message: 'Use convert_figma_context_to_elementor with data from Figma-Context-MCP for full conversion',
-            },
-            elementor: {
-              version: '0.4',
-              title: 'Figma Design',
-              type: 'page',
-              content: [],
-            },
-          };
-
-          // Save files if requested
-          if (save_files) {
-            const fs = await import('fs/promises');
-            await fs.writeFile('elementor_data.json', JSON.stringify(result.elementor, null, 2));
-            result.files_saved = ['elementor_data.json'];
-          }
+          // Use SSE method with HTTP fallback
+          const data = await fetchFromFigmaMCPViaSSE(fileKey, nodeId);
 
           return {
             content: [
               {
                 type: 'text',
-                text: `Figma URL received: ${figma_url}\n\nFor full conversion, please:\n1. Use Figma-Context-MCP to fetch the design data\n2. Use convert_figma_context_to_elementor with that data\n\nThis will provide rich Elementor v4 atomic widgets with proper styling and structure.`,
+                text: `Successfully fetched Figma data from deployed MCP server:\n\n${JSON.stringify(data, null, 2)}`,
               },
             ],
           };
         }
 
         case 'convert_figma_context_to_elementor': {
-          const { figma_context } = args as {
+          const { figma_context, save_file = false } = args as {
             figma_context: any;
+            save_file?: boolean;
           };
+
+          if (!figma_context) {
+            throw new Error('figma_context is required. Please fetch Figma data using fetch_figma_from_deployed_mcp first.');
+          }
 
           // Convert the Figma context to Elementor v4 atomic widgets
           const elementorData = convertFigmaToElementor(figma_context);
           
-          const result = {
+          const result: any = {
             metadata: {
               blocks_processed: figma_context.nodes?.length || 0,
               conversion_successful: true,
               timestamp: new Date().toISOString(),
               figma_name: figma_context.metadata?.name,
+              widgets_created: elementorData.content.length > 0 ? 
+                elementorData.content.reduce((total: number, section: any) => 
+                  total + (section.elements?.reduce((sectionTotal: number, column: any) => 
+                    sectionTotal + (column.elements?.length || 0), 0) || 0), 0) : 0,
             },
-            elementor: elementorData,
+            elementor_data: elementorData,
           };
+
+          if (save_file) {
+            const fs = await import('fs');
+            const outputPath = 'elementor_v4_output.json';
+            fs.writeFileSync(outputPath, JSON.stringify(elementorData, null, 2));
+            result.file_saved = outputPath;
+          }
 
           return {
             content: [
               {
                 type: 'text',
-                text: `Successfully converted Figma context to Elementor v4!\n\nDesign: ${figma_context.metadata?.name || 'Unknown'}\nNodes processed: ${result.metadata.blocks_processed}\nWidgets created: ${elementorData.content.length > 0 ? elementorData.content[0].elements[0].elements.length : 0}\n\nElementor v4 atomic widgets generated with proper styling and structure!`,
+                text: JSON.stringify(result, null, 2),
               },
             ],
           };
         }
 
-        case 'fetch_figma_design': {
-          const { figma_url, figma_api_key } = args as { 
+        case 'convert_figma_url_to_elementor': {
+          const { figma_url, save_file = false } = args as {
             figma_url: string;
-            figma_api_key?: string;
+            save_file?: boolean;
           };
-          
-          // Use provided API key or fall back to config/environment
-          const apiKey = figma_api_key || config.figmaApiKey;
-          if (!apiKey) {
-            throw new Error('Figma API key is required. Provide it as a parameter or set FIGMA_API_KEY environment variable.');
+
+          if (!figma_url) {
+            throw new Error('figma_url is required');
           }
+
+          // Extract file key from URL
+          const fileKeyMatch = figma_url.match(/\/design\/([a-zA-Z0-9]+)/);
+          if (!fileKeyMatch) {
+            throw new Error('Invalid Figma URL. Could not extract file key.');
+          }
+          const fileKey = fileKeyMatch[1];
+
+          // Extract node ID if present
+          const nodeIdMatch = figma_url.match(/node-id=([^&]+)/);
+          const nodeId = nodeIdMatch ? decodeURIComponent(nodeIdMatch[1]) : undefined;
+
+          // Step 1: Fetch from deployed MCP using SSE
+          const figmaContext = await fetchFromFigmaMCPViaSSE(fileKey, nodeId);
+
+          // Step 2: Convert to Elementor
+          const elementorData = convertFigmaToElementor(figmaContext);
           
-          // For now, suggest using Figma-Context-MCP
+          const result: any = {
+            metadata: {
+              figma_url,
+              file_key: fileKey,
+              node_id: nodeId,
+              blocks_processed: figmaContext.nodes?.length || 0,
+              conversion_successful: true,
+              timestamp: new Date().toISOString(),
+              figma_name: figmaContext.metadata?.name,
+              widgets_created: elementorData.content.length > 0 ? 
+                elementorData.content.reduce((total: number, section: any) => 
+                  total + (section.elements?.reduce((sectionTotal: number, column: any) => 
+                    sectionTotal + (column.elements?.length || 0), 0) || 0), 0) : 0,
+            },
+            elementor_data: elementorData,
+          };
+
+          if (save_file) {
+            const fs = await import('fs');
+            const outputPath = 'elementor_v4_output.json';
+            fs.writeFileSync(outputPath, JSON.stringify(elementorData, null, 2));
+            result.file_saved = outputPath;
+          }
+
           return {
             content: [
               {
                 type: 'text',
-                text: `Figma URL: ${figma_url}\n\nFor better results, use the Figma-Context-MCP to fetch design data:\n1. Use get_figma_data tool from Figma-Context-MCP\n2. Pass the result to convert_figma_context_to_elementor\n\nThis provides richer data for conversion to Elementor v4 atomic widgets.`,
+                text: JSON.stringify(result, null, 2),
               },
             ],
           };
@@ -551,12 +714,11 @@ export async function startServer(config: any) {
           throw new Error(`Unknown tool: ${name}`);
       }
     } catch (error) {
-      const errorMessage = error instanceof Error ? error.message : String(error);
       return {
         content: [
           {
             type: 'text',
-            text: `Error: ${errorMessage}`,
+            text: `Error: ${error instanceof Error ? error.message : 'Unknown error'}`,
           },
         ],
         isError: true,
@@ -564,97 +726,144 @@ export async function startServer(config: any) {
     }
   });
 
-  // Start server based on mode
-  if (config.mode === 'stdio') {
+  if (config.transport === 'stdio') {
     const transport = new StdioServerTransport();
     await server.connect(transport);
-    console.log('🔗 Figma to Elementor MCP server running in stdio mode');
+    console.error('Figma-to-Elementor MCP server running on stdio');
   } else {
-    // HTTP mode like figma-context-mcp
+    // HTTP mode
     const app = express();
-    app.use(cors());
     app.use(express.json());
 
-    // Health check endpoint
-    app.get('/health', (req, res) => {
-      res.json({ status: 'healthy', timestamp: new Date().toISOString() });
-    });
-
-    // Server info endpoint
-    app.get('/', (req, res) => {
+    app.get('/', (req: Request, res: Response) => {
       res.json({
         name: 'figma-to-elementor-mcp',
         version: '0.1.0',
-        description: 'MCP server to convert Figma designs to Elementor v4 atomic widgets',
+        description: 'Convert Figma designs to Elementor v4 atomic widgets using deployed Figma-Context-MCP via SSE with session management',
         endpoints: {
-          sse: '/sse',
-          messages: '/messages',
-          health: '/health'
-        }
+          '/': 'This endpoint',
+          '/health': 'Health check',
+          '/convert': 'Convert Figma context to Elementor',
+          '/convert-url': 'Convert Figma URL to Elementor (complete workflow)',
+        },
+        deployed_figma_mcp: 'https://figma-context-mcp-fre3.onrender.com',
+        transport_method: 'SSE with HTTP fallback and session management',
+        session_handling: 'Automatic session creation for deployed server',
       });
     });
 
-    // SSE endpoint for MCP clients
-    app.get('/sse', (req, res) => {
-      res.writeHead(200, {
-        'Content-Type': 'text/event-stream',
-        'Cache-Control': 'no-cache',
-        'Connection': 'keep-alive',
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Headers': 'Cache-Control'
-      });
-
-      // Send initial connection event
-      res.write('event: open\n');
-      res.write('data: {"type": "connection", "status": "connected"}\n\n');
-
-      // Keep connection alive
-      const keepAlive = setInterval(() => {
-        res.write('event: ping\n');
-        res.write('data: {"type": "ping"}\n\n');
-      }, 30000);
-
-      req.on('close', () => {
-        clearInterval(keepAlive);
-      });
+    app.get('/health', (req: Request, res: Response) => {
+      res.json({ status: 'healthy', timestamp: new Date().toISOString() });
     });
-    
-    // Messages endpoint for MCP communication
-    app.post('/messages', async (req, res) => {
+
+    app.post('/convert', async (req: Request, res: Response) => {
       try {
-        // This is a simplified implementation
-        // In a full implementation, you'd handle MCP protocol messages here
-        res.json({
-          jsonrpc: '2.0',
-          id: req.body.id,
-          result: {
-            content: [
-              {
-                type: 'text',
-                text: 'HTTP mode is available. Use stdio mode for full MCP functionality.'
-              }
-            ]
-          }
-        });
+        const { figma_context, save_file = false } = req.body;
+
+        if (!figma_context) {
+          return res.status(400).json({
+            error: 'figma_context is required. Please fetch Figma data using Figma-Context-MCP first.',
+          });
+        }
+
+        const elementorData = convertFigmaToElementor(figma_context);
+        
+        const result: any = {
+          metadata: {
+            blocks_processed: figma_context.nodes?.length || 0,
+            conversion_successful: true,
+            timestamp: new Date().toISOString(),
+            figma_name: figma_context.metadata?.name,
+            widgets_created: elementorData.content.length > 0 ? 
+              elementorData.content.reduce((total: number, section: any) => 
+                total + (section.elements?.reduce((sectionTotal: number, column: any) => 
+                  sectionTotal + (column.elements?.length || 0), 0) || 0), 0) : 0,
+          },
+          elementor_data: elementorData,
+        };
+
+        if (save_file) {
+          const fs = await import('fs');
+          const outputPath = 'elementor_v4_output.json';
+          fs.writeFileSync(outputPath, JSON.stringify(elementorData, null, 2));
+          result.file_saved = outputPath;
+        }
+
+        res.json(result);
       } catch (error) {
         res.status(500).json({
-          jsonrpc: '2.0',
-          id: req.body.id,
-          error: {
-            code: -32603,
-            message: 'Internal error'
-          }
+          error: error instanceof Error ? error.message : 'Unknown error',
+        });
+      }
+    });
+
+    app.post('/convert-url', async (req: Request, res: Response) => {
+      try {
+        const { figma_url, save_file = false } = req.body;
+
+        if (!figma_url) {
+          return res.status(400).json({
+            error: 'figma_url is required',
+          });
+        }
+
+        // Extract file key from URL
+        const fileKeyMatch = figma_url.match(/\/design\/([a-zA-Z0-9]+)/);
+        if (!fileKeyMatch) {
+          return res.status(400).json({
+            error: 'Invalid Figma URL. Could not extract file key.',
+          });
+        }
+        const fileKey = fileKeyMatch[1];
+
+        // Extract node ID if present
+        const nodeIdMatch = figma_url.match(/node-id=([^&]+)/);
+        const nodeId = nodeIdMatch ? decodeURIComponent(nodeIdMatch[1]) : undefined;
+
+        // Fetch from deployed MCP using SSE
+        const figmaContext = await fetchFromFigmaMCPViaSSE(fileKey, nodeId);
+
+        // Convert to Elementor
+        const elementorData = convertFigmaToElementor(figmaContext);
+        
+        const result: any = {
+          metadata: {
+            figma_url,
+            file_key: fileKey,
+            node_id: nodeId,
+            blocks_processed: figmaContext.nodes?.length || 0,
+            conversion_successful: true,
+            timestamp: new Date().toISOString(),
+            figma_name: figmaContext.metadata?.name,
+            widgets_created: elementorData.content.length > 0 ? 
+              elementorData.content.reduce((total: number, section: any) => 
+                total + (section.elements?.reduce((sectionTotal: number, column: any) => 
+                  sectionTotal + (column.elements?.length || 0), 0) || 0), 0) : 0,
+          },
+          elementor_data: elementorData,
+        };
+
+        if (save_file) {
+          const fs = await import('fs');
+          const outputPath = 'elementor_v4_output.json';
+          fs.writeFileSync(outputPath, JSON.stringify(elementorData, null, 2));
+          result.file_saved = outputPath;
+        }
+
+        res.json(result);
+      } catch (error) {
+        res.status(500).json({
+          error: error instanceof Error ? error.message : 'Unknown error',
         });
       }
     });
 
     const port = config.port || 3333;
     app.listen(port, () => {
-      console.log(`🌐 Figma to Elementor MCP server running in HTTP mode on port ${port}`);
-      console.log(`📡 SSE endpoint available at http://localhost:${port}/sse`);
-      console.log(`💬 Messages endpoint available at http://localhost:${port}/messages`);
-      console.log(`❤️  Health check available at http://localhost:${port}/health`);
-      console.log(`\n💡 For full MCP functionality, use --stdio mode with MCP clients`);
+      console.log(`Figma-to-Elementor MCP server running on http://localhost:${port}`);
+      console.log(`Using deployed Figma MCP: https://figma-context-mcp-fre3.onrender.com`);
+      console.log(`Transport: SSE with HTTP fallback and session management`);
+      console.log(`Session handling: Automatic session creation for deployed server`);
     });
   }
 } 

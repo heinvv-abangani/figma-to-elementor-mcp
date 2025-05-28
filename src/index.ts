@@ -33,17 +33,17 @@ export async function main() {
   }
 
   // Default to stdio mode unless --http is specified
-  const mode = options.http ? 'http' : 'stdio';
+  const transport = options.http ? 'http' : 'stdio';
 
   const config = {
     figmaApiKey,
     port: parseInt(options.port, 10),
-    mode
+    transport
   };
 
   console.log('🚀 Starting Figma to Elementor MCP Server...');
-  console.log(`   Mode: ${config.mode}`);
-  if (config.mode === 'http') {
+  console.log(`   Mode: ${config.transport}`);
+  if (config.transport === 'http') {
     console.log(`   Port: ${config.port}`);
   }
   console.log(`   API Key: ${figmaApiKey ? '✅ Set globally' : '⚠️  Not set (can be passed per request)'}`);

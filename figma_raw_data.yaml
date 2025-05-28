@@ -1,0 +1,1035 @@
+metadata:
+  name: Indications
+  lastModified: '2025-05-27T08:21:03Z'
+  thumbnailUrl: >-
+    https://s3-alpha.figma.com/thumbnails/3fd486cf-cf23-4737-940d-9727b0c3386e?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQ4GOSFWCULRAZSF5%2F20250525%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250525T120000Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=ec01236c426ff11cb60da27dfa0817ae95346141e36ffc3716c9fc11a4435910
+  components:
+    '328:87803':
+      id: '328:87803'
+      key: 27f20a912dd8d9b791430f69925eef5878a97362
+      name: Direction=Up
+      componentSetId: '328:87802'
+    '328:87826':
+      id: '328:87826'
+      key: 79bf50d1bf7a5d3c4d49c7351cc76c678f4b5a7f
+      name: Tooltipcontent
+    '0:4310':
+      id: '0:4310'
+      key: 53348700c9b3a0af2436395e432e7f3e156a1f11
+      name: Variant=subtitle2, Gutter Bottom=False
+      componentSetId: '0:4277'
+    '0:33628':
+      id: '0:33628'
+      key: 180bef8589aa9f6ea1c6edb55388edbbd6879444
+      name: Instances=2, Direction=Row, Spacing=0
+      componentSetId: '0:32932'
+    '432:97395':
+      id: '432:97395'
+      key: 6b77e0dd174e164e290795b33b4caa5ae1743051
+      name: Size=Tiny, Color=Default*, State=Enabled
+      componentSetId: '432:97386'
+    '0:24798':
+      id: '0:24798'
+      key: bee83fda33078c60efc604cde73ed149ebb69edb
+      name: Size=Tiny
+      componentSetId: '0:24789'
+    '432:97653':
+      id: '432:97653'
+      key: e7139663f06f6e0b7c663edbf5b6013ab2771ca0
+      name: Plus
+    '432:97659':
+      id: '432:97659'
+      key: fc7593457835d9b6b33a6a6013c193f503535dd2
+      name: SettingsShare
+    '432:97655':
+      id: '432:97655'
+      key: 43a8be51ff8c9d177c81cb9172e6c7340ede5ddc
+      name: X
+    '328:87501':
+      id: '328:87501'
+      key: 74d84722ac6af692562d020f12203961ac9ea18e
+      name: Row+value/Default
+    '328:87410':
+      id: '328:87410'
+      key: 500022ba8fdf325e6173024a549a58ec9f1c5a9c
+      name: Property 1=Default
+      componentSetId: '477:146651'
+    '0:28567':
+      id: '0:28567'
+      key: 95d0c66d22bf34954824327f1783b6e4782033a6
+      name: Property 1=tabler-icon-north-star
+      componentSetId: '0:28566'
+    '3:23309':
+      id: '3:23309'
+      key: a71d0681102fa26c2bf556c4f07a023446e71632
+      name: Desktop
+    '328:85754':
+      id: '328:85754'
+      key: e87e0ae7ab888cec74cfa8e44ef89e4536c53c8c
+      name: Size=Tiny, Color=Primary, State=Enabled, Variant=Standard
+      componentSetId: '328:85684'
+    '0:23656':
+      id: '0:23656'
+      key: 74d8ec46298974afac2346fdf03940e1a57eb88a
+      name: StarFilled
+    '3:8261':
+      id: '3:8261'
+      key: 71d89059d667a1661f656bcd7353c34cae4c3243
+      name: CancelFilled
+    '0:23713':
+      id: '0:23713'
+      key: 6b77e0dd174e164e290795b33b4caa5ae1743051
+      name: Size=Tiny, Color=Default*, State=Enabled
+      componentSetId: '0:23704'
+    '0:23667':
+      id: '0:23667'
+      key: bee83fda33078c60efc604cde73ed149ebb69edb
+      name: Size=Tiny
+      componentSetId: '0:23658'
+    '328:85628':
+      id: '328:85628'
+      key: 61817feedeaad00f8a817b51187c93ddca6b4a88
+      name: Eye
+    '715:133569':
+      id: '715:133569'
+      key: c4dcdbadfa50bcfae8696e9882c313ff0075847c
+      name: BrushBig
+    '127:324054':
+      id: '127:324054'
+      key: 5f77ae3e23b899d3931538ebcab5551b1d499b4e
+      name: ChevronUp
+    '366:74412':
+      id: '366:74412'
+      key: a14d5060a0d7ee733cb9fb8aed4a6fcca403b4d5
+      name: Property 1=Single line
+      componentSetId: '366:74385'
+    '328:85830':
+      id: '328:85830'
+      key: d6763cdf5344da24cd390c16572888302c8db82b
+      name: Size=Tiny, Color=Global, State=Enabled, Variant=Standard
+      componentSetId: '328:85684'
+    '0:23654':
+      id: '0:23654'
+      key: 8705546401655b2c667b2cb0ae9de3b57fbe339d
+      name: InfoCircle
+    '0:4267':
+      id: '0:4267'
+      key: 3f8e6966f9afd81908324727c6f94a968d1c5ef6
+      name: ChevronDown
+    '328:85829':
+      id: '328:85829'
+      key: 2b26b6ad7a4c42cc2b36291257c6d4ca58d9f32c
+      name: Size=Small, Color=Global, State=Enabled, Variant=Standard
+      componentSetId: '328:85684'
+    '3:23311':
+      id: '3:23311'
+      key: 98e169f823a81d18f1db6eb0490cbd6855f0a084
+      name: MoreVertical
+    '3:23359':
+      id: '3:23359'
+      key: ba14276c36957efae63619a9941e5092b46c1c2f
+      name: State=Default, Has state?=No, Semantic=Global
+      componentSetId: '3:23358'
+    '328:85753':
+      id: '328:85753'
+      key: 5ccc9f4c800ae5fb9559b5d1e432809a13e824c5
+      name: Size=Small, Color=Primary, State=Enabled, Variant=Standard
+      componentSetId: '328:85684'
+    '0:5164':
+      id: '0:5164'
+      key: 2b26b6ad7a4c42cc2b36291257c6d4ca58d9f32c
+      name: Size=Small, Color=Global, State=Enabled, Variant=Standard
+      componentSetId: '0:4668'
+    '3:23313':
+      id: '3:23313'
+      key: 8a7922a12cb6bb2115d0e9e10929b4775ba19bb4
+      name: BrushBig
+    '3:23315':
+      id: '3:23315'
+      key: fb46f1cd2a967c51c69e3c42acac20c4eaaf8020
+      name: Reset
+    '3:23363':
+      id: '3:23363'
+      key: 1a9a7d48768e2955f046ed006cacd46d9936afe6
+      name: State=Hover, Has state?=No, Semantic=Global
+      componentSetId: '3:23358'
+    '328:85773':
+      id: '328:85773'
+      key: d698636382f0eb619c7e37c60b275d1387814cee
+      name: Size=Small, Color=Secondary, State=Hovered, Variant=Standard
+      componentSetId: '328:85684'
+    '0:5204':
+      id: '0:5204'
+      key: cf2dc47ef6fa1769bf39e1894e68f5ca4d38ddc1
+      name: Size=Small, Color=Global, State=Hovered, Variant=Standard
+      componentSetId: '0:4668'
+  componentSets:
+    '328:87802':
+      id: '328:87802'
+      key: 16f8e3e2d210fb0337678b27696ef4b3e7ec7627
+      name: <Infoltip>
+      description: >-
+        Infotip display expanded information when users hover over, focus on, or
+        tap an element.
+    '0:4277':
+      id: '0:4277'
+      key: 86150c56b92afd30991b55fab716df341aef8a4d
+      name: <Typography>
+      description: ''
+    '0:32932':
+      id: '0:32932'
+      key: 4e41ea92af8c3b399932ed0675f1df19a4b1c411
+      name: <Stack>
+      description: ''
+    '432:97386':
+      id: '432:97386'
+      key: 243a61177a28ca3b336bbc8ba6d192bcae4c555c
+      name: <IconButton>
+      description: Icon buttons are commonly found in app bars and toolbars.
+    '0:24789':
+      id: '0:24789'
+      key: 788ab2e32c5c9820b2d7499e3af32fc441c8d64a
+      name: <ResizableIcon>
+      description: ''
+    '477:146651':
+      id: '477:146651'
+      key: 2587ac3cda3de8a5453094145ccd2680c872ca8b
+      name: Row
+      description: ''
+    '0:28566':
+      id: '0:28566'
+      key: 4a5dfc07f3fadb714a8f1515a37983c1e399afc5
+      name: local
+      description: ''
+    '328:85684':
+      id: '328:85684'
+      key: dc041aa6e98db726dcbfec1f4980edbedf1f892e
+      name: <Chip>
+      description: >-
+        Chips are compact elements that represent an input, attribute, or
+        action.
+    '0:23704':
+      id: '0:23704'
+      key: 243a61177a28ca3b336bbc8ba6d192bcae4c555c
+      name: <IconButton>
+      description: Icon buttons are commonly found in app bars and toolbars.
+    '0:23658':
+      id: '0:23658'
+      key: 788ab2e32c5c9820b2d7499e3af32fc441c8d64a
+      name: <ResizableIcon>
+      description: ''
+    '366:74385':
+      id: '366:74385'
+      key: 660a4f3d0c64a3f960408891749606535c1920ef
+      name: Frame
+      description: ''
+    '3:23358':
+      id: '3:23358'
+      key: f454190a1f72c17582e64c07d0677dd4b3b6fb04
+      name: class*
+      description: ''
+    '0:4668':
+      id: '0:4668'
+      key: dc041aa6e98db726dcbfec1f4980edbedf1f892e
+      name: <Chip>
+      description: >-
+        Chips are compact elements that represent an input, attribute, or
+        action.
+nodes:
+  - id: '645:176384'
+    name: <Infoltip>
+    type: INSTANCE
+    componentId: '328:87803'
+    componentProperties:
+      Instance#7935:18:
+        value: '328:87826'
+        type: INSTANCE_SWAP
+        preferredValues:
+          - type: COMPONENT
+            key: bcd61f9ad72032b849b54389aa2be91c3d0c3b6b
+      Direction:
+        value: Up
+        type: VARIANT
+    fills: fill_EL6BFC
+    effects: effect_7R6YA4
+    layout: layout_Q4AOT4
+    children:
+      - id: I645:176384;7097:2178
+        name: Arrow
+        type: IMAGE-SVG
+        fills: fill_EL6BFC
+        layout: layout_3RNHY0
+      - id: I645:176384;7935:112607
+        name: Tooltipcontent
+        type: INSTANCE
+        componentId: '328:87826'
+        fills: fill_EL6BFC
+        layout: layout_U2X808
+        borderRadius: 8px
+        children:
+          - id: I645:176384;7935:112607;477:173546
+            name: <Paper>
+            type: FRAME
+            layout: layout_S7YFS8
+            children:
+              - id: I645:176384;7935:112607;477:173547
+                name: <Toolbar>
+                type: FRAME
+                layout: layout_FTR2B9
+                children:
+                  - id: I645:176384;7935:112607;477:173548
+                    name: Left Side
+                    type: FRAME
+                    layout: layout_EJGCZM
+                    children:
+                      - id: I645:176384;7935:112607;477:173549
+                        name: <Typography>
+                        type: INSTANCE
+                        componentId: '0:4310'
+                        componentProperties:
+                          Content#61:0:
+                            value: Style origin
+                            type: TEXT
+                          Variant:
+                            value: subtitle2
+                            type: VARIANT
+                          Gutter Bottom:
+                            value: 'False'
+                            type: VARIANT
+                        layout: layout_BUMXEH
+                        children:
+                          - id: I645:176384;7935:112607;477:173549;11626:152454
+                            name: subtitle2
+                            type: TEXT
+                            textStyle: style_TD5DR0
+                            fills: fill_4EQIL3
+                            layout: layout_G0D2N1
+                            text: Style origin
+                  - id: I645:176384;7935:112607;477:173550
+                    name: <Stack>
+                    type: FRAME
+                    layout: layout_5XC1W3
+                    children:
+                      - id: I645:176384;7935:112607;477:173552
+                        name: 'Instance #2'
+                        type: INSTANCE
+                        componentId: '432:97395'
+                        componentProperties:
+                          Size:
+                            value: Tiny
+                            type: VARIANT
+                          Color:
+                            value: Default*
+                            type: VARIANT
+                          State:
+                            value: Enabled
+                            type: VARIANT
+                        layout: layout_2KJXS2
+                        borderRadius: 100px
+                        children:
+                          - id: I645:176384;7935:112607;477:173552;6307:41677
+                            name: <ResizableIcon>
+                            type: INSTANCE
+                            componentId: '0:24798'
+                            componentProperties:
+                              Icon Instance#10003:412:
+                                value: '432:97655'
+                                type: INSTANCE_SWAP
+                              Size:
+                                value: Tiny
+                                type: VARIANT
+                            layout: layout_U2FZG9
+                            children:
+                              - id: >-
+                                  I645:176384;7935:112607;477:173552;6307:41677;6307:26062
+                                name: X
+                                type: INSTANCE
+                                componentId: '432:97655'
+                                layout: layout_XRBAI3
+                                children:
+                                  - id: >-
+                                      I645:176384;7935:112607;477:173552;6307:41677;6307:26062;1322:10161
+                                    name: Vector
+                                    type: IMAGE-SVG
+                                    fills: fill_17SMS8
+                                    layout: layout_M0UJYR
+          - id: I645:176384;7935:112607;477:183010
+            name: Frame 10886282
+            type: FRAME
+            layout: layout_TAQ6UR
+            children:
+              - id: I645:176384;7935:112607;328:87825
+                name: Row+value/Default
+                type: INSTANCE
+                componentId: '328:87501'
+                layout: layout_9BPJUA
+                children:
+                  - id: I645:176384;7935:112607;328:87825;328:87466
+                    name: Frame 10886138
+                    type: INSTANCE
+                    componentId: '328:87410'
+                    componentProperties:
+                      Property 1:
+                        value: Default
+                        type: VARIANT
+                    layout: layout_AQBKRH
+                    borderRadius: 8px
+                    children:
+                      - id: I645:176384;7935:112607;328:87825;328:87466;328:85469
+                        name: Left
+                        type: FRAME
+                        layout: layout_EJGCZM
+                        children:
+                          - id: >-
+                              I645:176384;7935:112607;328:87825;328:87466;328:85470
+                            name: Inherit
+                            type: FRAME
+                            layout: layout_X0VBTS
+                            children:
+                              - id: >-
+                                  I645:176384;7935:112607;328:87825;328:87466;328:85473
+                                name: Desktop
+                                type: INSTANCE
+                                componentId: '3:23309'
+                                layout: layout_XRBAI3
+                                children:
+                                  - id: >-
+                                      I645:176384;7935:112607;328:87825;328:87466;328:85473;944:8406
+                                    name: Vector
+                                    type: IMAGE-SVG
+                                    fills: fill_60E9N9
+                                    layout: layout_O2GDJQ
+                              - id: >-
+                                  I645:176384;7935:112607;328:87825;328:87466;328:87403
+                                name: <Chip>
+                                type: INSTANCE
+                                componentId: '328:85754'
+                                componentProperties:
+                                  Thumbnail#9902:579:
+                                    value: false
+                                    type: BOOLEAN
+                                  ↳ Thumbnail#10128:0:
+                                    value: '0:23656'
+                                    type: INSTANCE_SWAP
+                                  Delete#9902:1028:
+                                    value: false
+                                    type: BOOLEAN
+                                  Label#11069:1495:
+                                    value: local
+                                    type: TEXT
+                                  Size:
+                                    value: Tiny
+                                    type: VARIANT
+                                  Color:
+                                    value: Primary
+                                    type: VARIANT
+                                  State:
+                                    value: Enabled
+                                    type: VARIANT
+                                  Variant:
+                                    value: Standard
+                                    type: VARIANT
+                                fills: fill_DRSAAN
+                                layout: layout_R53PF4
+                                borderRadius: 6px
+                                children:
+                                  - id: >-
+                                      I645:176384;7935:112607;328:87825;328:87466;328:87403;11299:30342
+                                    name: Typography
+                                    type: FRAME
+                                    layout: layout_8TT1N0
+                                    children:
+                                      - id: >-
+                                          I645:176384;7935:112607;328:87825;328:87466;328:87403;11299:30343
+                                        name: Chip
+                                        type: TEXT
+                                        textStyle: style_487GX5
+                                        fills: fill_WT4IC3
+                                        layout: layout_G0D2N1
+                                        text: local
+                      - id: I645:176384;7935:112607;328:87825;328:87466;328:85483
+                        name: Action slot
+                        type: FRAME
+                        layout: layout_271VKI
+                        children:
+                          - id: >-
+                              I645:176384;7935:112607;328:87825;328:87466;328:85624
+                            name: <IconButton>
+                            type: INSTANCE
+                            componentId: '0:23713'
+                            componentProperties:
+                              Size:
+                                value: Tiny
+                                type: VARIANT
+                              Color:
+                                value: Default*
+                                type: VARIANT
+                              State:
+                                value: Enabled
+                                type: VARIANT
+                            layout: layout_LWRWBF
+                            borderRadius: 100px
+                            children:
+                              - id: >-
+                                  I645:176384;7935:112607;328:87825;328:87466;328:85624;6307:41677
+                                name: <ResizableIcon>
+                                type: INSTANCE
+                                componentId: '0:23667'
+                                componentProperties:
+                                  Icon Instance#10003:412:
+                                    value: '328:85628'
+                                    type: INSTANCE_SWAP
+                                  Size:
+                                    value: Tiny
+                                    type: VARIANT
+                                layout: layout_U2FZG9
+                                children:
+                                  - id: >-
+                                      I645:176384;7935:112607;328:87825;328:87466;328:85624;6307:41677;6307:26062
+                                    name: Eye
+                                    type: INSTANCE
+                                    componentId: '328:85628'
+                                    layout: layout_XRBAI3
+                                    children:
+                                      - id: >-
+                                          I645:176384;7935:112607;328:87825;328:87466;328:85624;6307:41677;6307:26062;868:14445
+                                        name: Vector
+                                        type: IMAGE-SVG
+                                        fills: fill_YJUSUB
+                                        layout: layout_GWN5H6
+                          - id: >-
+                              I645:176384;7935:112607;328:87825;328:87466;328:85485
+                            name: <IconButton>
+                            type: INSTANCE
+                            componentId: '0:23713'
+                            componentProperties:
+                              Size:
+                                value: Tiny
+                                type: VARIANT
+                              Color:
+                                value: Default*
+                                type: VARIANT
+                              State:
+                                value: Enabled
+                                type: VARIANT
+                            layout: layout_LWRWBF
+                            borderRadius: 100px
+                            children:
+                              - id: >-
+                                  I645:176384;7935:112607;328:87825;328:87466;328:85485;6307:41677
+                                name: <ResizableIcon>
+                                type: INSTANCE
+                                componentId: '0:23667'
+                                componentProperties:
+                                  Icon Instance#10003:412:
+                                    value: '715:133569'
+                                    type: INSTANCE_SWAP
+                                  Size:
+                                    value: Tiny
+                                    type: VARIANT
+                                layout: layout_U2FZG9
+                                children:
+                                  - id: >-
+                                      I645:176384;7935:112607;328:87825;328:87466;328:85485;6307:41677;6307:26062
+                                    name: BrushBig
+                                    type: INSTANCE
+                                    componentId: '715:133569'
+                                    layout: layout_XRBAI3
+                                    children:
+                                      - id: >-
+                                          I645:176384;7935:112607;328:87825;328:87466;328:85485;6307:41677;6307:26062;12275:21410
+                                        name: Vector
+                                        type: IMAGE-SVG
+                                        fills: fill_YJUSUB
+                                        layout: layout_LK056F
+                  - id: I645:176384;7935:112607;328:87825;366:74755
+                    name: Frame
+                    type: INSTANCE
+                    componentId: '366:74412'
+                    componentProperties:
+                      Property 1:
+                        value: Single line
+                        type: VARIANT
+                    layout: layout_7IHLHR
+                    children:
+                      - id: I645:176384;7935:112607;328:87825;366:74755;366:74413
+                        name: Long Value + Units
+                        type: TEXT
+                        textStyle: style_5ZHIQU
+                        fills: fill_ZNRN3Q
+                        layout: layout_JHT58Q
+                        text: Long Value + Units
+              - id: I645:176384;7935:112607;328:87506
+                name: Frame 10886272
+                type: INSTANCE
+                componentId: '328:87501'
+                layout: layout_9BPJUA
+                children:
+                  - id: I645:176384;7935:112607;328:87506;328:87466
+                    name: Frame 10886138
+                    type: INSTANCE
+                    componentId: '328:87410'
+                    componentProperties:
+                      Property 1:
+                        value: Default
+                        type: VARIANT
+                    layout: layout_AQBKRH
+                    borderRadius: 8px
+                    children:
+                      - id: I645:176384;7935:112607;328:87506;328:87466;328:85469
+                        name: Left
+                        type: FRAME
+                        layout: layout_TYDP51
+                        children:
+                          - id: >-
+                              I645:176384;7935:112607;328:87506;328:87466;328:85470
+                            name: Inherit
+                            type: FRAME
+                            layout: layout_EJGCZM
+                            children:
+                              - id: >-
+                                  I645:176384;7935:112607;328:87506;328:87466;328:85473
+                                name: Desktop
+                                type: INSTANCE
+                                componentId: '3:23309'
+                                layout: layout_XRBAI3
+                                children:
+                                  - id: >-
+                                      I645:176384;7935:112607;328:87506;328:87466;328:85473;944:8406
+                                    name: Vector
+                                    type: IMAGE-SVG
+                                    fills: fill_60E9N9
+                                    layout: layout_O2GDJQ
+                              - id: >-
+                                  I645:176384;7935:112607;328:87506;328:87466;328:87403
+                                name: <Chip>
+                                type: INSTANCE
+                                componentId: '328:85830'
+                                componentProperties:
+                                  Thumbnail#9902:579:
+                                    value: false
+                                    type: BOOLEAN
+                                  ↳ Thumbnail#10128:0:
+                                    value: '0:23656'
+                                    type: INSTANCE_SWAP
+                                  Delete#9902:1028:
+                                    value: false
+                                    type: BOOLEAN
+                                  Label#11069:1495:
+                                    value: veryLonggggggggggClassName
+                                    type: TEXT
+                                  Size:
+                                    value: Tiny
+                                    type: VARIANT
+                                  Color:
+                                    value: Global
+                                    type: VARIANT
+                                  State:
+                                    value: Enabled
+                                    type: VARIANT
+                                  Variant:
+                                    value: Standard
+                                    type: VARIANT
+                                fills: fill_0TDFQ8
+                                layout: layout_D2P9GT
+                                borderRadius: 6px
+                                children:
+                                  - id: >-
+                                      I645:176384;7935:112607;328:87506;328:87466;328:87403;11299:30307
+                                    name: Typography
+                                    type: FRAME
+                                    layout: layout_Q56J2Q
+                                    children:
+                                      - id: >-
+                                          I645:176384;7935:112607;328:87506;328:87466;328:87403;11299:30308
+                                        name: Chip
+                                        type: TEXT
+                                        textStyle: style_487GX5
+                                        fills: fill_G3PYL8
+                                        layout: layout_KSE1PZ
+                                        text: veryLonggggggggggClassName
+                      - id: I645:176384;7935:112607;328:87506;328:87466;328:85483
+                        name: Action slot
+                        type: FRAME
+                        layout: layout_271VKI
+                        children:
+                          - id: >-
+                              I645:176384;7935:112607;328:87506;328:87466;328:85624
+                            name: <IconButton>
+                            type: INSTANCE
+                            componentId: '0:23713'
+                            componentProperties:
+                              Size:
+                                value: Tiny
+                                type: VARIANT
+                              Color:
+                                value: Default*
+                                type: VARIANT
+                              State:
+                                value: Enabled
+                                type: VARIANT
+                            layout: layout_LWRWBF
+                            borderRadius: 100px
+                            children:
+                              - id: >-
+                                  I645:176384;7935:112607;328:87506;328:87466;328:85624;6307:41677
+                                name: <ResizableIcon>
+                                type: INSTANCE
+                                componentId: '0:23667'
+                                componentProperties:
+                                  Icon Instance#10003:412:
+                                    value: '328:85628'
+                                    type: INSTANCE_SWAP
+                                  Size:
+                                    value: Tiny
+                                    type: VARIANT
+                                layout: layout_U2FZG9
+                                children:
+                                  - id: >-
+                                      I645:176384;7935:112607;328:87506;328:87466;328:85624;6307:41677;6307:26062
+                                    name: Eye
+                                    type: INSTANCE
+                                    componentId: '328:85628'
+                                    layout: layout_XRBAI3
+                                    children:
+                                      - id: >-
+                                          I645:176384;7935:112607;328:87506;328:87466;328:85624;6307:41677;6307:26062;868:14445
+                                        name: Vector
+                                        type: IMAGE-SVG
+                                        fills: fill_YJUSUB
+                                        layout: layout_GWN5H6
+                          - id: >-
+                              I645:176384;7935:112607;328:87506;328:87466;328:85485
+                            name: <IconButton>
+                            type: INSTANCE
+                            componentId: '0:23713'
+                            componentProperties:
+                              Size:
+                                value: Tiny
+                                type: VARIANT
+                              Color:
+                                value: Default*
+                                type: VARIANT
+                              State:
+                                value: Enabled
+                                type: VARIANT
+                            layout: layout_LWRWBF
+                            borderRadius: 100px
+                            children:
+                              - id: >-
+                                  I645:176384;7935:112607;328:87506;328:87466;328:85485;6307:41677
+                                name: <ResizableIcon>
+                                type: INSTANCE
+                                componentId: '0:23667'
+                                componentProperties:
+                                  Icon Instance#10003:412:
+                                    value: '715:133569'
+                                    type: INSTANCE_SWAP
+                                  Size:
+                                    value: Tiny
+                                    type: VARIANT
+                                layout: layout_U2FZG9
+                                children:
+                                  - id: >-
+                                      I645:176384;7935:112607;328:87506;328:87466;328:85485;6307:41677;6307:26062
+                                    name: BrushBig
+                                    type: INSTANCE
+                                    componentId: '715:133569'
+                                    layout: layout_XRBAI3
+                                    children:
+                                      - id: >-
+                                          I645:176384;7935:112607;328:87506;328:87466;328:85485;6307:41677;6307:26062;12275:21410
+                                        name: Vector
+                                        type: IMAGE-SVG
+                                        fills: fill_YJUSUB
+                                        layout: layout_LK056F
+                  - id: I645:176384;7935:112607;328:87506;366:74755
+                    name: Frame
+                    type: INSTANCE
+                    componentId: '366:74412'
+                    componentProperties:
+                      Property 1:
+                        value: Single line
+                        type: VARIANT
+                    layout: layout_7IHLHR
+                    children:
+                      - id: I645:176384;7935:112607;328:87506;366:74755;366:74413
+                        name: Long Value + Units
+                        type: TEXT
+                        textStyle: style_5ZHIQU
+                        fills: fill_ZNRN3Q
+                        layout: layout_JHT58Q
+                        text: Long Value + Units
+globalVars:
+  styles:
+    fill_EL6BFC:
+      - '#FFFFFF'
+    effect_7R6YA4:
+      boxShadow: >-
+        0px 3px 5px -1px rgba(0, 0, 0, 0.05), 0px 6px 10px 0px rgba(0, 0, 0,
+        0.05), 0px 1px 18px 0px rgba(0, 0, 0, 0.05)
+    layout_Q4AOT4:
+      mode: column
+      alignItems: center
+      sizing:
+        horizontal: fixed
+        vertical: fixed
+      dimensions:
+        width: 268
+        height: 166
+    layout_3RNHY0:
+      mode: none
+      sizing:
+        horizontal: fixed
+        vertical: fixed
+      dimensions:
+        width: 12
+        height: 6
+    layout_U2X808:
+      mode: column
+      alignSelf: stretch
+      gap: 4px
+      padding: 0px 0px 16px
+      sizing:
+        horizontal: fill
+        vertical: hug
+    layout_S7YFS8:
+      mode: column
+      alignSelf: stretch
+      padding: 4px 0px
+      sizing:
+        horizontal: fill
+        vertical: hug
+    layout_FTR2B9:
+      mode: row
+      alignItems: center
+      alignSelf: stretch
+      padding: 0px 4px 0px 12px
+      sizing:
+        horizontal: fill
+        vertical: hug
+    layout_EJGCZM:
+      mode: row
+      alignItems: center
+      gap: 4px
+      sizing:
+        horizontal: fill
+        vertical: hug
+    layout_BUMXEH:
+      mode: column
+      sizing:
+        horizontal: hug
+        vertical: hug
+    style_TD5DR0:
+      fontFamily: Roboto
+      fontWeight: 500
+      fontSize: 12
+      lineHeight: 1.2999999523162842em
+      letterSpacing: 0.8333333457509676%
+      textAlignHorizontal: LEFT
+      textAlignVertical: TOP
+    fill_4EQIL3:
+      - '#3F444B'
+    layout_G0D2N1:
+      mode: none
+      sizing:
+        horizontal: hug
+        vertical: hug
+    layout_5XC1W3:
+      mode: row
+      justifyContent: flex-end
+      alignItems: center
+      sizing:
+        horizontal: fixed
+        vertical: fixed
+      dimensions:
+        width: 84
+        height: 28
+    layout_2KJXS2:
+      mode: column
+      justifyContent: center
+      alignItems: center
+      padding: 6px
+      sizing:
+        horizontal: hug
+        vertical: hug
+    layout_U2FZG9:
+      mode: row
+      sizing:
+        horizontal: hug
+        vertical: hug
+    layout_XRBAI3:
+      mode: none
+      sizing:
+        horizontal: fixed
+        vertical: fixed
+      dimensions:
+        width: 16
+        height: 16
+    fill_17SMS8:
+      - rgba(0, 0, 0, 0.56)
+    layout_M0UJYR:
+      mode: none
+      locationRelativeToParent:
+        x: 3.33349609375
+        'y': 3.3333740234375
+      dimensions:
+        width: 9
+        height: 9
+    layout_TAQ6UR:
+      mode: column
+      alignSelf: stretch
+      gap: 12px
+      padding: 0px 8px 0px 16px
+      sizing:
+        horizontal: fill
+        vertical: hug
+    layout_9BPJUA:
+      mode: column
+      alignItems: flex-end
+      alignSelf: stretch
+      gap: 4px
+      sizing:
+        horizontal: fill
+        vertical: hug
+    layout_AQBKRH:
+      mode: row
+      alignItems: center
+      alignSelf: stretch
+      gap: 4px
+      sizing:
+        horizontal: fill
+        vertical: fixed
+    layout_X0VBTS:
+      mode: row
+      alignItems: center
+      gap: 4px
+      sizing:
+        horizontal: hug
+        vertical: hug
+    fill_60E9N9:
+      - '#0C0D0E'
+    layout_O2GDJQ:
+      mode: none
+      locationRelativeToParent:
+        x: 2.16650390625
+        'y': 2.5
+      dimensions:
+        width: 11.666666030883789
+        height: 11
+    fill_DRSAAN:
+      - '#FCF1FE'
+    layout_R53PF4:
+      mode: row
+      alignItems: center
+      padding: 3px 5px
+      sizing:
+        horizontal: hug
+        vertical: fixed
+      dimensions:
+        height: 20
+    layout_8TT1N0:
+      mode: column
+      padding: 0px 3px
+      sizing:
+        horizontal: hug
+        vertical: hug
+    style_487GX5:
+      fontFamily: Roboto
+      fontWeight: 400
+      fontSize: 12
+      lineHeight: 1.5em
+      letterSpacing: 1.333333303531011%
+      textAlignHorizontal: LEFT
+      textAlignVertical: TOP
+    fill_WT4IC3:
+      - '#860781'
+    layout_271VKI:
+      mode: row
+      alignItems: center
+      padding: 0px 0px 0px 8px
+      sizing:
+        horizontal: hug
+        vertical: hug
+    layout_LWRWBF:
+      mode: column
+      justifyContent: center
+      alignItems: center
+      padding: 2px
+      sizing:
+        horizontal: hug
+        vertical: hug
+    fill_YJUSUB:
+      - rgba(0, 0, 0, 0.54)
+    layout_GWN5H6:
+      mode: none
+      locationRelativeToParent:
+        x: 0.83349609375
+        'y': 2.8333740234375
+      dimensions:
+        width: 14.333333969116211
+        height: 10.333333969116211
+    layout_LK056F:
+      mode: none
+      locationRelativeToParent:
+        x: 1.33349609375
+        'y': 0.982177734375
+      dimensions:
+        width: 13.86542797088623
+        height: 14.40627670288086
+    layout_7IHLHR:
+      mode: column
+      alignSelf: stretch
+      gap: 4px
+      sizing:
+        horizontal: fill
+        vertical: hug
+    style_5ZHIQU:
+      fontFamily: Roboto
+      fontWeight: 400
+      fontSize: 12
+      lineHeight: 1.6600000063578289em
+      letterSpacing: 3.3333333830038705%
+      textAlignHorizontal: LEFT
+      textAlignVertical: TOP
+    fill_ZNRN3Q:
+      - '#69727D'
+    layout_JHT58Q:
+      mode: none
+      sizing:
+        horizontal: fixed
+        vertical: hug
+      dimensions:
+        width: 224.103515625
+    layout_TYDP51:
+      mode: row
+      justifyContent: stretch
+      alignItems: stretch
+      gap: 4px
+      sizing:
+        horizontal: fill
+        vertical: hug
+    fill_0TDFQ8:
+      - '#EAFDF9'
+    layout_D2P9GT:
+      mode: row
+      alignItems: center
+      padding: 3px 5px
+      sizing:
+        horizontal: fill
+        vertical: fixed
+      dimensions:
+        height: 20
+    layout_Q56J2Q:
+      mode: column
+      padding: 0px 3px
+      sizing:
+        horizontal: fill
+        vertical: hug
+    fill_G3PYL8:
+      - '#10666C'
+    layout_KSE1PZ:
+      mode: none
+      sizing:
+        horizontal: fill
+        vertical: hug
