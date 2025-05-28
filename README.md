@@ -242,7 +242,7 @@ ls test-data/
 
 ### **Debug Tools**
 - Use `debug_response.mjs` to inspect server responses
-- Check `figma_raw_data.yaml` for raw Figma data
+- Check `test-data/figma_raw_data.yaml` for raw Figma data
 - Verify session creation with verbose logging
 
 ## 🔗 **Integration**

@@ -1,5 +1,10 @@
 import fetch from 'node-fetch';
 import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 async function successfulConversion() {
   console.log('🎯 Successful Figma to Elementor conversion!\n');
@@ -119,13 +124,13 @@ async function successfulConversion() {
     };
 
     // Save the results
-    fs.writeFileSync('figma_raw_data.yaml', figmaYamlContent);
-    fs.writeFileSync('elementor_success_output.json', JSON.stringify(elementorData, null, 2));
+    fs.writeFileSync(path.join(__dirname, '../test-data/figma_raw_data.yaml'), figmaYamlContent);
+    fs.writeFileSync(path.join(__dirname, '../test-data/elementor_success_output.json'), JSON.stringify(elementorData, null, 2));
 
     console.log('✅ SUCCESS! Conversion completed!');
     console.log('💾 Files saved:');
-    console.log('  - figma_raw_data.yaml (raw Figma data)');
-    console.log('  - elementor_success_output.json (Elementor output)');
+    console.log('  - test-data/figma_raw_data.yaml (raw Figma data)');
+    console.log('  - test-data/elementor_success_output.json (Elementor output)');
     console.log(`📊 Sections: ${elementorData.content.length}`);
     
     const widgetCount = elementorData.content[0].elements[0].elements.length;

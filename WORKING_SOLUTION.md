@@ -229,12 +229,12 @@ npm install node-fetch
 
 ### **2. Run Conversion**
 ```bash
-node successful_conversion.mjs
+node tests/successful_conversion.mjs
 ```
 
 ### **3. Output Files**
-- `figma_raw_data.yaml` - Raw Figma design data
-- `elementor_success_output.json` - Elementor v4 compatible JSON
+- `test-data/figma_raw_data.yaml` - Raw Figma design data
+- `test-data/elementor_success_output.json` - Elementor v4 compatible JSON
 
 ---
 

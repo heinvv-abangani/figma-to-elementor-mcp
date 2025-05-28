@@ -250,37 +250,37 @@ nodes:
       Direction:
         value: Up
         type: VARIANT
-    fills: fill_EL6BFC
-    effects: effect_7R6YA4
-    layout: layout_Q4AOT4
+    fills: fill_CU2OLI
+    effects: effect_8HAVX9
+    layout: layout_A5TV6D
     children:
       - id: I645:176384;7097:2178
         name: Arrow
         type: IMAGE-SVG
-        fills: fill_EL6BFC
-        layout: layout_3RNHY0
+        fills: fill_CU2OLI
+        layout: layout_5ZBQTQ
       - id: I645:176384;7935:112607
         name: Tooltipcontent
         type: INSTANCE
         componentId: '328:87826'
-        fills: fill_EL6BFC
-        layout: layout_U2X808
+        fills: fill_CU2OLI
+        layout: layout_G0KKR8
         borderRadius: 8px
         children:
           - id: I645:176384;7935:112607;477:173546
             name: <Paper>
             type: FRAME
-            layout: layout_S7YFS8
+            layout: layout_6LGTM9
             children:
               - id: I645:176384;7935:112607;477:173547
                 name: <Toolbar>
                 type: FRAME
-                layout: layout_FTR2B9
+                layout: layout_5BGOE5
                 children:
                   - id: I645:176384;7935:112607;477:173548
                     name: Left Side
                     type: FRAME
-                    layout: layout_EJGCZM
+                    layout: layout_IJ5EUG
                     children:
                       - id: I645:176384;7935:112607;477:173549
                         name: <Typography>
@@ -296,19 +296,19 @@ nodes:
                           Gutter Bottom:
                             value: 'False'
                             type: VARIANT
-                        layout: layout_BUMXEH
+                        layout: layout_M6TIMZ
                         children:
                           - id: I645:176384;7935:112607;477:173549;11626:152454
                             name: subtitle2
                             type: TEXT
-                            textStyle: style_TD5DR0
-                            fills: fill_4EQIL3
-                            layout: layout_G0D2N1
+                            textStyle: style_36X3FP
+                            fills: fill_UTT73Q
+                            layout: layout_G9348J
                             text: Style origin
                   - id: I645:176384;7935:112607;477:173550
                     name: <Stack>
                     type: FRAME
-                    layout: layout_5XC1W3
+                    layout: layout_NIDAGC
                     children:
                       - id: I645:176384;7935:112607;477:173552
                         name: 'Instance #2'
@@ -324,7 +324,7 @@ nodes:
                           State:
                             value: Enabled
                             type: VARIANT
-                        layout: layout_2KJXS2
+                        layout: layout_MHHNCE
                         borderRadius: 100px
                         children:
                           - id: I645:176384;7935:112607;477:173552;6307:41677
@@ -338,31 +338,31 @@ nodes:
                               Size:
                                 value: Tiny
                                 type: VARIANT
-                            layout: layout_U2FZG9
+                            layout: layout_OW3X20
                             children:
                               - id: >-
                                   I645:176384;7935:112607;477:173552;6307:41677;6307:26062
                                 name: X
                                 type: INSTANCE
                                 componentId: '432:97655'
-                                layout: layout_XRBAI3
+                                layout: layout_0YQAVQ
                                 children:
                                   - id: >-
                                       I645:176384;7935:112607;477:173552;6307:41677;6307:26062;1322:10161
                                     name: Vector
                                     type: IMAGE-SVG
-                                    fills: fill_17SMS8
-                                    layout: layout_M0UJYR
+                                    fills: fill_QLISOE
+                                    layout: layout_UROS0J
           - id: I645:176384;7935:112607;477:183010
             name: Frame 10886282
             type: FRAME
-            layout: layout_TAQ6UR
+            layout: layout_UBC675
             children:
               - id: I645:176384;7935:112607;328:87825
                 name: Row+value/Default
                 type: INSTANCE
                 componentId: '328:87501'
-                layout: layout_9BPJUA
+                layout: layout_SRLRD9
                 children:
                   - id: I645:176384;7935:112607;328:87825;328:87466
                     name: Frame 10886138
@@ -372,33 +372,33 @@ nodes:
                       Property 1:
                         value: Default
                         type: VARIANT
-                    layout: layout_AQBKRH
+                    layout: layout_U35732
                     borderRadius: 8px
                     children:
                       - id: I645:176384;7935:112607;328:87825;328:87466;328:85469
                         name: Left
                         type: FRAME
-                        layout: layout_EJGCZM
+                        layout: layout_IJ5EUG
                         children:
                           - id: >-
                               I645:176384;7935:112607;328:87825;328:87466;328:85470
                             name: Inherit
                             type: FRAME
-                            layout: layout_X0VBTS
+                            layout: layout_P8JW7S
                             children:
                               - id: >-
                                   I645:176384;7935:112607;328:87825;328:87466;328:85473
                                 name: Desktop
                                 type: INSTANCE
                                 componentId: '3:23309'
-                                layout: layout_XRBAI3
+                                layout: layout_0YQAVQ
                                 children:
                                   - id: >-
                                       I645:176384;7935:112607;328:87825;328:87466;328:85473;944:8406
                                     name: Vector
                                     type: IMAGE-SVG
-                                    fills: fill_60E9N9
-                                    layout: layout_O2GDJQ
+                                    fills: fill_OPMOGQ
+                                    layout: layout_CM4YOG
                               - id: >-
                                   I645:176384;7935:112607;328:87825;328:87466;328:87403
                                 name: <Chip>
@@ -429,28 +429,28 @@ nodes:
                                   Variant:
                                     value: Standard
                                     type: VARIANT
-                                fills: fill_DRSAAN
-                                layout: layout_R53PF4
+                                fills: fill_JLMPKT
+                                layout: layout_UVRB5M
                                 borderRadius: 6px
                                 children:
                                   - id: >-
                                       I645:176384;7935:112607;328:87825;328:87466;328:87403;11299:30342
                                     name: Typography
                                     type: FRAME
-                                    layout: layout_8TT1N0
+                                    layout: layout_NP51LY
                                     children:
                                       - id: >-
                                           I645:176384;7935:112607;328:87825;328:87466;328:87403;11299:30343
                                         name: Chip
                                         type: TEXT
-                                        textStyle: style_487GX5
-                                        fills: fill_WT4IC3
-                                        layout: layout_G0D2N1
+                                        textStyle: style_G7X17V
+                                        fills: fill_K924H2
+                                        layout: layout_G9348J
                                         text: local
                       - id: I645:176384;7935:112607;328:87825;328:87466;328:85483
                         name: Action slot
                         type: FRAME
-                        layout: layout_271VKI
+                        layout: layout_TI2F5M
                         children:
                           - id: >-
                               I645:176384;7935:112607;328:87825;328:87466;328:85624
@@ -467,7 +467,7 @@ nodes:
                               State:
                                 value: Enabled
                                 type: VARIANT
-                            layout: layout_LWRWBF
+                            layout: layout_Y7J22A
                             borderRadius: 100px
                             children:
                               - id: >-
@@ -482,21 +482,21 @@ nodes:
                                   Size:
                                     value: Tiny
                                     type: VARIANT
-                                layout: layout_U2FZG9
+                                layout: layout_OW3X20
                                 children:
                                   - id: >-
                                       I645:176384;7935:112607;328:87825;328:87466;328:85624;6307:41677;6307:26062
                                     name: Eye
                                     type: INSTANCE
                                     componentId: '328:85628'
-                                    layout: layout_XRBAI3
+                                    layout: layout_0YQAVQ
                                     children:
                                       - id: >-
                                           I645:176384;7935:112607;328:87825;328:87466;328:85624;6307:41677;6307:26062;868:14445
                                         name: Vector
                                         type: IMAGE-SVG
-                                        fills: fill_YJUSUB
-                                        layout: layout_GWN5H6
+                                        fills: fill_ECQDWT
+                                        layout: layout_C46935
                           - id: >-
                               I645:176384;7935:112607;328:87825;328:87466;328:85485
                             name: <IconButton>
@@ -512,7 +512,7 @@ nodes:
                               State:
                                 value: Enabled
                                 type: VARIANT
-                            layout: layout_LWRWBF
+                            layout: layout_Y7J22A
                             borderRadius: 100px
                             children:
                               - id: >-
@@ -527,21 +527,21 @@ nodes:
                                   Size:
                                     value: Tiny
                                     type: VARIANT
-                                layout: layout_U2FZG9
+                                layout: layout_OW3X20
                                 children:
                                   - id: >-
                                       I645:176384;7935:112607;328:87825;328:87466;328:85485;6307:41677;6307:26062
                                     name: BrushBig
                                     type: INSTANCE
                                     componentId: '715:133569'
-                                    layout: layout_XRBAI3
+                                    layout: layout_0YQAVQ
                                     children:
                                       - id: >-
                                           I645:176384;7935:112607;328:87825;328:87466;328:85485;6307:41677;6307:26062;12275:21410
                                         name: Vector
                                         type: IMAGE-SVG
-                                        fills: fill_YJUSUB
-                                        layout: layout_LK056F
+                                        fills: fill_ECQDWT
+                                        layout: layout_UDFKT7
                   - id: I645:176384;7935:112607;328:87825;366:74755
                     name: Frame
                     type: INSTANCE
@@ -550,20 +550,20 @@ nodes:
                       Property 1:
                         value: Single line
                         type: VARIANT
-                    layout: layout_7IHLHR
+                    layout: layout_429H1Z
                     children:
                       - id: I645:176384;7935:112607;328:87825;366:74755;366:74413
                         name: Long Value + Units
                         type: TEXT
-                        textStyle: style_5ZHIQU
-                        fills: fill_ZNRN3Q
-                        layout: layout_JHT58Q
+                        textStyle: style_U8HR7O
+                        fills: fill_1YV8D8
+                        layout: layout_3HGG5W
                         text: Long Value + Units
               - id: I645:176384;7935:112607;328:87506
                 name: Frame 10886272
                 type: INSTANCE
                 componentId: '328:87501'
-                layout: layout_9BPJUA
+                layout: layout_SRLRD9
                 children:
                   - id: I645:176384;7935:112607;328:87506;328:87466
                     name: Frame 10886138
@@ -573,33 +573,33 @@ nodes:
                       Property 1:
                         value: Default
                         type: VARIANT
-                    layout: layout_AQBKRH
+                    layout: layout_U35732
                     borderRadius: 8px
                     children:
                       - id: I645:176384;7935:112607;328:87506;328:87466;328:85469
                         name: Left
                         type: FRAME
-                        layout: layout_TYDP51
+                        layout: layout_3MRCYI
                         children:
                           - id: >-
                               I645:176384;7935:112607;328:87506;328:87466;328:85470
                             name: Inherit
                             type: FRAME
-                            layout: layout_EJGCZM
+                            layout: layout_IJ5EUG
                             children:
                               - id: >-
                                   I645:176384;7935:112607;328:87506;328:87466;328:85473
                                 name: Desktop
                                 type: INSTANCE
                                 componentId: '3:23309'
-                                layout: layout_XRBAI3
+                                layout: layout_0YQAVQ
                                 children:
                                   - id: >-
                                       I645:176384;7935:112607;328:87506;328:87466;328:85473;944:8406
                                     name: Vector
                                     type: IMAGE-SVG
-                                    fills: fill_60E9N9
-                                    layout: layout_O2GDJQ
+                                    fills: fill_OPMOGQ
+                                    layout: layout_CM4YOG
                               - id: >-
                                   I645:176384;7935:112607;328:87506;328:87466;328:87403
                                 name: <Chip>
@@ -630,28 +630,28 @@ nodes:
                                   Variant:
                                     value: Standard
                                     type: VARIANT
-                                fills: fill_0TDFQ8
-                                layout: layout_D2P9GT
+                                fills: fill_7DWYUJ
+                                layout: layout_A8H4F4
                                 borderRadius: 6px
                                 children:
                                   - id: >-
                                       I645:176384;7935:112607;328:87506;328:87466;328:87403;11299:30307
                                     name: Typography
                                     type: FRAME
-                                    layout: layout_Q56J2Q
+                                    layout: layout_HP6NGC
                                     children:
                                       - id: >-
                                           I645:176384;7935:112607;328:87506;328:87466;328:87403;11299:30308
                                         name: Chip
                                         type: TEXT
-                                        textStyle: style_487GX5
-                                        fills: fill_G3PYL8
-                                        layout: layout_KSE1PZ
+                                        textStyle: style_G7X17V
+                                        fills: fill_5HBTF4
+                                        layout: layout_5RN2NT
                                         text: veryLonggggggggggClassName
                       - id: I645:176384;7935:112607;328:87506;328:87466;328:85483
                         name: Action slot
                         type: FRAME
-                        layout: layout_271VKI
+                        layout: layout_TI2F5M
                         children:
                           - id: >-
                               I645:176384;7935:112607;328:87506;328:87466;328:85624
@@ -668,7 +668,7 @@ nodes:
                               State:
                                 value: Enabled
                                 type: VARIANT
-                            layout: layout_LWRWBF
+                            layout: layout_Y7J22A
                             borderRadius: 100px
                             children:
                               - id: >-
@@ -683,21 +683,21 @@ nodes:
                                   Size:
                                     value: Tiny
                                     type: VARIANT
-                                layout: layout_U2FZG9
+                                layout: layout_OW3X20
                                 children:
                                   - id: >-
                                       I645:176384;7935:112607;328:87506;328:87466;328:85624;6307:41677;6307:26062
                                     name: Eye
                                     type: INSTANCE
                                     componentId: '328:85628'
-                                    layout: layout_XRBAI3
+                                    layout: layout_0YQAVQ
                                     children:
                                       - id: >-
                                           I645:176384;7935:112607;328:87506;328:87466;328:85624;6307:41677;6307:26062;868:14445
                                         name: Vector
                                         type: IMAGE-SVG
-                                        fills: fill_YJUSUB
-                                        layout: layout_GWN5H6
+                                        fills: fill_ECQDWT
+                                        layout: layout_C46935
                           - id: >-
                               I645:176384;7935:112607;328:87506;328:87466;328:85485
                             name: <IconButton>
@@ -713,7 +713,7 @@ nodes:
                               State:
                                 value: Enabled
                                 type: VARIANT
-                            layout: layout_LWRWBF
+                            layout: layout_Y7J22A
                             borderRadius: 100px
                             children:
                               - id: >-
@@ -728,21 +728,21 @@ nodes:
                                   Size:
                                     value: Tiny
                                     type: VARIANT
-                                layout: layout_U2FZG9
+                                layout: layout_OW3X20
                                 children:
                                   - id: >-
                                       I645:176384;7935:112607;328:87506;328:87466;328:85485;6307:41677;6307:26062
                                     name: BrushBig
                                     type: INSTANCE
                                     componentId: '715:133569'
-                                    layout: layout_XRBAI3
+                                    layout: layout_0YQAVQ
                                     children:
                                       - id: >-
                                           I645:176384;7935:112607;328:87506;328:87466;328:85485;6307:41677;6307:26062;12275:21410
                                         name: Vector
                                         type: IMAGE-SVG
-                                        fills: fill_YJUSUB
-                                        layout: layout_LK056F
+                                        fills: fill_ECQDWT
+                                        layout: layout_UDFKT7
                   - id: I645:176384;7935:112607;328:87506;366:74755
                     name: Frame
                     type: INSTANCE
@@ -751,24 +751,24 @@ nodes:
                       Property 1:
                         value: Single line
                         type: VARIANT
-                    layout: layout_7IHLHR
+                    layout: layout_429H1Z
                     children:
                       - id: I645:176384;7935:112607;328:87506;366:74755;366:74413
                         name: Long Value + Units
                         type: TEXT
-                        textStyle: style_5ZHIQU
-                        fills: fill_ZNRN3Q
-                        layout: layout_JHT58Q
+                        textStyle: style_U8HR7O
+                        fills: fill_1YV8D8
+                        layout: layout_3HGG5W
                         text: Long Value + Units
 globalVars:
   styles:
-    fill_EL6BFC:
+    fill_CU2OLI:
       - '#FFFFFF'
-    effect_7R6YA4:
+    effect_8HAVX9:
       boxShadow: >-
         0px 3px 5px -1px rgba(0, 0, 0, 0.05), 0px 6px 10px 0px rgba(0, 0, 0,
         0.05), 0px 1px 18px 0px rgba(0, 0, 0, 0.05)
-    layout_Q4AOT4:
+    layout_A5TV6D:
       mode: column
       alignItems: center
       sizing:
@@ -777,7 +777,7 @@ globalVars:
       dimensions:
         width: 268
         height: 166
-    layout_3RNHY0:
+    layout_5ZBQTQ:
       mode: none
       sizing:
         horizontal: fixed
@@ -785,7 +785,7 @@ globalVars:
       dimensions:
         width: 12
         height: 6
-    layout_U2X808:
+    layout_G0KKR8:
       mode: column
       alignSelf: stretch
       gap: 4px
@@ -793,14 +793,14 @@ globalVars:
       sizing:
         horizontal: fill
         vertical: hug
-    layout_S7YFS8:
+    layout_6LGTM9:
       mode: column
       alignSelf: stretch
       padding: 4px 0px
       sizing:
         horizontal: fill
         vertical: hug
-    layout_FTR2B9:
+    layout_5BGOE5:
       mode: row
       alignItems: center
       alignSelf: stretch
@@ -808,19 +808,19 @@ globalVars:
       sizing:
         horizontal: fill
         vertical: hug
-    layout_EJGCZM:
+    layout_IJ5EUG:
       mode: row
       alignItems: center
       gap: 4px
       sizing:
         horizontal: fill
         vertical: hug
-    layout_BUMXEH:
+    layout_M6TIMZ:
       mode: column
       sizing:
         horizontal: hug
         vertical: hug
-    style_TD5DR0:
+    style_36X3FP:
       fontFamily: Roboto
       fontWeight: 500
       fontSize: 12
@@ -828,14 +828,14 @@ globalVars:
       letterSpacing: 0.8333333457509676%
       textAlignHorizontal: LEFT
       textAlignVertical: TOP
-    fill_4EQIL3:
+    fill_UTT73Q:
       - '#3F444B'
-    layout_G0D2N1:
+    layout_G9348J:
       mode: none
       sizing:
         horizontal: hug
         vertical: hug
-    layout_5XC1W3:
+    layout_NIDAGC:
       mode: row
       justifyContent: flex-end
       alignItems: center
@@ -845,7 +845,7 @@ globalVars:
       dimensions:
         width: 84
         height: 28
-    layout_2KJXS2:
+    layout_MHHNCE:
       mode: column
       justifyContent: center
       alignItems: center
@@ -853,12 +853,12 @@ globalVars:
       sizing:
         horizontal: hug
         vertical: hug
-    layout_U2FZG9:
+    layout_OW3X20:
       mode: row
       sizing:
         horizontal: hug
         vertical: hug
-    layout_XRBAI3:
+    layout_0YQAVQ:
       mode: none
       sizing:
         horizontal: fixed
@@ -866,9 +866,9 @@ globalVars:
       dimensions:
         width: 16
         height: 16
-    fill_17SMS8:
+    fill_QLISOE:
       - rgba(0, 0, 0, 0.56)
-    layout_M0UJYR:
+    layout_UROS0J:
       mode: none
       locationRelativeToParent:
         x: 3.33349609375
@@ -876,7 +876,7 @@ globalVars:
       dimensions:
         width: 9
         height: 9
-    layout_TAQ6UR:
+    layout_UBC675:
       mode: column
       alignSelf: stretch
       gap: 12px
@@ -884,7 +884,7 @@ globalVars:
       sizing:
         horizontal: fill
         vertical: hug
-    layout_9BPJUA:
+    layout_SRLRD9:
       mode: column
       alignItems: flex-end
       alignSelf: stretch
@@ -892,7 +892,7 @@ globalVars:
       sizing:
         horizontal: fill
         vertical: hug
-    layout_AQBKRH:
+    layout_U35732:
       mode: row
       alignItems: center
       alignSelf: stretch
@@ -900,16 +900,16 @@ globalVars:
       sizing:
         horizontal: fill
         vertical: fixed
-    layout_X0VBTS:
+    layout_P8JW7S:
       mode: row
       alignItems: center
       gap: 4px
       sizing:
         horizontal: hug
         vertical: hug
-    fill_60E9N9:
+    fill_OPMOGQ:
       - '#0C0D0E'
-    layout_O2GDJQ:
+    layout_CM4YOG:
       mode: none
       locationRelativeToParent:
         x: 2.16650390625
@@ -917,9 +917,9 @@ globalVars:
       dimensions:
         width: 11.666666030883789
         height: 11
-    fill_DRSAAN:
+    fill_JLMPKT:
       - '#FCF1FE'
-    layout_R53PF4:
+    layout_UVRB5M:
       mode: row
       alignItems: center
       padding: 3px 5px
@@ -928,13 +928,13 @@ globalVars:
         vertical: fixed
       dimensions:
         height: 20
-    layout_8TT1N0:
+    layout_NP51LY:
       mode: column
       padding: 0px 3px
       sizing:
         horizontal: hug
         vertical: hug
-    style_487GX5:
+    style_G7X17V:
       fontFamily: Roboto
       fontWeight: 400
       fontSize: 12
@@ -942,16 +942,16 @@ globalVars:
       letterSpacing: 1.333333303531011%
       textAlignHorizontal: LEFT
       textAlignVertical: TOP
-    fill_WT4IC3:
+    fill_K924H2:
       - '#860781'
-    layout_271VKI:
+    layout_TI2F5M:
       mode: row
       alignItems: center
       padding: 0px 0px 0px 8px
       sizing:
         horizontal: hug
         vertical: hug
-    layout_LWRWBF:
+    layout_Y7J22A:
       mode: column
       justifyContent: center
       alignItems: center
@@ -959,9 +959,9 @@ globalVars:
       sizing:
         horizontal: hug
         vertical: hug
-    fill_YJUSUB:
+    fill_ECQDWT:
       - rgba(0, 0, 0, 0.54)
-    layout_GWN5H6:
+    layout_C46935:
       mode: none
       locationRelativeToParent:
         x: 0.83349609375
@@ -969,7 +969,7 @@ globalVars:
       dimensions:
         width: 14.333333969116211
         height: 10.333333969116211
-    layout_LK056F:
+    layout_UDFKT7:
       mode: none
       locationRelativeToParent:
         x: 1.33349609375
@@ -977,14 +977,14 @@ globalVars:
       dimensions:
         width: 13.86542797088623
         height: 14.40627670288086
-    layout_7IHLHR:
+    layout_429H1Z:
       mode: column
       alignSelf: stretch
       gap: 4px
       sizing:
         horizontal: fill
         vertical: hug
-    style_5ZHIQU:
+    style_U8HR7O:
       fontFamily: Roboto
       fontWeight: 400
       fontSize: 12
@@ -992,16 +992,16 @@ globalVars:
       letterSpacing: 3.3333333830038705%
       textAlignHorizontal: LEFT
       textAlignVertical: TOP
-    fill_ZNRN3Q:
+    fill_1YV8D8:
       - '#69727D'
-    layout_JHT58Q:
+    layout_3HGG5W:
       mode: none
       sizing:
         horizontal: fixed
         vertical: hug
       dimensions:
         width: 224.103515625
-    layout_TYDP51:
+    layout_3MRCYI:
       mode: row
       justifyContent: stretch
       alignItems: stretch
@@ -1009,9 +1009,9 @@ globalVars:
       sizing:
         horizontal: fill
         vertical: hug
-    fill_0TDFQ8:
+    fill_7DWYUJ:
       - '#EAFDF9'
-    layout_D2P9GT:
+    layout_A8H4F4:
       mode: row
       alignItems: center
       padding: 3px 5px
@@ -1020,15 +1020,15 @@ globalVars:
         vertical: fixed
       dimensions:
         height: 20
-    layout_Q56J2Q:
+    layout_HP6NGC:
       mode: column
       padding: 0px 3px
       sizing:
         horizontal: fill
         vertical: hug
-    fill_G3PYL8:
+    fill_5HBTF4:
       - '#10666C'
-    layout_KSE1PZ:
+    layout_5RN2NT:
       mode: none
       sizing:
         horizontal: fill
