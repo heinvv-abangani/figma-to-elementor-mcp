@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "figma-to-elementor-mcp": {
+      "command": "npx",
+      "args": ["-y", "figma-to-elementor-mcp", "--figma-api-key=YOUR_FIGMA_API_KEY", "--stdio"]
+    }
+  }
+} 
