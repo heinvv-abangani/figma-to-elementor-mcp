@@ -21,12 +21,12 @@ npm install
 
 ### **2. Run Working Conversion**
 ```bash
-node successful_conversion.mjs
+node tests/successful_conversion.mjs
 ```
 
 ### **3. Check Output**
-- `figma_raw_data.yaml` - Raw Figma design data
-- `elementor_success_output.json` - Elementor v4 compatible JSON
+- `test-data/figma_raw_data.yaml` - Raw Figma design data
+- `test-data/elementor_success_output.json` - Elementor v4 compatible JSON
 
 ## 📋 **Features**
 
@@ -202,13 +202,10 @@ npm run dev
 ### **Testing**
 ```bash
 # Test with working solution
-node successful_conversion.mjs
+node tests/successful_conversion.mjs
 
-# Debug response format
-node debug_response.mjs
-
-# Quick conversion test
-node quick_test.js
+# View test data outputs
+ls test-data/
 ```
 
 ## 🐛 **Troubleshooting**
