@@ -200,12 +200,32 @@ function extractNodes(yamlContent) {
 
 function convertNodesToWidgets(nodes, metadata) {
   const widgets = [];
-  
-  // Add a header widget with the design name
+
+  // Add a flexbox container for the layout
   widgets.push({
+    id: `flexbox_${Date.now()}`,
+    elType: 'widget',
+    widgetType: 'flexbox',
+    settings: {
+      gap: 'default',
+      background_background: 'classic',
+      background_color: '#FFFFFF',
+      padding: {
+        unit: 'px',
+        top: '20',
+        right: '20',
+        bottom: '20',
+        left: '20',
+      },
+    },
+    elements: [],
+  });
+
+  // Add an e-heading for the design name
+  widgets[0].elements.push({
     id: `widget_${Date.now()}_header`,
     elType: 'widget',
-    widgetType: 'heading',
+    widgetType: 'e-heading',
     settings: {
       title: metadata.name || 'Figma Design',
       header_size: 'h1',
@@ -221,11 +241,11 @@ function convertNodesToWidgets(nodes, metadata) {
   // Add widgets for each extracted node
   nodes.forEach((node, index) => {
     if (node.type === 'COLOR') {
-      // Create a color preview widget
-      widgets.push({
+      // Use flexbox for color preview (instead of div-block)
+      widgets[0].elements.push({
         id: `widget_${Date.now()}_color_${index}`,
         elType: 'widget',
-        widgetType: 'div-block',
+        widgetType: 'flexbox',
         settings: {
           background_background: 'classic',
           background_color: node.color,
@@ -244,21 +264,14 @@ function convertNodesToWidgets(nodes, metadata) {
             bottom: '8',
             left: '8',
           },
-          margin: {
-            unit: 'px',
-            top: '10',
-            right: '10',
-            bottom: '10',
-            left: '10',
-          },
         },
       });
-      
-      // Add a label for the color
-      widgets.push({
+
+      // Add an e-paragraph for the color label
+      widgets[0].elements.push({
         id: `widget_${Date.now()}_color_label_${index}`,
         elType: 'widget',
-        widgetType: 'paragraph',
+        widgetType: 'e-paragraph',
         settings: {
           text: `Color: ${node.color}`,
           typography_typography: 'custom',
@@ -270,11 +283,11 @@ function convertNodesToWidgets(nodes, metadata) {
         },
       });
     } else {
-      // Create a generic widget for other nodes
-      widgets.push({
+      // Add an e-paragraph for generic nodes
+      widgets[0].elements.push({
         id: `widget_${Date.now()}_node_${index}`,
         elType: 'widget',
-        widgetType: 'paragraph',
+        widgetType: 'e-paragraph',
         settings: {
           text: `Node: ${node.name}`,
           typography_typography: 'custom',

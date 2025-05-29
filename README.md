@@ -292,3 +292,109 @@ MIT License - see [LICENSE](LICENSE) file for details.
 - [`package.json`](./package.json) - Dependencies and scripts
 - [`tsconfig.json`](./tsconfig.json) - TypeScript configuration
 - [`tsup.config.ts`](./tsup.config.ts) - Build configuration 
+
+function convertNodesToWidgets(nodes, metadata) {
+  const widgets = [];
+
+  // Add a flexbox container for the layout
+  widgets.push({
+    id: `flexbox_${Date.now()}`,
+    elType: 'widget',
+    widgetType: 'flexbox',
+    settings: {
+      gap: 'default',
+      background_background: 'classic',
+      background_color: '#FFFFFF',
+      padding: {
+        unit: 'px',
+        top: '20',
+        right: '20',
+        bottom: '20',
+        left: '20',
+      },
+    },
+    elements: [],
+  });
+
+  // Add an e-heading for the design name
+  widgets[0].elements.push({
+    id: `widget_${Date.now()}_header`,
+    elType: 'widget',
+    widgetType: 'e-heading',
+    settings: {
+      title: metadata.name || 'Figma Design',
+      header_size: 'h1',
+      typography_typography: 'custom',
+      typography_font_size: {
+        unit: 'px',
+        size: 32,
+      },
+      color: '#0C0D0E',
+    },
+  });
+
+  // Add widgets for each extracted node
+  nodes.forEach((node, index) => {
+    if (node.type === 'COLOR') {
+      // Use flexbox for color preview (instead of div-block)
+      widgets[0].elements.push({
+        id: `widget_${Date.now()}_color_${index}`,
+        elType: 'widget',
+        widgetType: 'flexbox',
+        settings: {
+          background_background: 'classic',
+          background_color: node.color,
+          width: {
+            unit: 'px',
+            size: 50,
+          },
+          height: {
+            unit: 'px',
+            size: 50,
+          },
+          border_radius: {
+            unit: 'px',
+            top: '8',
+            right: '8',
+            bottom: '8',
+            left: '8',
+          },
+        },
+      });
+
+      // Add an e-paragraph for the color label
+      widgets[0].elements.push({
+        id: `widget_${Date.now()}_color_label_${index}`,
+        elType: 'widget',
+        widgetType: 'e-paragraph',
+        settings: {
+          text: `Color: ${node.color}`,
+          typography_typography: 'custom',
+          typography_font_size: {
+            unit: 'px',
+            size: 14,
+          },
+          color: '#69727D',
+        },
+      });
+    } else {
+      // Add an e-paragraph for generic nodes
+      widgets[0].elements.push({
+        id: `widget_${Date.now()}_node_${index}`,
+        elType: 'widget',
+        widgetType: 'e-paragraph',
+        settings: {
+          text: `Node: ${node.name}`,
+          typography_typography: 'custom',
+          typography_font_size: {
+            unit: 'px',
+            size: 16,
+          },
+          color: '#0C0D0E',
+        },
+      });
+    }
+  });
+
+  return widgets;
+} 
