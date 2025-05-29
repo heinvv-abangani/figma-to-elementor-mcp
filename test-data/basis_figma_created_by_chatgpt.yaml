@@ -1,0 +1,47 @@
+name: BasicComponent
+type: frame
+properties:
+  width: 400
+  height: 300
+  layoutMode: VERTICAL
+  primaryAxisAlign: CENTER
+  counterAxisAlign: CENTER
+  itemSpacing: 16
+  padding: 24
+  children:
+    - type: text
+      name: Heading
+      characters: "This is a Heading"
+      style:
+        fontSize: 32
+        fontWeight: 700
+        textAlign: CENTER
+
+    - type: text
+      name: Paragraph
+      characters: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      style:
+        fontSize: 16
+        fontWeight: 400
+        textAlign: CENTER
+
+    - type: rectangle
+      name: Button
+      width: 120
+      height: 40
+      fills:
+        - type: SOLID
+          color:
+            r: 0.0
+            g: 0.478
+            b: 1.0
+      cornerRadius: 6
+      children:
+        - type: text
+          name: ButtonLabel
+          characters: "Click Me"
+          style:
+            fontSize: 16
+            fontWeight: 600
+            textAlign: CENTER
+          layoutAlign: CENTER

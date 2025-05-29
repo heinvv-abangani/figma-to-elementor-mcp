@@ -1,0 +1,160 @@
+{
+        "content": [
+          {
+            "id": "53dcc9f3",
+            "settings": {
+              "classes": {
+                "$$type": "classes",
+                "value": [
+                  "e-53dcc9f3-bd72874"
+                ]
+              }
+            },
+            "elements": [
+              {
+                "id": "17683280",
+                "settings": {
+                  "classes": {
+                    "$$type": "classes",
+                    "value": [
+                      "e-17683280-b55da12"
+                    ]
+                  }
+                },
+                "elements": [],
+                "isInner": false,
+                "widgetType": "e-heading",
+                "elType": "widget",
+                "styles": {
+                  "e-17683280-b55da12": {
+                    "id": "e-17683280-b55da12",
+                    "label": "local",
+                    "type": "class",
+                    "variants": [
+                      {
+                        "meta": {
+                          "breakpoint": "desktop",
+                          "state": null
+                        },
+                        "props": {
+                          "font-family": {
+                            "$$type": "string",
+                            "value": "Tahoma"
+                          },
+                          "font-weight": {
+                            "$$type": "string",
+                            "value": "600"
+                          },
+                          "font-size": {
+                            "$$type": "size",
+                            "value": {
+                              "size": 50,
+                              "unit": "px"
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                "editor_settings": [],
+                "version": "0.0"
+              },
+              {
+                "id": "72c5346a",
+                "settings": {
+                  "classes": {
+                    "$$type": "classes",
+                    "value": [
+                      "e-72c5346a-522c421"
+                    ]
+                  }
+                },
+                "elements": [],
+                "isInner": false,
+                "widgetType": "e-paragraph",
+                "elType": "widget",
+                "styles": {
+                  "e-72c5346a-522c421": {
+                    "id": "e-72c5346a-522c421",
+                    "label": "local",
+                    "type": "class",
+                    "variants": [
+                      {
+                        "meta": {
+                          "breakpoint": "desktop",
+                          "state": null
+                        },
+                        "props": {
+                          "color": {
+                            "$$type": "color",
+                            "value": "#e36565"
+                          },
+                          "text-align": {
+                            "$$type": "string",
+                            "value": "center"
+                          },
+                          "padding": {
+                            "$$type": "size",
+                            "value": {
+                              "size": 60,
+                              "unit": "px"
+                            }
+                          },
+                          "background": {
+                            "$$type": "background",
+                            "value": {
+                              "color": {
+                                "$$type": "color",
+                                "value": "#ededed"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                "editor_settings": [],
+                "version": "0.0"
+              }
+            ],
+            "isInner": false,
+            "elType": "e-flexbox",
+            "styles": {
+              "e-53dcc9f3-bd72874": {
+                "id": "e-53dcc9f3-bd72874",
+                "label": "local",
+                "type": "class",
+                "variants": [
+                  {
+                    "meta": {
+                      "breakpoint": "desktop",
+                      "state": null
+                    },
+                    "props": {
+                      "flex-direction": {
+                        "$$type": "string",
+                        "value": "column"
+                      },
+                      "gap": {
+                        "$$type": "size",
+                        "value": {
+                          "size": 20,
+                          "unit": "px"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            "editor_settings": [],
+            "version": "0.0"
+          }
+        ],
+        "page_settings": [],
+        "version": "0.4",
+        "title": "MCP1",
+        "type": "e-flexbox"
+      }
