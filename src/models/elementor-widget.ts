@@ -1,18 +1,3 @@
-export type StyleValueType = 'color' | 'size' | 'string' | 'number' | 'background' | 'border' | 'shadow' | 'box-shadow';
-
-export interface StyleValue {
-  $$type: StyleValueType;
-  value: any;
-}
-
-export interface StyleVariant {
-  meta: {
-    breakpoint: 'desktop' | 'tablet' | 'mobile';
-    state: null | 'hover' | 'active' | 'focus';
-  };
-  props: Record<string, StyleValue>;
-}
-
 export interface ElementorWidget {
   id: string;
   settings: {
@@ -22,23 +7,24 @@ export interface ElementorWidget {
     };
     content?: string;
   };
-  elements?: ElementorWidget[];
+  elements: ElementorWidget[];
   isInner: boolean;
-  widgetType?: string;
+  widgetType: string;
   elType: string;
   styles: Record<string, {
     id: string;
     label: string;
-    type: 'class' | 'id';
-    variants: StyleVariant[];
+    type: string;
+    variants: Array<{
+      meta: {
+        breakpoint: string;
+        state: string | null;
+      };
+      props: Record<string, {
+        $$type: string;
+        value: any;
+      }>;
+    }>;
   }>;
   version: string;
 }
-
-export interface ElementorDocument {
-  content: ElementorWidget[];
-  page_settings: any[];
-  version: string;
-  title: string;
-  type: string;
-} 

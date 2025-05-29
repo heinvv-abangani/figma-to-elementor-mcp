@@ -6,115 +6,80 @@ export class ElementorConverter {
     return `e-${widgetId}-${Math.random().toString(16).slice(2, 8)}`;
   }
 
-  public convertNodes(nodes: FigmaNode[], metadata: { name?: string }): ElementorDocument {
-    const flexboxId = `flexbox_${Date.now()}`;
-    const flexboxClass = this.generateClassId(flexboxId);
+  private createStyleVariant(styles: Record<string, any>) {
+    return {
+      meta: {
+        breakpoint: "desktop",
+        state: null
+      },
+      props: Object.entries(styles).reduce((acc, [key, value]) => {
+        acc[key] = this.mapStyleProperty(key, value);
+        return acc;
+      }, {} as Record<string, any>)
+    };
+  }
+
+  private mapStyleProperty(key: string, value: any) {
+    const typeMap: Record<string, string> = {
+      color: "color",
+      fontSize: "size",
+      fontWeight: "string",
+      lineHeight: "number",
+      textAlign: "string",
+      backgroundColor: "color",
+      gap: "size",
+      padding: "size",
+      borderRadius: "size",
+      borderColor: "color",
+      borderWidth: "size"
+    };
 
     return {
-      content: [{
-        id: flexboxId,
-        settings: {
-          classes: {
-            $$type: "classes",
-            value: [flexboxClass]
-          }
-        },
-        elements: [
-          this.createHeadingWidget(metadata.name || 'Figma Design'),
-          ...nodes.map((node, index) => this.createParagraphWidget(node, index))
-        ],
-        isInner: false,
-        elType: "e-flexbox",
-        styles: {
-          [flexboxClass]: {
-            id: flexboxClass,
-            label: "local",
-            type: "class",
-            variants: [{
-              meta: { breakpoint: "desktop", state: null },
-              props: {
-                "flex-direction": { $$type: "string", value: "column" },
-                "gap": { $$type: "size", value: { size: 20, unit: "px" } },
-                "background-color": { $$type: "color", value: "#FFFFFF" }
-              }
-            }]
-          }
-        },
-        version: "0.0"
-      }],
+      $$type: typeMap[key] || "string",
+      value: key === "padding" || key === "borderRadius" 
+        ? { size: value, unit: "px" }
+        : value
+    };
+  }
+
+  public convertNodes(nodes: FigmaNode[]): ElementorDocument {
+    const content = nodes.map(node => this.convertNode(node));
+    return {
+      content,
       page_settings: [],
       version: "0.4",
-      title: metadata.name || "Figma Design",
+      title: "Converted Design",
       type: "e-flexbox"
     };
   }
 
-  private createHeadingWidget(title: string): ElementorWidget {
-    const widgetId = `heading_${Date.now()}`;
-    const widgetClass = this.generateClassId(widgetId);
-
-    return {
-      id: widgetId,
+  private convertNode(node: FigmaNode): ElementorWidget {
+    const classId = this.generateClassId(node.id);
+    
+    const element: ElementorWidget = {
+      id: node.id,
       settings: {
         classes: {
           $$type: "classes",
-          value: [widgetClass]
-        }
+          value: [classId]
+        },
+        ...(node.content ? { content: node.content } : {})
       },
-      widgetType: "e-heading",
+      elements: node.children?.map(child => this.convertNode(child)) || [],
+      isInner: false,
+      widgetType: node.type.startsWith('e-') ? node.type : `e-${node.type}`,
       elType: "widget",
       styles: {
-        [widgetClass]: {
-          id: widgetClass,
+        [classId]: {
+          id: classId,
           label: "local",
           type: "class",
-          variants: [{
-            meta: { breakpoint: "desktop", state: null },
-            props: {
-              "font-family": { $$type: "string", value: "Tahoma" },
-              "font-weight": { $$type: "string", value: "600" },
-              "font-size": { $$type: "size", value: { size: 32, unit: "px" } }
-            }
-          }]
+          variants: [this.createStyleVariant(node.styles || {})]
         }
       },
-      version: "0.0",
-      elements: [],
-      isInner: false
+      version: "0.0"
     };
-  }
 
-  private createParagraphWidget(node: FigmaNode, index: number): ElementorWidget {
-    const widgetId = `paragraph_${Date.now()}_${index}`;
-    const widgetClass = this.generateClassId(widgetId);
-
-    return {
-      id: widgetId,
-      settings: {
-        classes: {
-          $$type: "classes",
-          value: [widgetClass]
-        }
-      },
-      widgetType: "e-paragraph",
-      elType: "widget",
-      styles: {
-        [widgetClass]: {
-          id: widgetClass,
-          label: "local",
-          type: "class",
-          variants: [{
-            meta: { breakpoint: "desktop", state: null },
-            props: {
-              "color": { $$type: "color", value: "#0C0D0E" },
-              "font-size": { $$type: "size", value: { size: 16, unit: "px" } }
-            }
-          }]
-        }
-      },
-      version: "0.0",
-      elements: [],
-      isInner: false
-    };
+    return element;
   }
-} 
+}

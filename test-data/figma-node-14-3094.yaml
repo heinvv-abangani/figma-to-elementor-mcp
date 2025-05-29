@@ -1,0 +1,37 @@
+# Figma design template for Node 14-3094
+version: 0.1
+title: Node 14-3094
+type: e-flexbox
+styles:
+  color: "#333333"
+  fontSize: 16
+  fontWeight: 400
+  backgroundColor: "#FFFFFF"
+  borderRadius: 4
+  padding:
+    top: 20
+    right: 20
+    bottom: 20
+    left: 20
+children:
+  - id: heading
+    type: e-heading
+    content: "Node 14-3094 Title"
+    styles:
+      color: "#000000"
+      fontSize: 24
+      fontWeight: 700
+      textAlign: "center"
+  - id: button
+    type: e-button
+    content: "Click Me"
+    styles:
+      color: "#FFFFFF"
+      backgroundColor: "#0066CC"
+      fontSize: 16
+      borderRadius: 4
+      padding:
+        top: 12
+        right: 24
+        bottom: 12
+        left: 24 

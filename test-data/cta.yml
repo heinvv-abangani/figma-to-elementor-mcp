@@ -1,0 +1,95 @@
+name: CallToActionSection
+type: frame
+properties:
+  width: 800
+  height: 500
+  layoutMode: VERTICAL
+  primaryAxisAlign: CENTER
+  counterAxisAlign: CENTER
+  itemSpacing: 24
+  padding: 40
+  fills:
+    - type: SOLID
+      color: { r: 0.95, g: 0.96, b: 1.0 }
+  children:
+    - type: text
+      name: Title
+      characters: "Join Us Today"
+      style:
+        fontSize: 48
+        fontWeight: 800
+        fontFamily: "Inter"
+        textAlign: CENTER
+        lineHeightPercent: 120
+
+    - type: text
+      name: Subtitle
+      characters: "Start your journey with our platform. Boost your productivity and collaboration."
+      style:
+        fontSize: 20
+        fontWeight: 400
+        fontFamily: "Open Sans"
+        textAlign: CENTER
+        lineHeightPercent: 150
+
+    - type: rectangle
+      name: ImagePlaceholder
+      width: 600
+      height: 200
+      fills:
+        - type: SOLID
+          color: { r: 0.9, g: 0.9, b: 0.95 }
+      strokes:
+        - type: SOLID
+          color: { r: 0.7, g: 0.7, b: 0.8 }
+      strokeWeight: 1
+      cornerRadius: 12
+
+    - type: frame
+      name: ButtonGroup
+      layoutMode: HORIZONTAL
+      primaryAxisAlign: CENTER
+      counterAxisAlign: CENTER
+      itemSpacing: 16
+      children:
+        - type: rectangle
+          name: PrimaryButton
+          width: 160
+          height: 48
+          fills:
+            - type: SOLID
+              color: { r: 0.0, g: 0.5, b: 1.0 }
+          cornerRadius: 8
+          children:
+            - type: text
+              name: PrimaryLabel
+              characters: "Get Started"
+              style:
+                fontSize: 16
+                fontWeight: 600
+                fontFamily: "Inter"
+                textAlign: CENTER
+              layoutAlign: CENTER
+
+        - type: rectangle
+          name: SecondaryButton
+          width: 160
+          height: 48
+          fills:
+            - type: SOLID
+              color: { r: 1.0, g: 1.0, b: 1.0 }
+          strokes:
+            - type: SOLID
+              color: { r: 0.0, g: 0.5, b: 1.0 }
+          strokeWeight: 2
+          cornerRadius: 8
+          children:
+            - type: text
+              name: SecondaryLabel
+              characters: "Learn More"
+              style:
+                fontSize: 16
+                fontWeight: 600
+                fontFamily: "Inter"
+                textAlign: CENTER
+              layoutAlign: CENTER
