@@ -5,7 +5,10 @@ export interface FigmaNode {
   styles?: {
     // Typography
     color?: string;
-    fontSize?: number;
+    fontSize?: {
+      size: number;
+      unit: string;
+    };
     fontWeight?: string | number;
     fontFamily?: string;
     lineHeight?: number;
@@ -19,7 +22,10 @@ export interface FigmaNode {
     flexWrap?: string;
     justifyContent?: string;
     alignItems?: string;
-    gap?: number;
+    gap?: {
+      size: number;
+      unit: string;
+    };
     
     // Background
     backgroundColor?: string;
@@ -30,22 +36,41 @@ export interface FigmaNode {
     
     // Borders
     borderColor?: string;
-    borderWidth?: number;
-    borderRadius?: number;
+    borderWidth?: {
+      size: number;
+      unit: string;
+    };
+    borderRadius?: {
+      size: number;
+      unit: string;
+    };
     borderStyle?: string;
     
     // Spacing
     padding?: {
-      top?: number;
-      right?: number;
-      bottom?: number;
-      left?: number;
+      size: number;
+      unit: string;
     };
     margin?: {
-      top?: number;
-      right?: number;
-      bottom?: number;
-      left?: number;
+      size: number;
+      unit: string;
+    } | {
+      top?: {
+        size: number;
+        unit: string;
+      };
+      right?: {
+        size: number;
+        unit: string;
+      };
+      bottom?: {
+        size: number;
+        unit: string;
+      };
+      left?: {
+        size: number;
+        unit: string;
+      };
     };
     
     // Effects

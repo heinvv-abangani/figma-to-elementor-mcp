@@ -142,12 +142,12 @@ For Cursor IDE or other MCP clients:
 {
   "version": "0.4",
   "title": "Figma Design Name",
-  "type": "flexbox",
+  "type": "e-flexbox",
   "content": [
     {
       "id": "root_123456789",
       "elType": "widget",
-      "widgetType": "flexbox",
+      "widgetType": "e-flexbox",
       "settings": {
         "classes": {
           "$$type": "classes",
@@ -165,6 +165,7 @@ For Cursor IDE or other MCP clients:
               "value": ["e-heading-123456789"]
             }
           },
+          "editor_settings": [],
           "styles": {
             "e-heading-123456789": {
               "id": "e-heading-123456789",
@@ -333,11 +334,11 @@ MIT License - see [LICENSE](LICENSE) file for details.
 function convertNodesToWidgets(nodes, metadata) {
   const widgets = [];
 
-  // Add a flexbox container for the layout
+  // Add a e-flexbox container for the layout
   widgets.push({
-    id: `flexbox_${Date.now()}`,
+    id: `e-flexbox_${Date.now()}`,
     elType: 'widget',
-    widgetType: 'flexbox',
+    widgetType: 'e-e-flexbox',
     settings: {
       gap: 'default',
       background_background: 'classic',
@@ -373,11 +374,11 @@ function convertNodesToWidgets(nodes, metadata) {
   // Add widgets for each extracted node
   nodes.forEach((node, index) => {
     if (node.type === 'COLOR') {
-      // Use flexbox for color preview (instead of div-block)
+      // Use e-e-flexbox for color preview (instead of div-block)
       widgets[0].elements.push({
         id: `widget_${Date.now()}_color_${index}`,
         elType: 'widget',
-        widgetType: 'flexbox',
+        widgetType: 'e-e-flexbox',
         settings: {
           background_background: 'classic',
           background_color: node.color,

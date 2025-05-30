@@ -1,59 +1,178 @@
 import { FigmaNode } from '../models/figma-node';
-import { ElementorWidget, ElementorDocument } from '../models/elementor-widget';
+import { 
+  ElementorWidget, 
+  ElementorDocument, 
+  ElementorWidgetType,
+  ElementorWidgetSettings,
+  EParagraphSettings,
+  EHeadingSettings,
+  EButtonSettings
+} from '../models/elementor-widget';
 
 export class ElementorConverter {
   private generateClassId(widgetId: string): string {
-    return `e-${widgetId}-${Math.random().toString(16).slice(2, 8)}`;
+    const sanitizedId = widgetId.replace(/:/g, '-');
+    return `e-${sanitizedId}-${Math.random().toString(16).slice(2, 8)}`;
   }
 
   private createStyleVariant(styles: Record<string, any>) {
+    const props = Object.entries(styles).reduce((acc, [key, value]) => {
+      acc[key] = this.mapStyleProperty(key, value);
+      return acc;
+    }, {} as Record<string, any>);
+
+    // Ensure all size properties have proper value objects
+    ['padding', 'gap', 'borderRadius'].forEach(key => {
+      if (!props[key]) {
+        props[key] = {
+          $$type: 'size',
+          value: {
+            size: 0,
+            unit: 'px'
+          }
+        };
+      } else if (!props[key].value || !props[key].value.size) {
+        props[key].value = {
+          size: 0,
+          unit: 'px'
+        };
+      }
+    });
+
+    // Ensure color properties have proper value objects
+    ['backgroundColor', 'borderColor'].forEach(key => {
+      if (!props[key]) {
+        props[key] = {
+          $$type: 'color',
+          value: '#FFFFFF'
+        };
+      }
+    });
+
     return {
       meta: {
-        breakpoint: "desktop",
+        breakpoint: 'desktop',
         state: null
       },
-      props: Object.entries(styles).reduce((acc, [key, value]) => {
-        acc[key] = this.mapStyleProperty(key, value);
-        return acc;
-      }, {} as Record<string, any>)
+      props
     };
   }
 
   private mapStyleProperty(key: string, value: any) {
     const typeMap: Record<string, string> = {
-      color: "color",
-      fontSize: "size",
-      fontWeight: "string",
-      lineHeight: "number",
-      textAlign: "string",
-      backgroundColor: "color",
-      gap: "size",
-      padding: "size",
-      borderRadius: "size",
-      borderColor: "color",
-      borderWidth: "size"
+      color: 'color',
+      fontSize: 'size',
+      fontWeight: 'string',
+      lineHeight: 'number',
+      textAlign: 'string',
+      backgroundColor: 'color',
+      gap: 'size',
+      padding: 'size',
+      margin: 'size',
+      borderRadius: 'size',
+      borderColor: 'color',
+      borderWidth: 'size'
     };
 
+    // Handle margin with directional values
+    if (key === 'margin' && typeof value === 'object' && (value.top || value.right || value.bottom || value.left)) {
+      return {
+        $$type: 'size',
+        value: {
+          top: value.top || { size: 0, unit: 'px' },
+          right: value.right || { size: 0, unit: 'px' },
+          bottom: value.bottom || { size: 0, unit: 'px' },
+          left: value.left || { size: 0, unit: 'px' }
+        }
+      };
+    }
+
+    // Handle padding with directional values
+    if (key === 'padding' && typeof value === 'object' && (value.top || value.right || value.bottom || value.left)) {
+      return {
+        $$type: 'size',
+        value: {
+          top: value.top || { size: 0, unit: 'px' },
+          right: value.right || { size: 0, unit: 'px' },
+          bottom: value.bottom || { size: 0, unit: 'px' },
+          left: value.left || { size: 0, unit: 'px' }
+        }
+      };
+    }
+
+    // Handle size values
+    if (typeMap[key] === 'size') {
+      if (typeof value === 'object' && value.size !== undefined) {
+        return {
+          $$type: 'size',
+          value: {
+            size: value.size,
+            unit: value.unit || 'px'
+          }
+        };
+      }
+      if (!value) {
+        return {
+          $$type: 'size',
+          value: {
+            size: 0,
+            unit: 'px'
+          }
+        };
+      }
+      return {
+        $$type: 'size',
+        value: {
+          size: typeof value === 'number' ? value : 0,
+          unit: 'px'
+        }
+      };
+    }
+
+    // Handle color values
+    if (typeMap[key] === 'color') {
+      return {
+        $$type: 'color',
+        value: value || '#FFFFFF'
+      };
+    }
+
+    // Handle string values
+    if (!value) {
+      if (typeMap[key] === 'size') {
+        return {
+          $$type: 'size',
+          value: {
+            size: 0,
+            unit: 'px'
+          }
+        };
+      }
+      return {
+        $$type: typeMap[key] || 'string',
+        value: ''
+      };
+    }
+
     return {
-      $$type: typeMap[key] || "string",
-      value: key === "padding" || key === "borderRadius" 
-        ? { size: value, unit: "px" }
-        : value
+      $$type: typeMap[key] || 'string',
+      value: value
     };
   }
 
-  private mapFigmaTypeToElementor(type: string): string {
-    const typeMap: Record<string, string> = {
-      'FRAME': 'flexbox',
-      'STACK': 'flexbox',
+  private mapFigmaTypeToElementor(type: string): ElementorWidgetType {
+    const typeMap: Record<string, ElementorWidgetType> = {
+      'FRAME': 'e-flexbox',
+      'GROUP': 'e-flexbox',
+      'RECTANGLE': 'e-flexbox',
       'TEXT': 'e-paragraph',
       'IMAGE': 'e-image',
+      'IMAGE-SVG': 'e-svg',
       'BUTTON': 'e-button',
-      'SVG': 'e-svg',
       'HEADING': 'e-heading'
     };
 
-    return typeMap[type] || 'flexbox';
+    return typeMap[type] || 'e-flexbox';
   }
 
   public convertNodes(nodes: FigmaNode[]): ElementorDocument {
@@ -61,29 +180,77 @@ export class ElementorConverter {
     return {
       content,
       page_settings: [],
-      version: "0.4",
-      title: "Converted Design",
-      type: "flexbox"
+      version: '0.4',
+      title: 'Converted Design',
+      type: 'page',
+      settings: {}
     };
   }
 
   private convertNode(node: FigmaNode): ElementorWidget {
-    const classId = this.generateClassId(node.id);
+    const sanitizedId = node.id.replace(/:/g, '-');
+    const classId = this.generateClassId(sanitizedId);
     const widgetType = this.mapFigmaTypeToElementor(node.type);
     
+    const baseSettings: ElementorWidgetSettings = {
+      classes: {
+        $$type: "classes",
+        value: [classId]
+      }
+    };
+
+    let settings: ElementorWidgetSettings = baseSettings;
+
+    if (node.content) {
+      switch (widgetType) {
+        case 'e-paragraph':
+          settings = {
+            ...baseSettings,
+            paragraph: {
+              $$type: "string",
+              value: node.content
+            }
+          } as EParagraphSettings;
+          break;
+        case 'e-heading':
+          settings = {
+            ...baseSettings,
+            title: {
+              $$type: "string",
+              value: node.content
+            },
+            level: {
+              $$type: "string",
+              value: "h2"
+            }
+          } as EHeadingSettings;
+          break;
+        case 'e-button':
+          settings = {
+            ...baseSettings,
+            text: {
+              $$type: "string",
+              value: node.content
+            },
+            link: {
+              $$type: "link",
+              value: {
+                url: "",
+                target: "_self"
+              }
+            }
+          } as EButtonSettings;
+          break;
+      }
+    }
+    
     const element: ElementorWidget = {
-      id: node.id,
-      settings: {
-        classes: {
-          $$type: "classes",
-          value: [classId]
-        },
-        ...(node.content ? { content: node.content } : {})
-      },
+      id: sanitizedId,
+      settings,
       elements: node.children?.map(child => this.convertNode(child)) || [],
       isInner: false,
-      widgetType,
-      elType: "widget",
+      widgetType: widgetType,
+      elType: widgetType === 'e-flexbox' ? "e-flexbox" : "widget",
       styles: {
         [classId]: {
           id: classId,
@@ -92,6 +259,7 @@ export class ElementorConverter {
           variants: [this.createStyleVariant(node.styles || {})]
         }
       },
+      editor_settings: [],
       version: "0.0"
     };
 

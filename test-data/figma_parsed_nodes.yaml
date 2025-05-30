@@ -1,0 +1,215 @@
+- id: 1:801
+  type: GROUP
+  name: Screen14
+  children:
+    - id: 1:802
+      type: RECTANGLE
+      name: base
+      children: []
+      styles:
+        fills: fill_90NNXN
+    - id: 1:803
+      type: GROUP
+      name: tab_open
+      children:
+        - id: 1:804
+          type: GROUP
+          name: tab
+          children:
+            - id: 1:805
+              type: RECTANGLE
+              name: bg
+              children: []
+              styles:
+                fills: fill_A4YXBH
+            - id: 1:806
+              type: FRAME
+              name: icon/arrow_down
+              children:
+                - id: 1:807
+                  type: RECTANGLE
+                  name: Rectangle
+                  children: []
+                  styles:
+                    fills: fill_LGT6PQ
+                - id: 1:808
+                  type: IMAGE-SVG
+                  name: 💎 arrow copy
+                  children: []
+                  styles:
+                    fills: fill_LGT6PQ
+              styles: {}
+            - id: 1:809
+              type: TEXT
+              name: Get started
+              content: Reviews (180)
+              children: []
+              styles:
+                textStyle: style_HEGSF9
+                fills: fill_ZXOGRB
+          styles: {}
+      styles: {}
+    - id: 1:810
+      type: GROUP
+      name: tab_open
+      children:
+        - id: 1:811
+          type: GROUP
+          name: tab
+          children:
+            - id: 1:812
+              type: RECTANGLE
+              name: bg
+              children: []
+              styles:
+                fills: fill_A4YXBH
+            - id: 1:813
+              type: FRAME
+              name: icon/arrow_down
+              children:
+                - id: 1:814
+                  type: RECTANGLE
+                  name: Rectangle
+                  children: []
+                  styles:
+                    fills: fill_LGT6PQ
+                - id: 1:815
+                  type: IMAGE-SVG
+                  name: 💎 arrow copy
+                  children: []
+                  styles:
+                    fills: fill_LGT6PQ
+              styles: {}
+            - id: 1:816
+              type: TEXT
+              name: Get started
+              content: Free Shipping
+              children: []
+              styles:
+                textStyle: style_HEGSF9
+                fills: fill_ZXOGRB
+          styles: {}
+      styles: {}
+    - id: 1:817
+      type: FRAME
+      name: Product card 3
+      children:
+        - id: 1:818
+          type: TEXT
+          name: $195.80
+          content: $195.80
+          children: []
+          styles:
+            textStyle: style_C043LR
+            fills: fill_ZXOGRB
+        - id: 1:819
+          type: TEXT
+          name: Nike
+          content: Nike
+          children: []
+          styles:
+            textStyle: style_3Z1J0D
+            fills: fill_LHCMRC
+        - id: 1:820
+          type: TEXT
+          name: Nike Air Max Plus
+          content: Nike Air Max Plus
+          children: []
+          styles:
+            textStyle: style_KRMW4O
+            fills: fill_8T49QN
+        - id: 1:821
+          type: RECTANGLE
+          name: image
+          children: []
+          styles:
+            fills: fill_C9QE9V
+      styles:
+        fills: fill_90NNXN
+    - id: 1:822
+      type: FRAME
+      name: Product card 2
+      children:
+        - id: 1:823
+          type: TEXT
+          name: $195.80
+          content: $195.80
+          children: []
+          styles:
+            textStyle: style_C043LR
+            fills: fill_ZXOGRB
+        - id: 1:824
+          type: TEXT
+          name: Nike
+          content: Nike
+          children: []
+          styles:
+            textStyle: style_3Z1J0D
+            fills: fill_LHCMRC
+        - id: 1:825
+          type: TEXT
+          name: Nike Air Max 90
+          content: Nike Air Max 90
+          children: []
+          styles:
+            textStyle: style_KRMW4O
+            fills: fill_8T49QN
+        - id: 1:826
+          type: RECTANGLE
+          name: image
+          children: []
+          styles:
+            fills: fill_AFX35S
+      styles:
+        fills: fill_90NNXN
+    - id: 1:827
+      type: FRAME
+      name: Product card 1
+      children:
+        - id: 1:828
+          type: RECTANGLE
+          name: base
+          children: []
+          styles:
+            fills: fill_GW8U87
+        - id: 1:829
+          type: TEXT
+          name: $195.80
+          content: $195.80
+          children: []
+          styles:
+            textStyle: style_C043LR
+            fills: fill_ZXOGRB
+        - id: 1:830
+          type: TEXT
+          name: Nike
+          content: Nike
+          children: []
+          styles:
+            textStyle: style_3Z1J0D
+            fills: fill_LHCMRC
+        - id: 1:831
+          type: TEXT
+          name: Nike Air Max 270
+          content: Nike Air Max 270
+          children: []
+          styles:
+            textStyle: style_KRMW4O
+            fills: fill_8T49QN
+        - id: 1:832
+          type: RECTANGLE
+          name: image
+          children: []
+          styles:
+            fills: fill_L6ZXZH
+      styles:
+        fills: fill_90NNXN
+    - id: 1:833
+      type: TEXT
+      name: Bestsellers
+      content: Bestsellers
+      children: []
+      styles:
+        textStyle: style_QMC82N
+        fills: fill_ZXOGRB
+  styles: {}

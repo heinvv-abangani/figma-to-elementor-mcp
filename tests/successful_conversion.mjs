@@ -201,11 +201,11 @@ function extractNodes(yamlContent) {
 function convertNodesToWidgets(nodes, metadata) {
   const widgets = [];
 
-  // Add a flexbox container for the layout
+  // Add a e-flexbox container for the layout
   widgets.push({
-    id: `flexbox_${Date.now()}`,
+    id: `e-flexbox_${Date.now()}`,
     elType: 'widget',
-    widgetType: 'flexbox',
+    widgetType: 'e-flexbox',
     settings: {
       gap: 'default',
       background_background: 'classic',
@@ -241,11 +241,11 @@ function convertNodesToWidgets(nodes, metadata) {
   // Add widgets for each extracted node
   nodes.forEach((node, index) => {
     if (node.type === 'COLOR') {
-      // Use flexbox for color preview (instead of div-block)
+      // Use e-flexbox for color preview (instead of div-block)
       widgets[0].elements.push({
         id: `widget_${Date.now()}_color_${index}`,
         elType: 'widget',
-        widgetType: 'flexbox',
+        widgetType: 'e-flexbox',
         settings: {
           background_background: 'classic',
           background_color: node.color,
