@@ -2,11 +2,8 @@
 
 Convert Figma designs to Elementor v4 atomic widgets using Model Context Protocol (MCP) integration with the deployed Figma-Context-MCP server.
 
-## 🎯 **Working Solution Available**
+## 🎯 **Features**
 
-✅ **Successfully tested and working!** See [`WORKING_SOLUTION.md`](./WORKING_SOLUTION.md) for the complete proven approach.
-
-### **Quick Results**
 - ✅ Converts Figma designs to Elementor v4 widgets in ~5 seconds
 - ✅ Extracts design metadata, colors, and layout information
 - ✅ Generates production-ready Elementor JSON output
@@ -145,43 +142,84 @@ For Cursor IDE or other MCP clients:
 {
   "version": "0.4",
   "title": "Figma Design Name",
-  "type": "page",
+  "type": "flexbox",
   "content": [
     {
-      "id": "section_123456789",
-      "elType": "section",
+      "id": "root_123456789",
+      "elType": "widget",
+      "widgetType": "flexbox",
       "settings": {
-        "layout": "boxed",
-        "gap": "default",
-        "background_background": "classic",
-        "background_color": "#FFFFFF"
+        "classes": {
+          "$$type": "classes",
+          "value": ["e-root-123456789"]
+        }
       },
       "elements": [
         {
-          "id": "column_123456789",
-          "elType": "column",
+          "id": "heading_123456789",
+          "elType": "widget",
+          "widgetType": "e-heading",
           "settings": {
-            "_column_size": 100
+            "classes": {
+              "$$type": "classes",
+              "value": ["e-heading-123456789"]
+            }
           },
-          "elements": [
+          "styles": {
+            "e-heading-123456789": {
+              "id": "e-heading-123456789",
+              "label": "local",
+              "type": "class",
+              "variants": [
+                {
+                  "meta": {
+                    "breakpoint": "desktop",
+                    "state": null
+                  },
+                  "props": {
+                    "typography": {
+                      "$$type": "typography",
+                      "value": {
+                        "size": "32px",
+                        "family": "Roboto"
+                      }
+                    },
+                    "color": {
+                      "$$type": "color",
+                      "value": "#0C0D0E"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "styles": {
+        "e-root-123456789": {
+          "id": "e-root-123456789",
+          "label": "local",
+          "type": "class",
+          "variants": [
             {
-              "id": "widget_123456789",
-              "elType": "widget",
-              "widgetType": "heading",
-              "settings": {
-                "title": "Design Title",
-                "header_size": "h1",
-                "typography_typography": "custom",
-                "typography_font_size": {
-                  "unit": "px",
-                  "size": 32
+              "meta": {
+                "breakpoint": "desktop",
+                "state": null
+              },
+              "props": {
+                "backgroundColor": {
+                  "$$type": "color",
+                  "value": "#FFFFFF"
                 },
-                "color": "#0C0D0E"
+                "gap": {
+                  "$$type": "size",
+                  "value": "20px"
+                }
               }
             }
           ]
         }
-      ]
+      }
     }
   ]
 }
@@ -288,7 +326,6 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 ## 📚 **Documentation**
 
-- [`WORKING_SOLUTION.md`](./WORKING_SOLUTION.md) - Complete working implementation
 - [`package.json`](./package.json) - Dependencies and scripts
 - [`tsconfig.json`](./tsconfig.json) - TypeScript configuration
 - [`tsup.config.ts`](./tsup.config.ts) - Build configuration 
