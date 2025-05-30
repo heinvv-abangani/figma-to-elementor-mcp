@@ -9,10 +9,14 @@
       children: []
       styles:
         padding: null
+        margin: null
         gap: null
-        direction: row
-        textStyle: style_D7BOMA
-        fills: fill_ZE6QO8
+        borderRadius:
+          size: 0
+          unit: px
+        flex-direction: row
+        textStyle: style_GGFG4U
+        fills: fill_REI9TR
     - id: 1:827
       type: FRAME
       name: Product card 1
@@ -23,10 +27,13 @@
           children: []
           styles:
             padding: null
+            margin: null
             gap: null
-            borderRadius: 24px
-            direction: row
-            fills: fill_IAVAIU
+            borderRadius:
+              size: 24
+              unit: px
+            flex-direction: row
+            fills: fill_W2TAT1
         - id: 1:829
           type: TEXT
           name: $195.80
@@ -34,10 +41,14 @@
           children: []
           styles:
             padding: null
+            margin: null
             gap: null
-            direction: row
-            textStyle: style_MGXIJ5
-            fills: fill_ZE6QO8
+            borderRadius:
+              size: 0
+              unit: px
+            flex-direction: row
+            textStyle: style_0FC1SP
+            fills: fill_REI9TR
         - id: 1:830
           type: TEXT
           name: Nike
@@ -45,10 +56,14 @@
           children: []
           styles:
             padding: null
+            margin: null
             gap: null
-            direction: row
-            textStyle: style_5FVHP8
-            fills: fill_1ZQJYF
+            borderRadius:
+              size: 0
+              unit: px
+            flex-direction: row
+            textStyle: style_H3M7B7
+            fills: fill_FN170Y
         - id: 1:831
           type: TEXT
           name: Nike Air Max 270
@@ -56,24 +71,36 @@
           children: []
           styles:
             padding: null
+            margin: null
             gap: null
-            direction: row
-            textStyle: style_B4ONBZ
-            fills: fill_TO2T7Y
+            borderRadius:
+              size: 0
+              unit: px
+            flex-direction: row
+            textStyle: style_1B4UZC
+            fills: fill_A4IWGB
         - id: 1:832
           type: RECTANGLE
           name: image
           children: []
           styles:
             padding: null
+            margin: null
             gap: null
-            direction: row
-            fills: fill_95IC9U
+            borderRadius:
+              size: 0
+              unit: px
+            flex-direction: row
+            fills: fill_MNR97B
       styles:
         padding: null
+        margin: null
         gap: null
-        direction: row
-        fills: fill_0A07UL
+        borderRadius:
+          size: 0
+          unit: px
+        flex-direction: row
+        fills: fill_RBXDAJ
     - id: 1:822
       type: FRAME
       name: Product card 2
@@ -85,10 +112,14 @@
           children: []
           styles:
             padding: null
+            margin: null
             gap: null
-            direction: row
-            textStyle: style_MGXIJ5
-            fills: fill_ZE6QO8
+            borderRadius:
+              size: 0
+              unit: px
+            flex-direction: row
+            textStyle: style_0FC1SP
+            fills: fill_REI9TR
         - id: 1:824
           type: TEXT
           name: Nike
@@ -96,10 +127,14 @@
           children: []
           styles:
             padding: null
+            margin: null
             gap: null
-            direction: row
-            textStyle: style_5FVHP8
-            fills: fill_1ZQJYF
+            borderRadius:
+              size: 0
+              unit: px
+            flex-direction: row
+            textStyle: style_H3M7B7
+            fills: fill_FN170Y
         - id: 1:825
           type: TEXT
           name: Nike Air Max 90
@@ -107,24 +142,36 @@
           children: []
           styles:
             padding: null
+            margin: null
             gap: null
-            direction: row
-            textStyle: style_B4ONBZ
-            fills: fill_TO2T7Y
+            borderRadius:
+              size: 0
+              unit: px
+            flex-direction: row
+            textStyle: style_1B4UZC
+            fills: fill_A4IWGB
         - id: 1:826
           type: RECTANGLE
           name: image
           children: []
           styles:
             padding: null
+            margin: null
             gap: null
-            direction: row
-            fills: fill_4755Y7
+            borderRadius:
+              size: 0
+              unit: px
+            flex-direction: row
+            fills: fill_MYEYBE
       styles:
         padding: null
+        margin: null
         gap: null
-        direction: row
-        fills: fill_0A07UL
+        borderRadius:
+          size: 0
+          unit: px
+        flex-direction: row
+        fills: fill_RBXDAJ
     - id: 1:817
       type: FRAME
       name: Product card 3
@@ -136,10 +183,14 @@
           children: []
           styles:
             padding: null
+            margin: null
             gap: null
-            direction: row
-            textStyle: style_MGXIJ5
-            fills: fill_ZE6QO8
+            borderRadius:
+              size: 0
+              unit: px
+            flex-direction: row
+            textStyle: style_0FC1SP
+            fills: fill_REI9TR
         - id: 1:819
           type: TEXT
           name: Nike
@@ -147,10 +198,14 @@
           children: []
           styles:
             padding: null
+            margin: null
             gap: null
-            direction: row
-            textStyle: style_5FVHP8
-            fills: fill_1ZQJYF
+            borderRadius:
+              size: 0
+              unit: px
+            flex-direction: row
+            textStyle: style_H3M7B7
+            fills: fill_FN170Y
         - id: 1:820
           type: TEXT
           name: Nike Air Max Plus
@@ -158,24 +213,36 @@
           children: []
           styles:
             padding: null
+            margin: null
             gap: null
-            direction: row
-            textStyle: style_B4ONBZ
-            fills: fill_TO2T7Y
+            borderRadius:
+              size: 0
+              unit: px
+            flex-direction: row
+            textStyle: style_1B4UZC
+            fills: fill_A4IWGB
         - id: 1:821
           type: RECTANGLE
           name: image
           children: []
           styles:
             padding: null
+            margin: null
             gap: null
-            direction: row
-            fills: fill_GH62VG
+            borderRadius:
+              size: 0
+              unit: px
+            flex-direction: row
+            fills: fill_8K1BB0
       styles:
         padding: null
+        margin: null
         gap: null
-        direction: row
-        fills: fill_0A07UL
+        borderRadius:
+          size: 0
+          unit: px
+        flex-direction: row
+        fills: fill_RBXDAJ
     - id: 1:810
       type: GROUP
       name: tab_open
@@ -190,10 +257,13 @@
               children: []
               styles:
                 padding: null
+                margin: null
                 gap: null
-                borderRadius: 24px
-                direction: row
-                fills: fill_J70OLB
+                borderRadius:
+                  size: 24
+                  unit: px
+                flex-direction: row
+                fills: fill_YXI3GH
             - id: 1:813
               type: FRAME
               name: icon/arrow_down
@@ -204,22 +274,34 @@
                   children: []
                   styles:
                     padding: null
+                    margin: null
                     gap: null
-                    direction: row
-                    fills: fill_CWKEWT
+                    borderRadius:
+                      size: 0
+                      unit: px
+                    flex-direction: row
+                    fills: fill_QHN70J
                 - id: 1:815
                   type: IMAGE-SVG
                   name: 💎 arrow copy
                   children: []
                   styles:
                     padding: null
+                    margin: null
                     gap: null
-                    direction: row
-                    fills: fill_CWKEWT
+                    borderRadius:
+                      size: 0
+                      unit: px
+                    flex-direction: row
+                    fills: fill_QHN70J
               styles:
                 padding: null
+                margin: null
                 gap: null
-                direction: row
+                borderRadius:
+                  size: 0
+                  unit: px
+                flex-direction: row
             - id: 1:816
               type: TEXT
               name: Get started
@@ -227,20 +309,30 @@
               children: []
               styles:
                 padding: null
+                margin: null
                 gap: null
-                direction: row
-                textStyle: style_CR500C
-                fills: fill_ZE6QO8
+                borderRadius:
+                  size: 0
+                  unit: px
+                flex-direction: row
+                textStyle: style_62H9KU
+                fills: fill_REI9TR
           styles:
             padding: null
+            margin: null
             gap: null
-            borderRadius: 0px 0px 0px 0px
-            direction: row
+            borderRadius:
+              size: 0
+              unit: px
+            flex-direction: row
       styles:
         padding: null
+        margin: null
         gap: null
-        borderRadius: 0px 0px 0px 0px
-        direction: row
+        borderRadius:
+          size: 0
+          unit: px
+        flex-direction: row
     - id: 1:803
       type: GROUP
       name: tab_open
@@ -255,10 +347,13 @@
               children: []
               styles:
                 padding: null
+                margin: null
                 gap: null
-                borderRadius: 24px
-                direction: row
-                fills: fill_J70OLB
+                borderRadius:
+                  size: 24
+                  unit: px
+                flex-direction: row
+                fills: fill_YXI3GH
             - id: 1:806
               type: FRAME
               name: icon/arrow_down
@@ -269,22 +364,34 @@
                   children: []
                   styles:
                     padding: null
+                    margin: null
                     gap: null
-                    direction: row
-                    fills: fill_CWKEWT
+                    borderRadius:
+                      size: 0
+                      unit: px
+                    flex-direction: row
+                    fills: fill_QHN70J
                 - id: 1:808
                   type: IMAGE-SVG
                   name: 💎 arrow copy
                   children: []
                   styles:
                     padding: null
+                    margin: null
                     gap: null
-                    direction: row
-                    fills: fill_CWKEWT
+                    borderRadius:
+                      size: 0
+                      unit: px
+                    flex-direction: row
+                    fills: fill_QHN70J
               styles:
                 padding: null
+                margin: null
                 gap: null
-                direction: row
+                borderRadius:
+                  size: 0
+                  unit: px
+                flex-direction: row
             - id: 1:809
               type: TEXT
               name: Get started
@@ -292,20 +399,30 @@
               children: []
               styles:
                 padding: null
+                margin: null
                 gap: null
-                direction: row
-                textStyle: style_CR500C
-                fills: fill_ZE6QO8
+                borderRadius:
+                  size: 0
+                  unit: px
+                flex-direction: row
+                textStyle: style_62H9KU
+                fills: fill_REI9TR
           styles:
             padding: null
+            margin: null
             gap: null
-            borderRadius: 0px 0px 0px 0px
-            direction: row
+            borderRadius:
+              size: 0
+              unit: px
+            flex-direction: row
       styles:
         padding: null
+        margin: null
         gap: null
-        borderRadius: 0px 0px 0px 0px
-        direction: row
+        borderRadius:
+          size: 0
+          unit: px
+        flex-direction: row
   styles:
     padding:
       size: 0
@@ -316,9 +433,13 @@
         left: 20
         right: 20
       isLinked: false
+    margin: null
     gap:
       size: 20
       unit: px
-    borderRadius: 24px
-    direction: column
-    fills: fill_0A07UL
+      isLinked: true
+    borderRadius:
+      size: 24
+      unit: px
+    flex-direction: column
+    fills: fill_RBXDAJ

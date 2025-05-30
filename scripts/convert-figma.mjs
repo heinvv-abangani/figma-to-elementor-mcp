@@ -193,12 +193,68 @@ function extractNodesFromYaml(yamlContent) {
       }
     }
 
+    // Convert margin from "32px 20px" format to object
+    let marginValue = null;
+    if (layoutInfo.margin) {
+      const values = layoutInfo.margin.split(' ').map(val => {
+        const match = val.match(/(\d+)(px|%|em|rem)/);
+        return match ? parseInt(match[1]) : 0;
+      });
+      
+      if (values.length === 1) {
+        // Linked margin
+        marginValue = {
+          size: values[0],
+          unit: 'px',
+          isLinked: true
+        };
+      } else {
+        // Unlinked margin with different values for vertical and horizontal
+        marginValue = {
+          size: 0,
+          unit: 'px',
+          sizes: {
+            top: values[0],
+            bottom: values[0],
+            left: values[1],
+            right: values[1]
+          },
+          isLinked: false
+        };
+      }
+    }
+
     // Convert gap from "20px" format to object
     let gapValue = null;
     if (layoutInfo.gap) {
       const match = layoutInfo.gap.match(/(\d+)(px|%|em|rem)/);
       if (match) {
-        gapValue = { size: parseInt(match[1]), unit: match[2] };
+        gapValue = {
+          size: parseInt(match[1]),
+          unit: match[2] || 'px',
+          isLinked: true
+        };
+      }
+    }
+
+    // Convert borderRadius from "24px" format to object
+    let borderRadiusValue = {
+      size: 0,
+      unit: 'px'
+    };
+    
+    if (node.borderRadius) {
+      const match = node.borderRadius.match(/(\d+)(px|%|em|rem)/);
+      if (match) {
+        borderRadiusValue = {
+          size: parseInt(match[1]),
+          unit: match[2] || 'px'
+        };
+      } else if (typeof node.borderRadius === 'number') {
+        borderRadiusValue = {
+          size: node.borderRadius,
+          unit: 'px'
+        };
       }
     }
     
@@ -211,17 +267,35 @@ function extractNodesFromYaml(yamlContent) {
       styles: {
         backgroundColor: node.backgroundColor || node.fill,
         padding: paddingValue,
+        margin: marginValue,
         gap: gapValue,
-        borderRadius: node.borderRadius,
-        direction: layoutInfo.mode === 'column' ? 'column' : 'row',
+        borderRadius: borderRadiusValue,
+        'flex-direction': layoutInfo.mode === 'column' ? 'column' : 'row',
         ...node.style,
         ...(node.textStyle ? { textStyle: node.textStyle } : {}),
         ...(node.fills ? { fills: node.fills } : {})
       },
+      layout: node.layout
     };
   }
 
-  return yamlData.nodes.map(convertNode);
+  // First pass: Convert all nodes and preserve layout references
+  const nodesWithLayout = yamlData.nodes.map(convertNode);
+
+  // Second pass: Update flexDirection based on layout references
+  function updateFlexDirection(node) {
+    if (node.layout) {
+      const layoutInfo = globalStyles[node.layout] || {};
+      node.styles['flex-direction'] = layoutInfo.mode === 'column' ? 'column' : 'row';
+    }
+    if (node.children) {
+      node.children.forEach(updateFlexDirection);
+    }
+    delete node.layout; // Clean up layout reference
+    return node;
+  }
+
+  return nodesWithLayout.map(updateFlexDirection);
 }
 
 function countWidgets(elementorDocument) {

@@ -1,212 +1,215 @@
 metadata:
   name: App UI Elements (1)
-  lastModified: '2025-05-30T14:12:21Z'
+  lastModified: '2025-05-30T14:32:35Z'
   thumbnailUrl: >-
-    https://s3-alpha.figma.com/thumbnails/c01efe30-a9e3-4163-a268-d9620eb7373b?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQ4GOSFWCULRAZSF5%2F20250529%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250529T000000Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=60c0e1d63b74150ecffc1b76928d4414b7928ca7123563bb583d32d91f08ea82
+    https://s3-alpha.figma.com/thumbnails/c281d2bb-7f10-46dc-bbd5-6f5df005f328?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQ4GOSFWCULRAZSF5%2F20250529%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250529T000000Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=44926be53510fbd3f33f065e509387cda8f198fea8fe1b41c45ac02ab82be445
 nodes:
   - id: '1:801'
     name: Screen14
     type: FRAME
-    fills: fill_0A07UL
-    layout: layout_HUZH06
+    fills: fill_RBXDAJ
+    effects: effect_S4KZC6
+    layout: layout_S7CL9U
     borderRadius: 24px
     children:
       - id: '1:833'
         name: Bestsellers
         type: TEXT
-        textStyle: style_D7BOMA
-        fills: fill_ZE6QO8
-        layout: layout_JEO5ZO
+        textStyle: style_GGFG4U
+        fills: fill_REI9TR
+        layout: layout_QPKGIF
         text: Bestsellers
       - id: '1:827'
         name: Product card 1
         type: FRAME
-        fills: fill_0A07UL
-        layout: layout_ZI2BBA
+        fills: fill_RBXDAJ
+        layout: layout_NMVL7O
         children:
           - id: '1:828'
             name: base
             type: RECTANGLE
-            fills: fill_IAVAIU
-            layout: layout_4QG4KN
+            fills: fill_W2TAT1
+            layout: layout_342QLV
             borderRadius: 24px
           - id: '1:829'
             name: $195.80
             type: TEXT
-            textStyle: style_MGXIJ5
-            fills: fill_ZE6QO8
-            layout: layout_4B72C4
+            textStyle: style_0FC1SP
+            fills: fill_REI9TR
+            layout: layout_SOXFAF
             text: $195.80
           - id: '1:830'
             name: Nike
             type: TEXT
-            textStyle: style_5FVHP8
-            fills: fill_1ZQJYF
-            layout: layout_6KUI1H
+            textStyle: style_H3M7B7
+            fills: fill_FN170Y
+            layout: layout_XSP413
             text: Nike
           - id: '1:831'
             name: Nike Air Max 270
             type: TEXT
-            textStyle: style_B4ONBZ
-            fills: fill_TO2T7Y
-            layout: layout_WGIDVN
+            textStyle: style_1B4UZC
+            fills: fill_A4IWGB
+            layout: layout_617NZ0
             text: Nike Air Max 270
           - id: '1:832'
             name: image
             type: RECTANGLE
-            fills: fill_95IC9U
-            layout: layout_RLWS80
+            fills: fill_MNR97B
+            layout: layout_ZXDKQ5
       - id: '1:822'
         name: Product card 2
         type: FRAME
-        fills: fill_0A07UL
-        layout: layout_ZI2BBA
+        fills: fill_RBXDAJ
+        layout: layout_NMVL7O
         children:
           - id: '1:823'
             name: $195.80
             type: TEXT
-            textStyle: style_MGXIJ5
-            fills: fill_ZE6QO8
-            layout: layout_4B72C4
+            textStyle: style_0FC1SP
+            fills: fill_REI9TR
+            layout: layout_SOXFAF
             text: $195.80
           - id: '1:824'
             name: Nike
             type: TEXT
-            textStyle: style_5FVHP8
-            fills: fill_1ZQJYF
-            layout: layout_6KUI1H
+            textStyle: style_H3M7B7
+            fills: fill_FN170Y
+            layout: layout_XSP413
             text: Nike
           - id: '1:825'
             name: Nike Air Max 90
             type: TEXT
-            textStyle: style_B4ONBZ
-            fills: fill_TO2T7Y
-            layout: layout_8DI4IR
+            textStyle: style_1B4UZC
+            fills: fill_A4IWGB
+            layout: layout_WFHN96
             text: Nike Air Max 90
           - id: '1:826'
             name: image
             type: RECTANGLE
-            fills: fill_4755Y7
-            layout: layout_WVI63D
+            fills: fill_MYEYBE
+            layout: layout_XB131M
       - id: '1:817'
         name: Product card 3
         type: FRAME
-        fills: fill_0A07UL
-        layout: layout_ZI2BBA
+        fills: fill_RBXDAJ
+        layout: layout_NMVL7O
         children:
           - id: '1:818'
             name: $195.80
             type: TEXT
-            textStyle: style_MGXIJ5
-            fills: fill_ZE6QO8
-            layout: layout_4B72C4
+            textStyle: style_0FC1SP
+            fills: fill_REI9TR
+            layout: layout_SOXFAF
             text: $195.80
           - id: '1:819'
             name: Nike
             type: TEXT
-            textStyle: style_5FVHP8
-            fills: fill_1ZQJYF
-            layout: layout_6KUI1H
+            textStyle: style_H3M7B7
+            fills: fill_FN170Y
+            layout: layout_XSP413
             text: Nike
           - id: '1:820'
             name: Nike Air Max Plus
             type: TEXT
-            textStyle: style_B4ONBZ
-            fills: fill_TO2T7Y
-            layout: layout_8DI4IR
+            textStyle: style_1B4UZC
+            fills: fill_A4IWGB
+            layout: layout_WFHN96
             text: Nike Air Max Plus
           - id: '1:821'
             name: image
             type: RECTANGLE
-            fills: fill_GH62VG
-            layout: layout_P4TVFS
+            fills: fill_8K1BB0
+            layout: layout_US82QJ
       - id: '1:810'
         name: tab_open
         type: GROUP
-        layout: layout_XVYS4L
+        layout: layout_UDJ3NU
         borderRadius: 0px 0px 0px 0px
         children:
           - id: '1:811'
             name: tab
             type: GROUP
-            layout: layout_7QRQMX
+            layout: layout_FAQCPO
             borderRadius: 0px 0px 0px 0px
             children:
               - id: '1:812'
                 name: bg
                 type: RECTANGLE
-                fills: fill_J70OLB
-                layout: layout_7QRQMX
+                fills: fill_YXI3GH
+                layout: layout_FAQCPO
                 borderRadius: 24px
               - id: '1:813'
                 name: icon/arrow_down
                 type: FRAME
-                layout: layout_4KG06L
+                layout: layout_42Y7U2
                 children:
                   - id: '1:814'
                     name: Rectangle
                     type: RECTANGLE
-                    fills: fill_CWKEWT
-                    layout: layout_CFII5S
+                    fills: fill_QHN70J
+                    layout: layout_EGUKOP
                   - id: '1:815'
                     name: 💎 arrow copy
                     type: IMAGE-SVG
-                    fills: fill_CWKEWT
-                    strokes: stroke_650NIT
-                    layout: layout_BBXPSU
+                    fills: fill_QHN70J
+                    strokes: stroke_LNNUHU
+                    layout: layout_9K3I1S
               - id: '1:816'
                 name: Get started
                 type: TEXT
-                textStyle: style_CR500C
-                fills: fill_ZE6QO8
-                layout: layout_82PLRL
+                textStyle: style_62H9KU
+                fills: fill_REI9TR
+                layout: layout_P99043
                 text: Free Shipping
       - id: '1:803'
         name: tab_open
         type: GROUP
-        layout: layout_XVYS4L
+        layout: layout_UDJ3NU
         borderRadius: 0px 0px 0px 0px
         children:
           - id: '1:804'
             name: tab
             type: GROUP
-            layout: layout_7QRQMX
+            layout: layout_FAQCPO
             borderRadius: 0px 0px 0px 0px
             children:
               - id: '1:805'
                 name: bg
                 type: RECTANGLE
-                fills: fill_J70OLB
-                layout: layout_7QRQMX
+                fills: fill_YXI3GH
+                layout: layout_FAQCPO
                 borderRadius: 24px
               - id: '1:806'
                 name: icon/arrow_down
                 type: FRAME
-                layout: layout_4KG06L
+                layout: layout_42Y7U2
                 children:
                   - id: '1:807'
                     name: Rectangle
                     type: RECTANGLE
-                    fills: fill_CWKEWT
-                    layout: layout_CFII5S
+                    fills: fill_QHN70J
+                    layout: layout_EGUKOP
                   - id: '1:808'
                     name: 💎 arrow copy
                     type: IMAGE-SVG
-                    fills: fill_CWKEWT
-                    strokes: stroke_650NIT
-                    layout: layout_BBXPSU
+                    fills: fill_QHN70J
+                    strokes: stroke_LNNUHU
+                    layout: layout_9K3I1S
               - id: '1:809'
                 name: Get started
                 type: TEXT
-                textStyle: style_CR500C
-                fills: fill_ZE6QO8
-                layout: layout_82PLRL
+                textStyle: style_62H9KU
+                fills: fill_REI9TR
+                layout: layout_P99043
                 text: Reviews (180)
 globalVars:
   styles:
-    fill_0A07UL:
+    fill_RBXDAJ:
       - '#FFFFFF'
-    layout_HUZH06:
+    effect_S4KZC6:
+      boxShadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25)
+    layout_S7CL9U:
       mode: column
       gap: 20px
       padding: 32px 20px
@@ -215,7 +218,7 @@ globalVars:
         vertical: hug
       dimensions:
         width: 375
-    style_D7BOMA:
+    style_GGFG4U:
       fontFamily: Montserrat
       fontWeight: 600
       fontSize: 24
@@ -223,23 +226,23 @@ globalVars:
       letterSpacing: 1.0416666666666665%
       textAlignHorizontal: LEFT
       textAlignVertical: CENTER
-    fill_ZE6QO8:
+    fill_REI9TR:
       - '#12121F'
-    layout_JEO5ZO:
+    layout_QPKGIF:
       mode: none
       sizing:
         horizontal: fill
         vertical: hug
-    layout_ZI2BBA:
+    layout_NMVL7O:
       mode: none
       sizing:
         horizontal: fill
         vertical: fixed
       dimensions:
         height: 120
-    fill_IAVAIU:
+    fill_W2TAT1:
       - '#FEF2EE'
-    layout_4QG4KN:
+    layout_342QLV:
       mode: none
       locationRelativeToParent:
         x: 0
@@ -247,7 +250,7 @@ globalVars:
       dimensions:
         width: 335
         height: 120
-    style_MGXIJ5:
+    style_0FC1SP:
       fontFamily: Montserrat
       fontWeight: 600
       fontSize: 14
@@ -255,7 +258,7 @@ globalVars:
       letterSpacing: 1.7857142857142856%
       textAlignHorizontal: LEFT
       textAlignVertical: CENTER
-    layout_4B72C4:
+    layout_SOXFAF:
       mode: none
       locationRelativeToParent:
         x: 136
@@ -263,7 +266,7 @@ globalVars:
       dimensions:
         width: 55
         height: 24
-    style_5FVHP8:
+    style_H3M7B7:
       fontFamily: Montserrat
       fontWeight: 400
       fontSize: 12
@@ -271,9 +274,9 @@ globalVars:
       letterSpacing: 2.083333333333333%
       textAlignHorizontal: LEFT
       textAlignVertical: TOP
-    fill_1ZQJYF:
+    fill_FN170Y:
       - '#AFAFBD'
-    layout_6KUI1H:
+    layout_XSP413:
       mode: none
       locationRelativeToParent:
         x: 146.4951171875
@@ -281,7 +284,7 @@ globalVars:
       dimensions:
         width: 172.34727478027344
         height: 16
-    style_B4ONBZ:
+    style_1B4UZC:
       fontFamily: Montserrat
       fontWeight: 600
       fontSize: 14
@@ -289,9 +292,9 @@ globalVars:
       letterSpacing: 1.7857142857142856%
       textAlignHorizontal: LEFT
       textAlignVertical: CENTER
-    fill_TO2T7Y:
+    fill_A4IWGB:
       - '#FE805C'
-    layout_WGIDVN:
+    layout_617NZ0:
       mode: none
       locationRelativeToParent:
         x: 146.4951171875
@@ -299,11 +302,11 @@ globalVars:
       dimensions:
         width: 188.50482177734375
         height: 20
-    fill_95IC9U:
+    fill_MNR97B:
       - type: IMAGE
         imageRef: b7448c8d227cb7803cb86000746933f580388893
         scaleMode: FILL
-    layout_RLWS80:
+    layout_ZXDKQ5:
       mode: none
       locationRelativeToParent:
         x: 18
@@ -311,7 +314,7 @@ globalVars:
       dimensions:
         width: 118
         height: 94
-    layout_8DI4IR:
+    layout_WFHN96:
       mode: none
       locationRelativeToParent:
         x: 146.4951171875
@@ -319,11 +322,11 @@ globalVars:
       dimensions:
         width: 172.34727478027344
         height: 20
-    fill_4755Y7:
+    fill_MYEYBE:
       - type: IMAGE
         imageRef: 151e4d2deec4e9c9a9ee5ab3ee80dd6a8f44fff4
         scaleMode: STRETCH
-    layout_WVI63D:
+    layout_XB131M:
       mode: none
       locationRelativeToParent:
         x: 18
@@ -331,11 +334,11 @@ globalVars:
       dimensions:
         width: 124
         height: 109.57447052001953
-    fill_GH62VG:
+    fill_8K1BB0:
       - type: IMAGE
         imageRef: c7e90f40a3f1ea2ed4cc667afca12be7abccb86e
         scaleMode: STRETCH
-    layout_P4TVFS:
+    layout_US82QJ:
       mode: none
       locationRelativeToParent:
         x: 8
@@ -343,7 +346,7 @@ globalVars:
       dimensions:
         width: 138
         height: 101
-    layout_XVYS4L:
+    layout_UDJ3NU:
       mode: none
       sizing:
         horizontal: fixed
@@ -351,7 +354,7 @@ globalVars:
       dimensions:
         width: 311
         height: 48
-    layout_7QRQMX:
+    layout_FAQCPO:
       mode: none
       locationRelativeToParent:
         x: 0
@@ -359,9 +362,9 @@ globalVars:
       dimensions:
         width: 311
         height: 48
-    fill_J70OLB:
+    fill_YXI3GH:
       - '#F9F9FC'
-    layout_4KG06L:
+    layout_42Y7U2:
       mode: none
       locationRelativeToParent:
         x: 270
@@ -369,9 +372,9 @@ globalVars:
       dimensions:
         width: 24
         height: 24
-    fill_CWKEWT:
+    fill_QHN70J:
       - '#D8D8D8'
-    layout_CFII5S:
+    layout_EGUKOP:
       mode: none
       locationRelativeToParent:
         x: 0
@@ -379,11 +382,11 @@ globalVars:
       dimensions:
         width: 24
         height: 24
-    stroke_650NIT:
+    stroke_LNNUHU:
       colors:
         - '#12121F'
       strokeWeight: 1.5px
-    layout_BBXPSU:
+    layout_9K3I1S:
       mode: none
       locationRelativeToParent:
         x: 6
@@ -391,7 +394,7 @@ globalVars:
       dimensions:
         width: 11.86738109588623
         height: 5.933690547943115
-    style_CR500C:
+    style_62H9KU:
       fontFamily: Montserrat
       fontWeight: 600
       fontSize: 16
@@ -399,7 +402,7 @@ globalVars:
       letterSpacing: 1.5625%
       textAlignHorizontal: LEFT
       textAlignVertical: TOP
-    layout_82PLRL:
+    layout_P99043:
       mode: none
       locationRelativeToParent:
         x: 24

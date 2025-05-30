@@ -17,15 +17,15 @@ export class ElementorConverter {
 
   private createStyleVariant(styles: Record<string, any>) {
     const props = Object.entries(styles).reduce((acc, [key, value]) => {
-      if (key === 'padding') {
-        // Handle padding with size and unit
+      if (key === 'padding' || key === 'margin') {
+        // Handle padding and margin with size and unit
         if (!value || typeof value !== 'object') {
-          acc.padding = {
+          acc[key] = {
             $$type: "size",
             value: { size: 0, unit: 'px', isLinked: true }
           };
         } else if (value.isLinked) {
-          acc.padding = {
+          acc[key] = {
             $$type: "size",
             value: {
               size: value.size || 0,
@@ -34,8 +34,8 @@ export class ElementorConverter {
             }
           };
         } else {
-          // Handle unlinked padding with sizes object
-          acc.padding = {
+          // Handle unlinked padding/margin with sizes object
+          acc[key] = {
             $$type: "size",
             value: {
               size: value.size || 0,
@@ -52,17 +52,24 @@ export class ElementorConverter {
         }
       } else if (key === 'gap') {
         // Handle gap with size and unit
-        const gapValue = value && typeof value === 'object' && value.size !== undefined
-          ? value
-          : { size: 0, unit: 'px' };
-
-        acc.gap = {
-          $$type: "size",
-          value: gapValue
-        };
-      } else if (key === 'direction') {
+        if (!value || typeof value !== 'object') {
+          acc.gap = {
+            $$type: "size",
+            value: { size: 0, unit: 'px', isLinked: true }
+          };
+        } else {
+          acc.gap = {
+            $$type: "size",
+            value: {
+              size: value.size || 0,
+              unit: value.unit || 'px',
+              isLinked: true
+            }
+          };
+        }
+      } else if (key === 'flex-direction') {
         // Handle flex direction
-        acc.flexDirection = {
+        acc['flex-direction'] = {
           $$type: "string",
           value: value || 'row'
         };
@@ -136,20 +143,41 @@ export class ElementorConverter {
     // Handle size values
     if (typeMap[key] === 'size') {
       if (typeof value === 'object' && value.size !== undefined) {
+        if (key === 'borderRadius') {
+          return {
+            $$type: 'size',
+            value: {
+              size: value.size || 0,
+              unit: value.unit || 'px'
+            }
+          };
+        }
         return {
           $$type: 'size',
           value: {
-            size: value.size,
-            unit: value.unit || 'px'
+            size: value.size || 0,
+            unit: value.unit || 'px',
+            ...(value.sizes ? { sizes: value.sizes } : {}),
+            ...(value.isLinked !== undefined ? { isLinked: value.isLinked } : {})
           }
         };
       }
-      if (!value) {
+      if (!value || (typeof value === 'object' && !value.size)) {
+        if (key === 'borderRadius') {
+          return {
+            $$type: 'size',
+            value: {
+              size: 0,
+              unit: 'px'
+            }
+          };
+        }
         return {
           $$type: 'size',
           value: {
             size: 0,
-            unit: 'px'
+            unit: 'px',
+            isLinked: true
           }
         };
       }
@@ -157,7 +185,8 @@ export class ElementorConverter {
         $$type: 'size',
         value: {
           size: typeof value === 'number' ? value : 0,
-          unit: 'px'
+          unit: 'px',
+          ...(key !== 'borderRadius' ? { isLinked: true } : {})
         }
       };
     }
