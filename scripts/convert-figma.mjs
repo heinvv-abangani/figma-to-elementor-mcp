@@ -8,7 +8,7 @@ import { parse as parseYaml, stringify as stringifyYaml } from 'yaml';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const figmaUrl = 'https://www.figma.com/design/eHczmy48dhw7o9NLrVqAAm/App-UI-Elements--1-?node-id=1-801&t=mGWVKQtlnnUmSBEx-4';
+const figmaUrl = 'https://www.figma.com/design/eHczmy48dhw7o9NLrVqAAm/App-UI-Elements--1-?node-id=1-801&t=nKPXWcYUrXMJofgg-4';
 
 async function convertFigmaToElementor() {
   console.log('🎯 Converting Figma design to Elementor...\n');
@@ -156,8 +156,52 @@ async function convertFigmaToElementor() {
 
 function extractNodesFromYaml(yamlContent) {
   const yamlData = parseYaml(yamlContent);
+  const globalStyles = yamlData.globalVars?.styles || {};
   
   function convertNode(node) {
+    // Get layout info from globalVars.styles
+    const layoutInfo = node.layout ? globalStyles[node.layout] || {} : {};
+    
+    // Convert padding from "32px 20px" format to object
+    let paddingValue = null;
+    if (layoutInfo.padding) {
+      const values = layoutInfo.padding.split(' ').map(val => {
+        const match = val.match(/(\d+)(px|%|em|rem)/);
+        return match ? parseInt(match[1]) : 0;
+      });
+      
+      if (values.length === 1) {
+        // Linked padding
+        paddingValue = {
+          size: values[0],
+          unit: 'px',
+          isLinked: true
+        };
+      } else {
+        // Unlinked padding with different values for vertical and horizontal
+        paddingValue = {
+          size: 0,
+          unit: 'px',
+          sizes: {
+            top: values[0],
+            bottom: values[0],
+            left: values[1],
+            right: values[1]
+          },
+          isLinked: false
+        };
+      }
+    }
+
+    // Convert gap from "20px" format to object
+    let gapValue = null;
+    if (layoutInfo.gap) {
+      const match = layoutInfo.gap.match(/(\d+)(px|%|em|rem)/);
+      if (match) {
+        gapValue = { size: parseInt(match[1]), unit: match[2] };
+      }
+    }
+    
     return {
       id: node.id || `node_${Math.random().toString(36).substr(2, 9)}`,
       type: node.type || 'FRAME',
@@ -166,9 +210,10 @@ function extractNodesFromYaml(yamlContent) {
       children: node.children?.map(convertNode) || [],
       styles: {
         backgroundColor: node.backgroundColor || node.fill,
-        padding: node.padding || node.paddingTop,
-        gap: node.itemSpacing || node.gap,
-        borderRadius: node.cornerRadius,
+        padding: paddingValue,
+        gap: gapValue,
+        borderRadius: node.borderRadius,
+        direction: layoutInfo.mode === 'column' ? 'column' : 'row',
         ...node.style,
         ...(node.textStyle ? { textStyle: node.textStyle } : {}),
         ...(node.fills ? { fills: node.fills } : {})

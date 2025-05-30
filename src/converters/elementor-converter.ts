@@ -17,41 +17,74 @@ export class ElementorConverter {
 
   private createStyleVariant(styles: Record<string, any>) {
     const props = Object.entries(styles).reduce((acc, [key, value]) => {
-      acc[key] = this.mapStyleProperty(key, value);
+      if (key === 'padding') {
+        // Handle padding with size and unit
+        if (!value || typeof value !== 'object') {
+          acc.padding = {
+            $$type: "size",
+            value: { size: 0, unit: 'px', isLinked: true }
+          };
+        } else if (value.isLinked) {
+          acc.padding = {
+            $$type: "size",
+            value: {
+              size: value.size || 0,
+              unit: value.unit || 'px',
+              isLinked: true
+            }
+          };
+        } else {
+          // Handle unlinked padding with sizes object
+          acc.padding = {
+            $$type: "size",
+            value: {
+              size: value.size || 0,
+              unit: value.unit || 'px',
+              sizes: {
+                top: value.sizes?.top || 0,
+                bottom: value.sizes?.bottom || 0,
+                left: value.sizes?.left || 0,
+                right: value.sizes?.right || 0
+              },
+              isLinked: false
+            }
+          };
+        }
+      } else if (key === 'gap') {
+        // Handle gap with size and unit
+        const gapValue = value && typeof value === 'object' && value.size !== undefined
+          ? value
+          : { size: 0, unit: 'px' };
+
+        acc.gap = {
+          $$type: "size",
+          value: gapValue
+        };
+      } else if (key === 'direction') {
+        // Handle flex direction
+        acc.flexDirection = {
+          $$type: "string",
+          value: value || 'row'
+        };
+      } else {
+        acc[key] = this.mapStyleProperty(key, value);
+      }
       return acc;
     }, {} as Record<string, any>);
-
-    // Ensure all size properties have proper value objects
-    ['padding', 'gap', 'borderRadius'].forEach(key => {
-      if (!props[key]) {
-        props[key] = {
-          $$type: 'size',
-          value: {
-            size: 0,
-            unit: 'px'
-          }
-        };
-      } else if (!props[key].value || !props[key].value.size) {
-        props[key].value = {
-          size: 0,
-          unit: 'px'
-        };
-      }
-    });
 
     // Ensure color properties have proper value objects
     ['backgroundColor', 'borderColor'].forEach(key => {
       if (!props[key]) {
         props[key] = {
-          $$type: 'color',
-          value: '#FFFFFF'
+          $$type: "color",
+          value: "#FFFFFF"
         };
       }
     });
 
     return {
       meta: {
-        breakpoint: 'desktop',
+        breakpoint: "desktop",
         state: null
       },
       props
