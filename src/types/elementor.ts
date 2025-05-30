@@ -27,14 +27,13 @@ export interface ElementorWidget {
   settings: Record<string, any>;
 }
 
-export type ElementorWidgetType = 
-  | 'div-block'
+export type ElementorWidgetType =
   | 'flexbox'
-  | 'heading'
-  | 'paragraph'
-  | 'image'
-  | 'button'
-  | 'svg';
+  | 'e-heading'
+  | 'e-paragraph'
+  | 'e-image'
+  | 'e-button'
+  | 'e-svg';
 
 export interface ElementorSectionSettings {
   layout?: 'boxed' | 'full_width';

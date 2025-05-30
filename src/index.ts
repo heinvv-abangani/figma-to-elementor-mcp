@@ -4,6 +4,8 @@ import { Command } from 'commander';
 import dotenv from 'dotenv';
 import { startServer } from './server.js';
 
+export { ElementorConverter } from './converters/elementor-converter';
+
 // Load environment variables
 dotenv.config();
 

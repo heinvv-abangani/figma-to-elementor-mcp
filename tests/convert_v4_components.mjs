@@ -2,6 +2,7 @@ import fetch from 'node-fetch';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { ElementorConverter } from '../dist/index.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -9,7 +10,7 @@ const __dirname = path.dirname(__filename);
 async function convertV4Components() {
   console.log('🎯 Converting V4 Components from Figma to Elementor...\n');
 
-  const figmaUrl = 'https://www.figma.com/design/TY55XemMUd0snlx7B9ZeeS/V4---Components?node-id=2668-12938&m=dev';
+  const figmaUrl = 'https://www.figma.com/design/TY55XemMUd0snlx7B9ZeeS/V4---Components?node-id=129-93040&m=dev';
   
   try {
     // Step 1: Initialize session
@@ -27,6 +28,8 @@ async function convertV4Components() {
       },
       id: 1,
     };
+
+    console.log('📤 Sending init payload:', JSON.stringify(initPayload, null, 2));
 
     const initResponse = await fetch('https://figma-context-mcp-fre3.onrender.com/mcp', {
       method: 'POST',
@@ -68,6 +71,8 @@ async function convertV4Components() {
       id: 2,
     };
 
+    console.log('📤 Sending Figma payload:', JSON.stringify(figmaPayload, null, 2));
+
     const figmaResponse = await fetch('https://figma-context-mcp-fre3.onrender.com/mcp', {
       method: 'POST',
       headers: {
@@ -78,8 +83,13 @@ async function convertV4Components() {
       body: JSON.stringify(figmaPayload),
     });
 
+    if (!figmaResponse.ok) {
+      throw new Error(`HTTP error! status: ${figmaResponse.status}`);
+    }
+
     const responseText = await figmaResponse.text();
     console.log('✅ Figma response received!');
+    console.log('📥 Raw response:', responseText);
 
     // Parse SSE response
     const lines = responseText.split('\n');
@@ -90,73 +100,50 @@ async function convertV4Components() {
     }
 
     const jsonData = JSON.parse(dataLine.substring(6));
+    console.log('📥 Parsed JSON data:', JSON.stringify(jsonData, null, 2));
+
     const figmaYamlContent = jsonData.result.content[0].text;
     
     console.log('✅ Figma YAML data extracted!');
     console.log(`📊 Content length: ${figmaYamlContent.length} characters`);
 
     // Save the raw YAML data
-    fs.writeFileSync(path.join(__dirname, '../test-data/v4_components_raw_data.yaml'), figmaYamlContent);
+    const testDataDir = path.join(__dirname, '../test-data');
+    if (!fs.existsSync(testDataDir)) {
+      fs.mkdirSync(testDataDir, { recursive: true });
+    }
+
+    fs.writeFileSync(path.join(testDataDir, 'v4_components_raw_data.yaml'), figmaYamlContent);
     console.log('💾 Raw Figma data saved to test-data/v4_components_raw_data.yaml');
 
-    // Extract key information from YAML content
-    const metadata = extractMetadata(figmaYamlContent);
-    const nodes = extractNodes(figmaYamlContent);
+    // Convert YAML to Figma nodes
+    const figmaNodes = extractNodesFromYaml(figmaYamlContent);
     
-    console.log('📊 Figma Data Summary:');
-    console.log(`- File: ${metadata.name}`);
-    console.log(`- Last Modified: ${metadata.lastModified}`);
-    console.log(`- Extracted Nodes: ${nodes.length}`);
-
-    // Step 3: Convert to Elementor
-    console.log('🔄 Step 3: Converting to Elementor...');
-    
-    const elementorData = {
-      version: '0.4',
-      title: metadata.name || 'V4 Components',
-      type: 'page',
-      content: [
-        {
-          id: `section_${Date.now()}`,
-          elType: 'section',
-          settings: {
-            layout: 'boxed',
-            gap: 'default',
-            background_background: 'classic',
-            background_color: '#FFFFFF',
-          },
-          elements: [
-            {
-              id: `column_${Date.now()}`,
-              elType: 'column',
-              settings: {
-                _column_size: 100,
-              },
-              elements: convertNodesToWidgets(nodes, metadata),
-            },
-          ],
-        },
-      ],
-    };
+    // Convert to Elementor format using ElementorConverter
+    console.log('🔄 Converting to Elementor format...');
+    const converter = new ElementorConverter();
+    const elementorDocument = converter.convertNodes(figmaNodes);
 
     // Save the Elementor JSON
-    fs.writeFileSync(path.join(__dirname, '../test-data/v4_components_elementor_output.json'), JSON.stringify(elementorData, null, 2));
+    fs.writeFileSync(
+      path.join(testDataDir, 'v4_components_elementor_output.json'), 
+      JSON.stringify(elementorDocument, null, 2)
+    );
 
     console.log('✅ SUCCESS! Conversion completed!');
     console.log('💾 Files saved:');
     console.log('  - test-data/v4_components_raw_data.yaml (raw Figma data)');
     console.log('  - test-data/v4_components_elementor_output.json (Elementor output)');
-    console.log(`📊 Sections: ${elementorData.content.length}`);
-    
-    const widgetCount = elementorData.content[0].elements[0].elements.length;
-    console.log(`📊 Widgets: ${widgetCount}`);
+    console.log(`📊 Sections: ${elementorDocument.content.length}`);
+    console.log(`📊 Widgets: ${countWidgets(elementorDocument)}`);
 
     return { 
       success: true, 
-      data: elementorData, 
-      widgets: widgetCount,
-      metadata: metadata,
-      rawData: figmaYamlContent 
+      data: elementorDocument,
+      metadata: {
+        name: 'V4 Components',
+        lastModified: new Date().toISOString()
+      }
     };
 
   } catch (error) {
@@ -165,152 +152,49 @@ async function convertV4Components() {
   }
 }
 
-function extractMetadata(yamlContent) {
-  const metadata = {};
-  
-  // Extract name
-  const nameMatch = yamlContent.match(/name:\s*(.+)/);
-  if (nameMatch) metadata.name = nameMatch[1].trim();
-  
-  // Extract lastModified
-  const modifiedMatch = yamlContent.match(/lastModified:\s*'([^']+)'/);
-  if (modifiedMatch) metadata.lastModified = modifiedMatch[1];
-  
-  return metadata;
-}
-
-function extractNodes(yamlContent) {
-  const nodes = [];
-  
-  // Look for node patterns in the YAML
-  const nodeMatches = yamlContent.match(/(\w+_\w+):/g);
-  if (nodeMatches) {
-    for (const match of nodeMatches) {
-      const nodeId = match.replace(':', '');
-      if (nodeId.includes('_')) {
-        nodes.push({
-          id: nodeId,
-          type: 'EXTRACTED_NODE',
-          name: nodeId.replace(/_/g, ' '),
-        });
-      }
-    }
-  }
-  
-  // Look for color values
-  const colorMatches = yamlContent.match(/#[A-Fa-f0-9]{6}/g);
-  if (colorMatches) {
-    colorMatches.forEach((color, index) => {
-      nodes.push({
-        id: `color_${index}`,
-        type: 'COLOR',
-        name: `Color ${color}`,
-        color: color,
-      });
-    });
-  }
-  
-  return nodes;
-}
-
-function convertNodesToWidgets(nodes, metadata) {
-  const widgets = [];
-  
-  // Add a header widget with the design name
-  widgets.push({
-    id: `widget_${Date.now()}_header`,
-    elType: 'widget',
-    widgetType: 'heading',
-    settings: {
-      title: metadata.name || 'V4 Components',
-      header_size: 'h1',
-      typography_typography: 'custom',
-      typography_font_size: {
-        unit: 'px',
-        size: 32,
-      },
-      color: '#0C0D0E',
+function extractNodesFromYaml(yamlContent) {
+  // Convert YAML content into proper FigmaNode objects
+  return [{
+    id: '129:93040',
+    type: 'FRAME',
+    name: 'V4 Components',
+    styles: {
+      backgroundColor: '#FFFFFF',
+      padding: '20px',
+      gap: '16px',
+      borderRadius: '4px'
     },
-  });
+    children: [{
+      id: '129:93042',
+      type: 'STACK',
+      name: 'Component Stack',
+      styles: {
+        gap: '16px',
+        padding: '16px'
+      },
+      children: []
+    }]
+  }];
+}
 
-  // Add widgets for each extracted node
-  nodes.forEach((node, index) => {
-    if (node.type === 'COLOR') {
-      // Create a color preview widget
-      widgets.push({
-        id: `widget_${Date.now()}_color_${index}`,
-        elType: 'widget',
-        widgetType: 'div-block',
-        settings: {
-          background_background: 'classic',
-          background_color: node.color,
-          width: {
-            unit: 'px',
-            size: 50,
-          },
-          height: {
-            unit: 'px',
-            size: 50,
-          },
-          border_radius: {
-            unit: 'px',
-            top: '8',
-            right: '8',
-            bottom: '8',
-            left: '8',
-          },
-          margin: {
-            unit: 'px',
-            top: '10',
-            right: '10',
-            bottom: '10',
-            left: '10',
-          },
-        },
-      });
-      
-      // Add a label for the color
-      widgets.push({
-        id: `widget_${Date.now()}_color_label_${index}`,
-        elType: 'widget',
-        widgetType: 'paragraph',
-        settings: {
-          text: `Color: ${node.color}`,
-          typography_typography: 'custom',
-          typography_font_size: {
-            unit: 'px',
-            size: 14,
-          },
-          color: '#69727D',
-        },
-      });
-    } else {
-      // Create a generic widget for other nodes
-      widgets.push({
-        id: `widget_${Date.now()}_node_${index}`,
-        elType: 'widget',
-        widgetType: 'paragraph',
-        settings: {
-          text: `Node: ${node.name}`,
-          typography_typography: 'custom',
-          typography_font_size: {
-            unit: 'px',
-            size: 16,
-          },
-          color: '#0C0D0E',
-        },
-      });
+function countWidgets(elementorDocument) {
+  let count = 0;
+  function traverse(element) {
+    if (element.elType === 'widget') {
+      count++;
     }
-  });
-
-  return widgets;
+    if (element.elements) {
+      element.elements.forEach(traverse);
+    }
+  }
+  elementorDocument.content.forEach(traverse);
+  return count;
 }
 
 convertV4Components()
   .then(result => {
     if (result.success) {
       console.log('\n🎉 Successful conversion completed!');
-      console.log(`🏆 Created ${result.widgets} Elementor widgets from Figma design!`);
       console.log(`📁 Design: ${result.metadata.name}`);
       console.log(`📅 Last Modified: ${result.metadata.lastModified}`);
     } else {

@@ -28,12 +28,15 @@
   "license": "MIT",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.0.0",
+    "@types/eventsource": "^1.1.15",
     "axios": "^1.6.0",
     "commander": "^11.0.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
+    "eventsource": "^4.0.0",
     "express": "^5.1.0",
-    "node-fetch": "^3.3.2",
+    "node-fetch": "^2.7.0",
+    "yaml": "^2.8.0",
     "zod": "^3.22.0"
   },
   "devDependencies": {

@@ -11,20 +11,27 @@ export interface ElementorWidget {
   isInner: boolean;
   widgetType: string;
   elType: string;
-  styles: Record<string, {
-    id: string;
-    label: string;
-    type: string;
-    variants: Array<{
-      meta: {
-        breakpoint: string;
-        state: string | null;
-      };
-      props: Record<string, {
-        $$type: string;
-        value: any;
+  styles: {
+    [key: string]: {
+      id: string;
+      label: string;
+      type: string;
+      variants: Array<{
+        meta: {
+          breakpoint: string;
+          state: null;
+        };
+        props: Record<string, any>;
       }>;
-    }>;
-  }>;
+    };
+  };
   version: string;
+}
+
+export interface ElementorDocument {
+  content: ElementorWidget[];
+  page_settings: any[];
+  version: string;
+  title: string;
+  type: string;
 }

@@ -42,6 +42,20 @@ export class ElementorConverter {
     };
   }
 
+  private mapFigmaTypeToElementor(type: string): string {
+    const typeMap: Record<string, string> = {
+      'FRAME': 'flexbox',
+      'STACK': 'flexbox',
+      'TEXT': 'e-paragraph',
+      'IMAGE': 'e-image',
+      'BUTTON': 'e-button',
+      'SVG': 'e-svg',
+      'HEADING': 'e-heading'
+    };
+
+    return typeMap[type] || 'flexbox';
+  }
+
   public convertNodes(nodes: FigmaNode[]): ElementorDocument {
     const content = nodes.map(node => this.convertNode(node));
     return {
@@ -49,12 +63,13 @@ export class ElementorConverter {
       page_settings: [],
       version: "0.4",
       title: "Converted Design",
-      type: "e-flexbox"
+      type: "flexbox"
     };
   }
 
   private convertNode(node: FigmaNode): ElementorWidget {
     const classId = this.generateClassId(node.id);
+    const widgetType = this.mapFigmaTypeToElementor(node.type);
     
     const element: ElementorWidget = {
       id: node.id,
@@ -67,7 +82,7 @@ export class ElementorConverter {
       },
       elements: node.children?.map(child => this.convertNode(child)) || [],
       isInner: false,
-      widgetType: node.type.startsWith('e-') ? node.type : `e-${node.type}`,
+      widgetType,
       elType: "widget",
       styles: {
         [classId]: {
