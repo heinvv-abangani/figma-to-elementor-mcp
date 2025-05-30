@@ -250,14 +250,14 @@ nodes:
   - id: '129:93040'
     name: Property 1=Choose
     type: COMPONENT
-    layout: layout_W6DTPB
+    layout: layout_Z7J70Y
     children:
       - id: '129:93041'
         name: <Box><Paper>
         type: FRAME
-        fills: fill_W951OH
-        effects: effect_WZTUFH
-        layout: layout_SOYU79
+        fills: fill_91NUOG
+        effects: effect_TC6C4E
+        layout: layout_HQIH2B
         borderRadius: 16px
         children:
           - id: '2667:40727'
@@ -271,9 +271,9 @@ nodes:
               Main:
                 value: 'Yes'
                 type: VARIANT
-            fills: fill_W951OH
-            strokes: stroke_AT58V2
-            layout: layout_GOABHF
+            fills: fill_91NUOG
+            strokes: stroke_RC3HG5
+            layout: layout_WYY110
             children:
               - id: I2667:40727;2667:34107
                 name: <L.PopoverheaderBar>
@@ -283,28 +283,28 @@ nodes:
                   Property 1:
                     value: Fonts
                     type: VARIANT
-                fills: fill_W951OH
-                layout: layout_GOABHF
+                fills: fill_91NUOG
+                layout: layout_WYY110
                 children:
                   - id: I2667:40727;2667:34107;2667:27118
                     name: <AppBar>
                     type: FRAME
-                    layout: layout_HM56I0
+                    layout: layout_OL2T0U
                     children:
                       - id: I2667:40727;2667:34107;2667:27119
                         name: <Paper>
                         type: FRAME
-                        layout: layout_GLI3WW
+                        layout: layout_XJJGTN
                         children:
                           - id: I2667:40727;2667:34107;2667:27120
                             name: <Toolbar>
                             type: FRAME
-                            layout: layout_OU8K06
+                            layout: layout_UZX5WA
                             children:
                               - id: I2667:40727;2667:34107;2667:27121
                                 name: Left Side
                                 type: FRAME
-                                layout: layout_W8WTQP
+                                layout: layout_BC06UP
                                 children:
                                   - id: I2667:40727;2667:34107;2667:27122
                                     name: <ResizableIcon>
@@ -317,27 +317,27 @@ nodes:
                                       Size:
                                         value: Inherit
                                         type: VARIANT
-                                    layout: layout_QM0NNC
+                                    layout: layout_MMMUAW
                                     children:
                                       - id: >-
                                           I2667:40727;2667:34107;2667:27122;2228:96209
                                         name: Text
                                         type: INSTANCE
                                         componentId: '2667:27142'
-                                        fills: fill_W951OH
-                                        layout: layout_RK7U56
+                                        fills: fill_91NUOG
+                                        layout: layout_8YF6NP
                                         children:
                                           - id: >-
                                               I2667:40727;2667:34107;2667:27122;2228:96209;6891:2988
                                             name: Vector
                                             type: IMAGE-SVG
-                                            layout: layout_PXBS8B
+                                            layout: layout_SRTZ2E
                                           - id: >-
                                               I2667:40727;2667:34107;2667:27122;2228:96209;6891:2996
                                             name: Union
                                             type: IMAGE-SVG
-                                            fills: fill_AF8ZFC
-                                            layout: layout_4U0Y41
+                                            fills: fill_LZNDXA
+                                            layout: layout_HWZIUH
                                   - id: I2667:40727;2667:34107;2667:27123
                                     name: <Typography>
                                     type: INSTANCE
@@ -352,20 +352,20 @@ nodes:
                                       Gutter Bottom:
                                         value: 'False'
                                         type: VARIANT
-                                    layout: layout_7B2XIS
+                                    layout: layout_8XA8E2
                                     children:
                                       - id: >-
                                           I2667:40727;2667:34107;2667:27123;11626:152454
                                         name: subtitle2
                                         type: TEXT
-                                        textStyle: style_59ICFC
-                                        fills: fill_AF8ZFC
-                                        layout: layout_WHN3IN
+                                        textStyle: style_6LQZSZ
+                                        fills: fill_LZNDXA
+                                        layout: layout_SPUYFN
                                         text: Fonts
                               - id: I2667:40727;2667:34107;2667:27124
                                 name: <Stack>
                                 type: FRAME
-                                layout: layout_8O9C5I
+                                layout: layout_E9G7I9
                                 children:
                                   - id: I2667:40727;2667:34107;2667:27125
                                     name: 'Instance #1'
@@ -399,7 +399,7 @@ nodes:
                                       Spacing:
                                         value: '0'
                                         type: VARIANT
-                                    layout: layout_AIJK8Q
+                                    layout: layout_TRGYHS
                                     children:
                                       - id: >-
                                           I2667:40727;2667:34107;2667:27125;11385:161975
@@ -416,7 +416,7 @@ nodes:
                                           State:
                                             value: Enabled
                                             type: VARIANT
-                                        layout: layout_68HIYO
+                                        layout: layout_XCH4WD
                                         borderRadius: 100px
                                         children:
                                           - id: >-
@@ -431,21 +431,21 @@ nodes:
                                               Size:
                                                 value: Tiny
                                                 type: VARIANT
-                                            layout: layout_QM0NNC
+                                            layout: layout_MMMUAW
                                             children:
                                               - id: >-
                                                   I2667:40727;2667:34107;2667:27125;11385:161975;6307:41677;6307:26062
                                                 name: Plus
                                                 type: INSTANCE
                                                 componentId: '2667:19256'
-                                                layout: layout_RK7U56
+                                                layout: layout_8YF6NP
                                                 children:
                                                   - id: >-
                                                       I2667:40727;2667:34107;2667:27125;11385:161975;6307:41677;6307:26062;830:9552
                                                     name: Vector
                                                     type: IMAGE-SVG
-                                                    fills: fill_JDI9KG
-                                                    layout: layout_4U0Y41
+                                                    fills: fill_V3S2R1
+                                                    layout: layout_HWZIUH
                                       - id: >-
                                           I2667:40727;2667:34107;2667:27125;11385:161976
                                         name: 'Instance #2'
@@ -461,7 +461,7 @@ nodes:
                                           State:
                                             value: Enabled
                                             type: VARIANT
-                                        layout: layout_68HIYO
+                                        layout: layout_XCH4WD
                                         borderRadius: 100px
                                         children:
                                           - id: >-
@@ -476,22 +476,22 @@ nodes:
                                               Size:
                                                 value: Tiny
                                                 type: VARIANT
-                                            layout: layout_QM0NNC
+                                            layout: layout_MMMUAW
                                             children:
                                               - id: >-
                                                   I2667:40727;2667:34107;2667:27125;11385:161976;6307:41677;6307:26062
                                                 name: SettingsShare
                                                 type: INSTANCE
                                                 componentId: '2667:27113'
-                                                fills: fill_W951OH
-                                                layout: layout_RK7U56
+                                                fills: fill_91NUOG
+                                                layout: layout_8YF6NP
                                                 children:
                                                   - id: >-
                                                       I2667:40727;2667:34107;2667:27125;11385:161976;6307:41677;6307:26062;4016:2528
                                                     name: Vector
                                                     type: IMAGE-SVG
-                                                    fills: fill_JDI9KG
-                                                    layout: layout_32UV4U
+                                                    fills: fill_V3S2R1
+                                                    layout: layout_J4LBTJ
                                   - id: I2667:40727;2667:34107;2667:27126
                                     name: 'Instance #2'
                                     type: INSTANCE
@@ -506,7 +506,7 @@ nodes:
                                       State:
                                         value: Enabled
                                         type: VARIANT
-                                    layout: layout_68HIYO
+                                    layout: layout_XCH4WD
                                     borderRadius: 100px
                                     children:
                                       - id: >-
@@ -521,25 +521,25 @@ nodes:
                                           Size:
                                             value: Tiny
                                             type: VARIANT
-                                        layout: layout_QM0NNC
+                                        layout: layout_MMMUAW
                                         children:
                                           - id: >-
                                               I2667:40727;2667:34107;2667:27126;6307:41677;6307:26062
                                             name: X
                                             type: INSTANCE
                                             componentId: '2667:19246'
-                                            layout: layout_RK7U56
+                                            layout: layout_8YF6NP
                                             children:
                                               - id: >-
                                                   I2667:40727;2667:34107;2667:27126;6307:41677;6307:26062;1322:10161
                                                 name: Vector
                                                 type: IMAGE-SVG
-                                                fills: fill_JDI9KG
-                                                layout: layout_9LMA5U
+                                                fills: fill_V3S2R1
+                                                layout: layout_4IFGT7
               - id: I2667:40727;2667:34006
                 name: margin
                 type: FRAME
-                layout: layout_B8R1JC
+                layout: layout_LWC8VI
                 children:
                   - id: I2667:40727;2667:65462
                     name: <Autocomplete>
@@ -549,8 +549,8 @@ nodes:
                       Property 1:
                         value: Default
                         type: VARIANT
-                    fills: fill_W951OH
-                    layout: layout_GOABHF
+                    fills: fill_91NUOG
+                    layout: layout_WYY110
                     children:
                       - id: I2667:40727;2667:65462;2667:59395
                         name: <Autocomplete>
@@ -560,7 +560,7 @@ nodes:
                           Multiple Value:
                             value: 'False'
                             type: VARIANT
-                        layout: layout_GOABHF
+                        layout: layout_WYY110
                         children:
                           - id: I2667:40727;2667:65462;2667:59395;6570:49858
                             name: <Select>
@@ -605,28 +605,28 @@ nodes:
                               Has Value:
                                 value: 'false'
                                 type: VARIANT
-                            fills: fill_W951OH
-                            layout: layout_GOABHF
+                            fills: fill_91NUOG
+                            layout: layout_WYY110
                             children:
                               - id: >-
                                   I2667:40727;2667:65462;2667:59395;6570:49858;6307:38883
                                 name: Input
                                 type: FRAME
-                                strokes: stroke_0XBBDT
-                                layout: layout_QEWYCY
+                                strokes: stroke_ZFCAQE
+                                layout: layout_C4YC49
                                 borderRadius: 8px
                                 children:
                                   - id: >-
                                       I2667:40727;2667:65462;2667:59395;6570:49858;6307:38884
                                     name: Container
                                     type: FRAME
-                                    layout: layout_NLE38F
+                                    layout: layout_8XIUVU
                                     children:
                                       - id: >-
                                           I2667:40727;2667:65462;2667:59395;6570:49858;6748:7994
                                         name: Adorn. Start Container
                                         type: FRAME
-                                        layout: layout_OY4HPW
+                                        layout: layout_JF93QR
                                         children:
                                           - id: >-
                                               I2667:40727;2667:65462;2667:59395;6570:49858;6748:7995
@@ -640,43 +640,43 @@ nodes:
                                               Size:
                                                 value: Tiny
                                                 type: VARIANT
-                                            layout: layout_8EIWW2
+                                            layout: layout_OVNBYD
                                             children:
                                               - id: >-
                                                   I2667:40727;2667:65462;2667:59395;6570:49858;6748:7995;6307:26062
                                                 name: Zoom
                                                 type: INSTANCE
                                                 componentId: '2667:64495'
-                                                layout: layout_RK7U56
+                                                layout: layout_8YF6NP
                                                 children:
                                                   - id: >-
                                                       I2667:40727;2667:65462;2667:59395;6570:49858;6748:7995;6307:26062;830:9497
                                                     name: Vector
                                                     type: IMAGE-SVG
-                                                    fills: fill_QPASQ0
-                                                    layout: layout_SCR950
+                                                    fills: fill_W2ANLW
+                                                    layout: layout_3ODG44
                                       - id: >-
                                           I2667:40727;2667:65462;2667:59395;6570:49858;6307:38885
                                         name: min-height
                                         type: FRAME
-                                        layout: layout_XDDSZK
+                                        layout: layout_BIVF3J
                                       - id: >-
                                           I2667:40727;2667:65462;2667:59395;6570:49858;6307:38890
                                         name: Label
                                         type: TEXT
-                                        textStyle: style_04IJR6
-                                        fills: fill_QPASQ0
-                                        layout: layout_JKIHZU
+                                        textStyle: style_VMMLN1
+                                        fills: fill_W2ANLW
+                                        layout: layout_BTE3UB
                                         text: Search
                                       - id: >-
                                           I2667:40727;2667:65462;2667:59395;6570:49858;6307:38891
                                         name: min-width
                                         type: FRAME
-                                        layout: layout_FMCS37
+                                        layout: layout_NTKB68
           - id: '129:93042'
             name: <Stack>
             type: FRAME
-            layout: layout_MX3EF7
+            layout: layout_XOSRJO
             borderRadius: 4px
             children:
               - id: '129:93044'
@@ -687,20 +687,20 @@ nodes:
                   Property 1:
                     value: Default
                     type: VARIANT
-                layout: layout_MSKH8D
+                layout: layout_QEW81A
                 children:
                   - id: I129:93044;129:93048
                     name: <ListSubheader>
                     type: INSTANCE
                     componentId: '2388:75729'
-                    layout: layout_NBLI8A
+                    layout: layout_YBSUH4
                     children:
                       - id: I129:93044;129:93048;6645:59768
                         name: Subheader
                         type: TEXT
-                        textStyle: style_TLLUCU
-                        fills: fill_T9RONL
-                        layout: layout_JKIHZU
+                        textStyle: style_AAPOP1
+                        fills: fill_FVT2A4
+                        layout: layout_BTE3UB
                         text: Subheader
                   - id: I129:93044;2420:105473
                     name: <L.MenuItem>
@@ -710,8 +710,8 @@ nodes:
                       Property 1:
                         value: Default
                         type: VARIANT
-                    fills: fill_W951OH
-                    layout: layout_GRLF1Q
+                    fills: fill_91NUOG
+                    layout: layout_RQBKN6
                     children:
                       - id: I129:93044;2420:105473;2420:103938
                         name: <MenuItem>
@@ -751,19 +751,19 @@ nodes:
                           State:
                             value: Enabled
                             type: VARIANT
-                        layout: layout_4CB6BR
+                        layout: layout_JSC2RI
                         children:
                           - id: I129:93044;2420:105473;2420:103938;10070:120194
                             name: Container
                             type: FRAME
-                            layout: layout_213PDE
+                            layout: layout_5RHHID
                             children:
                               - id: >-
                                   I129:93044;2420:105473;2420:103938;10063:123673
                                 name: Left Slot
                                 type: FRAME
-                                fills: fill_W951OH
-                                layout: layout_LV46RJ
+                                fills: fill_91NUOG
+                                layout: layout_70KY72
                                 children:
                                   - id: >-
                                       I129:93044;2420:105473;2420:103938;10063:123674
@@ -777,33 +777,33 @@ nodes:
                                       Size:
                                         value: Tiny
                                         type: VARIANT
-                                    layout: layout_QM0NNC
+                                    layout: layout_MMMUAW
                                     children:
                                       - id: >-
                                           I129:93044;2420:105473;2420:103938;10063:123674;6307:26062
                                         name: StarFilled
                                         type: INSTANCE
                                         componentId: '1:1092'
-                                        layout: layout_RK7U56
+                                        layout: layout_8YF6NP
                                         children:
                                           - id: >-
                                               I129:93044;2420:105473;2420:103938;10063:123674;6307:26062;1050:6744
                                             name: Vector
                                             type: IMAGE-SVG
-                                            fills: fill_AF8ZFC
-                                            layout: layout_SWJ9WL
+                                            fills: fill_LZNDXA
+                                            layout: layout_IT89DE
                               - id: I129:93044;2420:105473;2420:103938;7306:48427
                                 name: Container
                                 type: FRAME
-                                layout: layout_2YMNX2
+                                layout: layout_98NMNJ
                                 children:
                                   - id: >-
                                       I129:93044;2420:105473;2420:103938;10100:157250
                                     name: Value
                                     type: TEXT
-                                    textStyle: style_TLLUCU
-                                    fills: fill_AF8ZFC
-                                    layout: layout_WHN3IN
+                                    textStyle: style_AAPOP1
+                                    fills: fill_LZNDXA
+                                    layout: layout_SPUYFN
                                     text: Menu Item
                                   - id: >-
                                       I129:93044;2420:105473;2420:103938;7306:47804
@@ -838,7 +838,7 @@ nodes:
                                       Spacing:
                                         value: '0'
                                         type: VARIANT
-                                    layout: layout_IWPDEQ
+                                    layout: layout_R1EWJB
                                     children:
                                       - id: >-
                                           I129:93044;2420:105473;2420:103938;7306:47804;11385:161975
@@ -855,15 +855,15 @@ nodes:
                                           Gutter Bottom:
                                             value: 'False'
                                             type: VARIANT
-                                        layout: layout_C1R3WO
+                                        layout: layout_X908CK
                                         children:
                                           - id: >-
                                               I129:93044;2420:105473;2420:103938;7306:47804;11385:161975;11626:152458
                                             name: caption
                                             type: TEXT
-                                            textStyle: style_TLLUCU
-                                            fills: fill_T9RONL
-                                            layout: layout_JKIHZU
+                                            textStyle: style_AAPOP1
+                                            fills: fill_FVT2A4
+                                            layout: layout_BTE3UB
                                             text: Value
                   - id: I129:93044;2420:107158
                     name: <L.MenuItem>
@@ -873,8 +873,8 @@ nodes:
                       Property 1:
                         value: Default
                         type: VARIANT
-                    fills: fill_W951OH
-                    layout: layout_GRLF1Q
+                    fills: fill_91NUOG
+                    layout: layout_RQBKN6
                     children:
                       - id: I129:93044;2420:107158;2420:103938
                         name: <MenuItem>
@@ -914,19 +914,19 @@ nodes:
                           State:
                             value: Enabled
                             type: VARIANT
-                        layout: layout_4CB6BR
+                        layout: layout_JSC2RI
                         children:
                           - id: I129:93044;2420:107158;2420:103938;10070:120194
                             name: Container
                             type: FRAME
-                            layout: layout_213PDE
+                            layout: layout_5RHHID
                             children:
                               - id: >-
                                   I129:93044;2420:107158;2420:103938;10063:123673
                                 name: Left Slot
                                 type: FRAME
-                                fills: fill_W951OH
-                                layout: layout_LV46RJ
+                                fills: fill_91NUOG
+                                layout: layout_70KY72
                                 children:
                                   - id: >-
                                       I129:93044;2420:107158;2420:103938;10063:123674
@@ -940,33 +940,33 @@ nodes:
                                       Size:
                                         value: Tiny
                                         type: VARIANT
-                                    layout: layout_QM0NNC
+                                    layout: layout_MMMUAW
                                     children:
                                       - id: >-
                                           I129:93044;2420:107158;2420:103938;10063:123674;6307:26062
                                         name: StarFilled
                                         type: INSTANCE
                                         componentId: '1:1092'
-                                        layout: layout_RK7U56
+                                        layout: layout_8YF6NP
                                         children:
                                           - id: >-
                                               I129:93044;2420:107158;2420:103938;10063:123674;6307:26062;1050:6744
                                             name: Vector
                                             type: IMAGE-SVG
-                                            fills: fill_AF8ZFC
-                                            layout: layout_SWJ9WL
+                                            fills: fill_LZNDXA
+                                            layout: layout_IT89DE
                               - id: I129:93044;2420:107158;2420:103938;7306:48427
                                 name: Container
                                 type: FRAME
-                                layout: layout_2YMNX2
+                                layout: layout_98NMNJ
                                 children:
                                   - id: >-
                                       I129:93044;2420:107158;2420:103938;10100:157250
                                     name: Value
                                     type: TEXT
-                                    textStyle: style_TLLUCU
-                                    fills: fill_AF8ZFC
-                                    layout: layout_WHN3IN
+                                    textStyle: style_AAPOP1
+                                    fills: fill_LZNDXA
+                                    layout: layout_SPUYFN
                                     text: Menu Item
                                   - id: >-
                                       I129:93044;2420:107158;2420:103938;7306:47804
@@ -1001,7 +1001,7 @@ nodes:
                                       Spacing:
                                         value: '0'
                                         type: VARIANT
-                                    layout: layout_IWPDEQ
+                                    layout: layout_R1EWJB
                                     children:
                                       - id: >-
                                           I129:93044;2420:107158;2420:103938;7306:47804;11385:161975
@@ -1018,15 +1018,15 @@ nodes:
                                           Gutter Bottom:
                                             value: 'False'
                                             type: VARIANT
-                                        layout: layout_C1R3WO
+                                        layout: layout_X908CK
                                         children:
                                           - id: >-
                                               I129:93044;2420:107158;2420:103938;7306:47804;11385:161975;11626:152458
                                             name: caption
                                             type: TEXT
-                                            textStyle: style_TLLUCU
-                                            fills: fill_T9RONL
-                                            layout: layout_JKIHZU
+                                            textStyle: style_AAPOP1
+                                            fills: fill_FVT2A4
+                                            layout: layout_BTE3UB
                                             text: Value
                   - id: I129:93044;2420:108010
                     name: <L.MenuItem>
@@ -1036,8 +1036,8 @@ nodes:
                       Property 1:
                         value: Default
                         type: VARIANT
-                    fills: fill_W951OH
-                    layout: layout_GRLF1Q
+                    fills: fill_91NUOG
+                    layout: layout_RQBKN6
                     children:
                       - id: I129:93044;2420:108010;2420:103938
                         name: <MenuItem>
@@ -1077,19 +1077,19 @@ nodes:
                           State:
                             value: Enabled
                             type: VARIANT
-                        layout: layout_4CB6BR
+                        layout: layout_JSC2RI
                         children:
                           - id: I129:93044;2420:108010;2420:103938;10070:120194
                             name: Container
                             type: FRAME
-                            layout: layout_213PDE
+                            layout: layout_5RHHID
                             children:
                               - id: >-
                                   I129:93044;2420:108010;2420:103938;10063:123673
                                 name: Left Slot
                                 type: FRAME
-                                fills: fill_W951OH
-                                layout: layout_LV46RJ
+                                fills: fill_91NUOG
+                                layout: layout_70KY72
                                 children:
                                   - id: >-
                                       I129:93044;2420:108010;2420:103938;10063:123674
@@ -1103,33 +1103,33 @@ nodes:
                                       Size:
                                         value: Tiny
                                         type: VARIANT
-                                    layout: layout_QM0NNC
+                                    layout: layout_MMMUAW
                                     children:
                                       - id: >-
                                           I129:93044;2420:108010;2420:103938;10063:123674;6307:26062
                                         name: StarFilled
                                         type: INSTANCE
                                         componentId: '1:1092'
-                                        layout: layout_RK7U56
+                                        layout: layout_8YF6NP
                                         children:
                                           - id: >-
                                               I129:93044;2420:108010;2420:103938;10063:123674;6307:26062;1050:6744
                                             name: Vector
                                             type: IMAGE-SVG
-                                            fills: fill_AF8ZFC
-                                            layout: layout_SWJ9WL
+                                            fills: fill_LZNDXA
+                                            layout: layout_IT89DE
                               - id: I129:93044;2420:108010;2420:103938;7306:48427
                                 name: Container
                                 type: FRAME
-                                layout: layout_2YMNX2
+                                layout: layout_98NMNJ
                                 children:
                                   - id: >-
                                       I129:93044;2420:108010;2420:103938;10100:157250
                                     name: Value
                                     type: TEXT
-                                    textStyle: style_TLLUCU
-                                    fills: fill_AF8ZFC
-                                    layout: layout_WHN3IN
+                                    textStyle: style_AAPOP1
+                                    fills: fill_LZNDXA
+                                    layout: layout_SPUYFN
                                     text: Menu Item
                                   - id: >-
                                       I129:93044;2420:108010;2420:103938;7306:47804
@@ -1164,7 +1164,7 @@ nodes:
                                       Spacing:
                                         value: '0'
                                         type: VARIANT
-                                    layout: layout_IWPDEQ
+                                    layout: layout_R1EWJB
                                     children:
                                       - id: >-
                                           I129:93044;2420:108010;2420:103938;7306:47804;11385:161975
@@ -1181,15 +1181,15 @@ nodes:
                                           Gutter Bottom:
                                             value: 'False'
                                             type: VARIANT
-                                        layout: layout_C1R3WO
+                                        layout: layout_X908CK
                                         children:
                                           - id: >-
                                               I129:93044;2420:108010;2420:103938;7306:47804;11385:161975;11626:152458
                                             name: caption
                                             type: TEXT
-                                            textStyle: style_TLLUCU
-                                            fills: fill_T9RONL
-                                            layout: layout_JKIHZU
+                                            textStyle: style_AAPOP1
+                                            fills: fill_FVT2A4
+                                            layout: layout_BTE3UB
                                             text: Value
                   - id: I129:93044;2420:108914
                     name: <L.MenuItem>
@@ -1199,8 +1199,8 @@ nodes:
                       Property 1:
                         value: Default
                         type: VARIANT
-                    fills: fill_W951OH
-                    layout: layout_GRLF1Q
+                    fills: fill_91NUOG
+                    layout: layout_RQBKN6
                     children:
                       - id: I129:93044;2420:108914;2420:103938
                         name: <MenuItem>
@@ -1240,19 +1240,19 @@ nodes:
                           State:
                             value: Enabled
                             type: VARIANT
-                        layout: layout_4CB6BR
+                        layout: layout_JSC2RI
                         children:
                           - id: I129:93044;2420:108914;2420:103938;10070:120194
                             name: Container
                             type: FRAME
-                            layout: layout_213PDE
+                            layout: layout_5RHHID
                             children:
                               - id: >-
                                   I129:93044;2420:108914;2420:103938;10063:123673
                                 name: Left Slot
                                 type: FRAME
-                                fills: fill_W951OH
-                                layout: layout_LV46RJ
+                                fills: fill_91NUOG
+                                layout: layout_70KY72
                                 children:
                                   - id: >-
                                       I129:93044;2420:108914;2420:103938;10063:123674
@@ -1266,33 +1266,33 @@ nodes:
                                       Size:
                                         value: Tiny
                                         type: VARIANT
-                                    layout: layout_QM0NNC
+                                    layout: layout_MMMUAW
                                     children:
                                       - id: >-
                                           I129:93044;2420:108914;2420:103938;10063:123674;6307:26062
                                         name: StarFilled
                                         type: INSTANCE
                                         componentId: '1:1092'
-                                        layout: layout_RK7U56
+                                        layout: layout_8YF6NP
                                         children:
                                           - id: >-
                                               I129:93044;2420:108914;2420:103938;10063:123674;6307:26062;1050:6744
                                             name: Vector
                                             type: IMAGE-SVG
-                                            fills: fill_AF8ZFC
-                                            layout: layout_BQVQOG
+                                            fills: fill_LZNDXA
+                                            layout: layout_G2NRXP
                               - id: I129:93044;2420:108914;2420:103938;7306:48427
                                 name: Container
                                 type: FRAME
-                                layout: layout_2YMNX2
+                                layout: layout_98NMNJ
                                 children:
                                   - id: >-
                                       I129:93044;2420:108914;2420:103938;10100:157250
                                     name: Value
                                     type: TEXT
-                                    textStyle: style_TLLUCU
-                                    fills: fill_AF8ZFC
-                                    layout: layout_WHN3IN
+                                    textStyle: style_AAPOP1
+                                    fills: fill_LZNDXA
+                                    layout: layout_SPUYFN
                                     text: Menu Item
                                   - id: >-
                                       I129:93044;2420:108914;2420:103938;7306:47804
@@ -1327,7 +1327,7 @@ nodes:
                                       Spacing:
                                         value: '0'
                                         type: VARIANT
-                                    layout: layout_IWPDEQ
+                                    layout: layout_R1EWJB
                                     children:
                                       - id: >-
                                           I129:93044;2420:108914;2420:103938;7306:47804;11385:161975
@@ -1344,15 +1344,15 @@ nodes:
                                           Gutter Bottom:
                                             value: 'False'
                                             type: VARIANT
-                                        layout: layout_C1R3WO
+                                        layout: layout_X908CK
                                         children:
                                           - id: >-
                                               I129:93044;2420:108914;2420:103938;7306:47804;11385:161975;11626:152458
                                             name: caption
                                             type: TEXT
-                                            textStyle: style_TLLUCU
-                                            fills: fill_T9RONL
-                                            layout: layout_JKIHZU
+                                            textStyle: style_AAPOP1
+                                            fills: fill_FVT2A4
+                                            layout: layout_BTE3UB
                                             text: Value
                   - id: I129:93044;2420:109870
                     name: <L.MenuItem>
@@ -1362,8 +1362,8 @@ nodes:
                       Property 1:
                         value: Default
                         type: VARIANT
-                    fills: fill_W951OH
-                    layout: layout_GRLF1Q
+                    fills: fill_91NUOG
+                    layout: layout_RQBKN6
                     children:
                       - id: I129:93044;2420:109870;2420:103938
                         name: <MenuItem>
@@ -1403,19 +1403,19 @@ nodes:
                           State:
                             value: Enabled
                             type: VARIANT
-                        layout: layout_4CB6BR
+                        layout: layout_JSC2RI
                         children:
                           - id: I129:93044;2420:109870;2420:103938;10070:120194
                             name: Container
                             type: FRAME
-                            layout: layout_213PDE
+                            layout: layout_5RHHID
                             children:
                               - id: >-
                                   I129:93044;2420:109870;2420:103938;10063:123673
                                 name: Left Slot
                                 type: FRAME
-                                fills: fill_W951OH
-                                layout: layout_LV46RJ
+                                fills: fill_91NUOG
+                                layout: layout_70KY72
                                 children:
                                   - id: >-
                                       I129:93044;2420:109870;2420:103938;10063:123674
@@ -1429,33 +1429,33 @@ nodes:
                                       Size:
                                         value: Tiny
                                         type: VARIANT
-                                    layout: layout_QM0NNC
+                                    layout: layout_MMMUAW
                                     children:
                                       - id: >-
                                           I129:93044;2420:109870;2420:103938;10063:123674;6307:26062
                                         name: StarFilled
                                         type: INSTANCE
                                         componentId: '1:1092'
-                                        layout: layout_RK7U56
+                                        layout: layout_8YF6NP
                                         children:
                                           - id: >-
                                               I129:93044;2420:109870;2420:103938;10063:123674;6307:26062;1050:6744
                                             name: Vector
                                             type: IMAGE-SVG
-                                            fills: fill_AF8ZFC
-                                            layout: layout_BQVQOG
+                                            fills: fill_LZNDXA
+                                            layout: layout_G2NRXP
                               - id: I129:93044;2420:109870;2420:103938;7306:48427
                                 name: Container
                                 type: FRAME
-                                layout: layout_2YMNX2
+                                layout: layout_98NMNJ
                                 children:
                                   - id: >-
                                       I129:93044;2420:109870;2420:103938;10100:157250
                                     name: Value
                                     type: TEXT
-                                    textStyle: style_TLLUCU
-                                    fills: fill_AF8ZFC
-                                    layout: layout_WHN3IN
+                                    textStyle: style_AAPOP1
+                                    fills: fill_LZNDXA
+                                    layout: layout_SPUYFN
                                     text: Menu Item
                                   - id: >-
                                       I129:93044;2420:109870;2420:103938;7306:47804
@@ -1490,7 +1490,7 @@ nodes:
                                       Spacing:
                                         value: '0'
                                         type: VARIANT
-                                    layout: layout_IWPDEQ
+                                    layout: layout_R1EWJB
                                     children:
                                       - id: >-
                                           I129:93044;2420:109870;2420:103938;7306:47804;11385:161975
@@ -1507,35 +1507,35 @@ nodes:
                                           Gutter Bottom:
                                             value: 'False'
                                             type: VARIANT
-                                        layout: layout_C1R3WO
+                                        layout: layout_X908CK
                                         children:
                                           - id: >-
                                               I129:93044;2420:109870;2420:103938;7306:47804;11385:161975;11626:152458
                                             name: caption
                                             type: TEXT
-                                            textStyle: style_TLLUCU
-                                            fills: fill_T9RONL
-                                            layout: layout_JKIHZU
+                                            textStyle: style_AAPOP1
+                                            fills: fill_FVT2A4
+                                            layout: layout_BTE3UB
                                             text: Value
                   - id: I129:93044;2420:116096
                     name: <L.ListSubheader>
                     type: INSTANCE
                     componentId: '2420:116095'
-                    fills: fill_W951OH
-                    layout: layout_GOABHF
+                    fills: fill_91NUOG
+                    layout: layout_WYY110
                     children:
                       - id: I129:93044;2420:116096;2420:116093
                         name: <ListSubheader>
                         type: INSTANCE
                         componentId: '2388:75729'
-                        layout: layout_ULO511
+                        layout: layout_ELFDUQ
                         children:
                           - id: I129:93044;2420:116096;2420:116093;6645:59768
                             name: Subheader
                             type: TEXT
-                            textStyle: style_TLLUCU
-                            fills: fill_T9RONL
-                            layout: layout_JKIHZU
+                            textStyle: style_AAPOP1
+                            fills: fill_FVT2A4
+                            layout: layout_BTE3UB
                             text: Subheader
                   - id: I129:93044;2420:119381
                     name: <L.MenuItem>
@@ -1545,8 +1545,8 @@ nodes:
                       Property 1:
                         value: Default
                         type: VARIANT
-                    fills: fill_W951OH
-                    layout: layout_GRLF1Q
+                    fills: fill_91NUOG
+                    layout: layout_RQBKN6
                     children:
                       - id: I129:93044;2420:119381;2420:103938
                         name: <MenuItem>
@@ -1586,19 +1586,19 @@ nodes:
                           State:
                             value: Enabled
                             type: VARIANT
-                        layout: layout_4CB6BR
+                        layout: layout_JSC2RI
                         children:
                           - id: I129:93044;2420:119381;2420:103938;10070:120194
                             name: Container
                             type: FRAME
-                            layout: layout_213PDE
+                            layout: layout_5RHHID
                             children:
                               - id: >-
                                   I129:93044;2420:119381;2420:103938;10063:123673
                                 name: Left Slot
                                 type: FRAME
-                                fills: fill_W951OH
-                                layout: layout_LV46RJ
+                                fills: fill_91NUOG
+                                layout: layout_70KY72
                                 children:
                                   - id: >-
                                       I129:93044;2420:119381;2420:103938;10063:123674
@@ -1612,33 +1612,33 @@ nodes:
                                       Size:
                                         value: Tiny
                                         type: VARIANT
-                                    layout: layout_QM0NNC
+                                    layout: layout_MMMUAW
                                     children:
                                       - id: >-
                                           I129:93044;2420:119381;2420:103938;10063:123674;6307:26062
                                         name: StarFilled
                                         type: INSTANCE
                                         componentId: '1:1092'
-                                        layout: layout_RK7U56
+                                        layout: layout_8YF6NP
                                         children:
                                           - id: >-
                                               I129:93044;2420:119381;2420:103938;10063:123674;6307:26062;1050:6744
                                             name: Vector
                                             type: IMAGE-SVG
-                                            fills: fill_AF8ZFC
-                                            layout: layout_BQVQOG
+                                            fills: fill_LZNDXA
+                                            layout: layout_G2NRXP
                               - id: I129:93044;2420:119381;2420:103938;7306:48427
                                 name: Container
                                 type: FRAME
-                                layout: layout_2YMNX2
+                                layout: layout_98NMNJ
                                 children:
                                   - id: >-
                                       I129:93044;2420:119381;2420:103938;10100:157250
                                     name: Value
                                     type: TEXT
-                                    textStyle: style_TLLUCU
-                                    fills: fill_AF8ZFC
-                                    layout: layout_WHN3IN
+                                    textStyle: style_AAPOP1
+                                    fills: fill_LZNDXA
+                                    layout: layout_SPUYFN
                                     text: Menu Item
                                   - id: >-
                                       I129:93044;2420:119381;2420:103938;7306:47804
@@ -1673,7 +1673,7 @@ nodes:
                                       Spacing:
                                         value: '0'
                                         type: VARIANT
-                                    layout: layout_IWPDEQ
+                                    layout: layout_R1EWJB
                                     children:
                                       - id: >-
                                           I129:93044;2420:119381;2420:103938;7306:47804;11385:161975
@@ -1690,15 +1690,15 @@ nodes:
                                           Gutter Bottom:
                                             value: 'False'
                                             type: VARIANT
-                                        layout: layout_C1R3WO
+                                        layout: layout_X908CK
                                         children:
                                           - id: >-
                                               I129:93044;2420:119381;2420:103938;7306:47804;11385:161975;11626:152458
                                             name: caption
                                             type: TEXT
-                                            textStyle: style_TLLUCU
-                                            fills: fill_T9RONL
-                                            layout: layout_JKIHZU
+                                            textStyle: style_AAPOP1
+                                            fills: fill_FVT2A4
+                                            layout: layout_BTE3UB
                                             text: Value
                   - id: I129:93044;2420:119382
                     name: <L.MenuItem>
@@ -1708,8 +1708,8 @@ nodes:
                       Property 1:
                         value: Default
                         type: VARIANT
-                    fills: fill_W951OH
-                    layout: layout_GRLF1Q
+                    fills: fill_91NUOG
+                    layout: layout_RQBKN6
                     children:
                       - id: I129:93044;2420:119382;2420:103938
                         name: <MenuItem>
@@ -1749,19 +1749,19 @@ nodes:
                           State:
                             value: Enabled
                             type: VARIANT
-                        layout: layout_4CB6BR
+                        layout: layout_JSC2RI
                         children:
                           - id: I129:93044;2420:119382;2420:103938;10070:120194
                             name: Container
                             type: FRAME
-                            layout: layout_213PDE
+                            layout: layout_5RHHID
                             children:
                               - id: >-
                                   I129:93044;2420:119382;2420:103938;10063:123673
                                 name: Left Slot
                                 type: FRAME
-                                fills: fill_W951OH
-                                layout: layout_LV46RJ
+                                fills: fill_91NUOG
+                                layout: layout_70KY72
                                 children:
                                   - id: >-
                                       I129:93044;2420:119382;2420:103938;10063:123674
@@ -1775,33 +1775,33 @@ nodes:
                                       Size:
                                         value: Tiny
                                         type: VARIANT
-                                    layout: layout_QM0NNC
+                                    layout: layout_MMMUAW
                                     children:
                                       - id: >-
                                           I129:93044;2420:119382;2420:103938;10063:123674;6307:26062
                                         name: StarFilled
                                         type: INSTANCE
                                         componentId: '1:1092'
-                                        layout: layout_RK7U56
+                                        layout: layout_8YF6NP
                                         children:
                                           - id: >-
                                               I129:93044;2420:119382;2420:103938;10063:123674;6307:26062;1050:6744
                                             name: Vector
                                             type: IMAGE-SVG
-                                            fills: fill_AF8ZFC
-                                            layout: layout_BQVQOG
+                                            fills: fill_LZNDXA
+                                            layout: layout_G2NRXP
                               - id: I129:93044;2420:119382;2420:103938;7306:48427
                                 name: Container
                                 type: FRAME
-                                layout: layout_2YMNX2
+                                layout: layout_98NMNJ
                                 children:
                                   - id: >-
                                       I129:93044;2420:119382;2420:103938;10100:157250
                                     name: Value
                                     type: TEXT
-                                    textStyle: style_TLLUCU
-                                    fills: fill_AF8ZFC
-                                    layout: layout_WHN3IN
+                                    textStyle: style_AAPOP1
+                                    fills: fill_LZNDXA
+                                    layout: layout_SPUYFN
                                     text: Menu Item
                                   - id: >-
                                       I129:93044;2420:119382;2420:103938;7306:47804
@@ -1836,7 +1836,7 @@ nodes:
                                       Spacing:
                                         value: '0'
                                         type: VARIANT
-                                    layout: layout_IWPDEQ
+                                    layout: layout_R1EWJB
                                     children:
                                       - id: >-
                                           I129:93044;2420:119382;2420:103938;7306:47804;11385:161975
@@ -1853,15 +1853,15 @@ nodes:
                                           Gutter Bottom:
                                             value: 'False'
                                             type: VARIANT
-                                        layout: layout_C1R3WO
+                                        layout: layout_X908CK
                                         children:
                                           - id: >-
                                               I129:93044;2420:119382;2420:103938;7306:47804;11385:161975;11626:152458
                                             name: caption
                                             type: TEXT
-                                            textStyle: style_TLLUCU
-                                            fills: fill_T9RONL
-                                            layout: layout_JKIHZU
+                                            textStyle: style_AAPOP1
+                                            fills: fill_FVT2A4
+                                            layout: layout_BTE3UB
                                             text: Value
                   - id: I129:93044;2420:119383
                     name: <L.MenuItem>
@@ -1871,8 +1871,8 @@ nodes:
                       Property 1:
                         value: Default
                         type: VARIANT
-                    fills: fill_W951OH
-                    layout: layout_GRLF1Q
+                    fills: fill_91NUOG
+                    layout: layout_RQBKN6
                     children:
                       - id: I129:93044;2420:119383;2420:103938
                         name: <MenuItem>
@@ -1912,19 +1912,19 @@ nodes:
                           State:
                             value: Enabled
                             type: VARIANT
-                        layout: layout_4CB6BR
+                        layout: layout_JSC2RI
                         children:
                           - id: I129:93044;2420:119383;2420:103938;10070:120194
                             name: Container
                             type: FRAME
-                            layout: layout_213PDE
+                            layout: layout_5RHHID
                             children:
                               - id: >-
                                   I129:93044;2420:119383;2420:103938;10063:123673
                                 name: Left Slot
                                 type: FRAME
-                                fills: fill_W951OH
-                                layout: layout_LV46RJ
+                                fills: fill_91NUOG
+                                layout: layout_70KY72
                                 children:
                                   - id: >-
                                       I129:93044;2420:119383;2420:103938;10063:123674
@@ -1938,33 +1938,33 @@ nodes:
                                       Size:
                                         value: Tiny
                                         type: VARIANT
-                                    layout: layout_QM0NNC
+                                    layout: layout_MMMUAW
                                     children:
                                       - id: >-
                                           I129:93044;2420:119383;2420:103938;10063:123674;6307:26062
                                         name: StarFilled
                                         type: INSTANCE
                                         componentId: '1:1092'
-                                        layout: layout_RK7U56
+                                        layout: layout_8YF6NP
                                         children:
                                           - id: >-
                                               I129:93044;2420:119383;2420:103938;10063:123674;6307:26062;1050:6744
                                             name: Vector
                                             type: IMAGE-SVG
-                                            fills: fill_AF8ZFC
-                                            layout: layout_BQVQOG
+                                            fills: fill_LZNDXA
+                                            layout: layout_G2NRXP
                               - id: I129:93044;2420:119383;2420:103938;7306:48427
                                 name: Container
                                 type: FRAME
-                                layout: layout_2YMNX2
+                                layout: layout_98NMNJ
                                 children:
                                   - id: >-
                                       I129:93044;2420:119383;2420:103938;10100:157250
                                     name: Value
                                     type: TEXT
-                                    textStyle: style_TLLUCU
-                                    fills: fill_AF8ZFC
-                                    layout: layout_WHN3IN
+                                    textStyle: style_AAPOP1
+                                    fills: fill_LZNDXA
+                                    layout: layout_SPUYFN
                                     text: Menu Item
                                   - id: >-
                                       I129:93044;2420:119383;2420:103938;7306:47804
@@ -1999,7 +1999,7 @@ nodes:
                                       Spacing:
                                         value: '0'
                                         type: VARIANT
-                                    layout: layout_IWPDEQ
+                                    layout: layout_R1EWJB
                                     children:
                                       - id: >-
                                           I129:93044;2420:119383;2420:103938;7306:47804;11385:161975
@@ -2016,15 +2016,15 @@ nodes:
                                           Gutter Bottom:
                                             value: 'False'
                                             type: VARIANT
-                                        layout: layout_C1R3WO
+                                        layout: layout_X908CK
                                         children:
                                           - id: >-
                                               I129:93044;2420:119383;2420:103938;7306:47804;11385:161975;11626:152458
                                             name: caption
                                             type: TEXT
-                                            textStyle: style_TLLUCU
-                                            fills: fill_T9RONL
-                                            layout: layout_JKIHZU
+                                            textStyle: style_AAPOP1
+                                            fills: fill_FVT2A4
+                                            layout: layout_BTE3UB
                                             text: Value
                   - id: I129:93044;2420:119384
                     name: <L.MenuItem>
@@ -2034,8 +2034,8 @@ nodes:
                       Property 1:
                         value: Default
                         type: VARIANT
-                    fills: fill_W951OH
-                    layout: layout_GRLF1Q
+                    fills: fill_91NUOG
+                    layout: layout_RQBKN6
                     children:
                       - id: I129:93044;2420:119384;2420:103938
                         name: <MenuItem>
@@ -2075,19 +2075,19 @@ nodes:
                           State:
                             value: Enabled
                             type: VARIANT
-                        layout: layout_4CB6BR
+                        layout: layout_JSC2RI
                         children:
                           - id: I129:93044;2420:119384;2420:103938;10070:120194
                             name: Container
                             type: FRAME
-                            layout: layout_213PDE
+                            layout: layout_5RHHID
                             children:
                               - id: >-
                                   I129:93044;2420:119384;2420:103938;10063:123673
                                 name: Left Slot
                                 type: FRAME
-                                fills: fill_W951OH
-                                layout: layout_LV46RJ
+                                fills: fill_91NUOG
+                                layout: layout_70KY72
                                 children:
                                   - id: >-
                                       I129:93044;2420:119384;2420:103938;10063:123674
@@ -2101,33 +2101,33 @@ nodes:
                                       Size:
                                         value: Tiny
                                         type: VARIANT
-                                    layout: layout_QM0NNC
+                                    layout: layout_MMMUAW
                                     children:
                                       - id: >-
                                           I129:93044;2420:119384;2420:103938;10063:123674;6307:26062
                                         name: StarFilled
                                         type: INSTANCE
                                         componentId: '1:1092'
-                                        layout: layout_RK7U56
+                                        layout: layout_8YF6NP
                                         children:
                                           - id: >-
                                               I129:93044;2420:119384;2420:103938;10063:123674;6307:26062;1050:6744
                                             name: Vector
                                             type: IMAGE-SVG
-                                            fills: fill_AF8ZFC
-                                            layout: layout_BQVQOG
+                                            fills: fill_LZNDXA
+                                            layout: layout_G2NRXP
                               - id: I129:93044;2420:119384;2420:103938;7306:48427
                                 name: Container
                                 type: FRAME
-                                layout: layout_2YMNX2
+                                layout: layout_98NMNJ
                                 children:
                                   - id: >-
                                       I129:93044;2420:119384;2420:103938;10100:157250
                                     name: Value
                                     type: TEXT
-                                    textStyle: style_TLLUCU
-                                    fills: fill_AF8ZFC
-                                    layout: layout_WHN3IN
+                                    textStyle: style_AAPOP1
+                                    fills: fill_LZNDXA
+                                    layout: layout_SPUYFN
                                     text: Menu Item
                                   - id: >-
                                       I129:93044;2420:119384;2420:103938;7306:47804
@@ -2162,7 +2162,7 @@ nodes:
                                       Spacing:
                                         value: '0'
                                         type: VARIANT
-                                    layout: layout_IWPDEQ
+                                    layout: layout_R1EWJB
                                     children:
                                       - id: >-
                                           I129:93044;2420:119384;2420:103938;7306:47804;11385:161975
@@ -2179,15 +2179,15 @@ nodes:
                                           Gutter Bottom:
                                             value: 'False'
                                             type: VARIANT
-                                        layout: layout_C1R3WO
+                                        layout: layout_X908CK
                                         children:
                                           - id: >-
                                               I129:93044;2420:119384;2420:103938;7306:47804;11385:161975;11626:152458
                                             name: caption
                                             type: TEXT
-                                            textStyle: style_TLLUCU
-                                            fills: fill_T9RONL
-                                            layout: layout_JKIHZU
+                                            textStyle: style_AAPOP1
+                                            fills: fill_FVT2A4
+                                            layout: layout_BTE3UB
                                             text: Value
                   - id: I129:93044;2420:119385
                     name: <L.MenuItem>
@@ -2197,8 +2197,8 @@ nodes:
                       Property 1:
                         value: Default
                         type: VARIANT
-                    fills: fill_W951OH
-                    layout: layout_GRLF1Q
+                    fills: fill_91NUOG
+                    layout: layout_RQBKN6
                     children:
                       - id: I129:93044;2420:119385;2420:103938
                         name: <MenuItem>
@@ -2238,19 +2238,19 @@ nodes:
                           State:
                             value: Enabled
                             type: VARIANT
-                        layout: layout_4CB6BR
+                        layout: layout_JSC2RI
                         children:
                           - id: I129:93044;2420:119385;2420:103938;10070:120194
                             name: Container
                             type: FRAME
-                            layout: layout_213PDE
+                            layout: layout_5RHHID
                             children:
                               - id: >-
                                   I129:93044;2420:119385;2420:103938;10063:123673
                                 name: Left Slot
                                 type: FRAME
-                                fills: fill_W951OH
-                                layout: layout_LV46RJ
+                                fills: fill_91NUOG
+                                layout: layout_70KY72
                                 children:
                                   - id: >-
                                       I129:93044;2420:119385;2420:103938;10063:123674
@@ -2264,33 +2264,33 @@ nodes:
                                       Size:
                                         value: Tiny
                                         type: VARIANT
-                                    layout: layout_QM0NNC
+                                    layout: layout_MMMUAW
                                     children:
                                       - id: >-
                                           I129:93044;2420:119385;2420:103938;10063:123674;6307:26062
                                         name: StarFilled
                                         type: INSTANCE
                                         componentId: '1:1092'
-                                        layout: layout_RK7U56
+                                        layout: layout_8YF6NP
                                         children:
                                           - id: >-
                                               I129:93044;2420:119385;2420:103938;10063:123674;6307:26062;1050:6744
                                             name: Vector
                                             type: IMAGE-SVG
-                                            fills: fill_AF8ZFC
-                                            layout: layout_BQVQOG
+                                            fills: fill_LZNDXA
+                                            layout: layout_G2NRXP
                               - id: I129:93044;2420:119385;2420:103938;7306:48427
                                 name: Container
                                 type: FRAME
-                                layout: layout_2YMNX2
+                                layout: layout_98NMNJ
                                 children:
                                   - id: >-
                                       I129:93044;2420:119385;2420:103938;10100:157250
                                     name: Value
                                     type: TEXT
-                                    textStyle: style_TLLUCU
-                                    fills: fill_AF8ZFC
-                                    layout: layout_WHN3IN
+                                    textStyle: style_AAPOP1
+                                    fills: fill_LZNDXA
+                                    layout: layout_SPUYFN
                                     text: Menu Item
                                   - id: >-
                                       I129:93044;2420:119385;2420:103938;7306:47804
@@ -2325,7 +2325,7 @@ nodes:
                                       Spacing:
                                         value: '0'
                                         type: VARIANT
-                                    layout: layout_IWPDEQ
+                                    layout: layout_R1EWJB
                                     children:
                                       - id: >-
                                           I129:93044;2420:119385;2420:103938;7306:47804;11385:161975
@@ -2342,19 +2342,19 @@ nodes:
                                           Gutter Bottom:
                                             value: 'False'
                                             type: VARIANT
-                                        layout: layout_C1R3WO
+                                        layout: layout_X908CK
                                         children:
                                           - id: >-
                                               I129:93044;2420:119385;2420:103938;7306:47804;11385:161975;11626:152458
                                             name: caption
                                             type: TEXT
-                                            textStyle: style_TLLUCU
-                                            fills: fill_T9RONL
-                                            layout: layout_JKIHZU
+                                            textStyle: style_AAPOP1
+                                            fills: fill_FVT2A4
+                                            layout: layout_BTE3UB
                                             text: Value
 globalVars:
   styles:
-    layout_W6DTPB:
+    layout_Z7J70Y:
       mode: column
       justifyContent: stretch
       alignItems: stretch
@@ -2364,43 +2364,43 @@ globalVars:
         vertical: fixed
       dimensions:
         height: 348
-    fill_W951OH:
+    fill_91NUOG:
       - '#FFFFFF'
-    effect_WZTUFH:
+    effect_TC6C4E:
       boxShadow: >-
         0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 5px 8px 0px rgba(0, 0, 0,
         0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12)
-    layout_SOYU79:
+    layout_HQIH2B:
       mode: column
       alignSelf: stretch
       sizing:
         horizontal: fill
         vertical: fill
-    stroke_AT58V2:
+    stroke_RC3HG5:
       colors:
         - rgba(0, 0, 0, 0.12)
       strokeWeight: 0px 0px 1px
-    layout_GOABHF:
+    layout_WYY110:
       mode: column
       alignSelf: stretch
       sizing:
         horizontal: fill
         vertical: hug
-    layout_HM56I0:
+    layout_OL2T0U:
       mode: column
       alignSelf: stretch
       padding: 4px 0px
       sizing:
         horizontal: fill
         vertical: hug
-    layout_GLI3WW:
+    layout_XJJGTN:
       mode: column
       alignSelf: stretch
       padding: 0px 0px 0px 4px
       sizing:
         horizontal: fill
         vertical: hug
-    layout_OU8K06:
+    layout_UZX5WA:
       mode: row
       alignItems: center
       alignSelf: stretch
@@ -2408,19 +2408,19 @@ globalVars:
       sizing:
         horizontal: fill
         vertical: hug
-    layout_W8WTQP:
+    layout_BC06UP:
       mode: row
       alignItems: center
       gap: 4px
       sizing:
         horizontal: fill
         vertical: hug
-    layout_QM0NNC:
+    layout_MMMUAW:
       mode: row
       sizing:
         horizontal: hug
         vertical: hug
-    layout_RK7U56:
+    layout_8YF6NP:
       mode: none
       sizing:
         horizontal: fixed
@@ -2428,7 +2428,7 @@ globalVars:
       dimensions:
         width: 16
         height: 16
-    layout_PXBS8B:
+    layout_SRTZ2E:
       mode: none
       locationRelativeToParent:
         x: 0
@@ -2436,9 +2436,9 @@ globalVars:
       dimensions:
         width: 16
         height: 16
-    fill_AF8ZFC:
+    fill_LZNDXA:
       - '#0C0D0E'
-    layout_4U0Y41:
+    layout_HWZIUH:
       mode: none
       locationRelativeToParent:
         x: 2.8333282470703125
@@ -2446,12 +2446,12 @@ globalVars:
       dimensions:
         width: 10.333333969116211
         height: 10.333333969116211
-    layout_7B2XIS:
+    layout_8XA8E2:
       mode: column
       sizing:
         horizontal: hug
         vertical: hug
-    style_59ICFC:
+    style_6LQZSZ:
       fontFamily: Roboto
       fontWeight: 500
       fontSize: 12
@@ -2459,12 +2459,12 @@ globalVars:
       letterSpacing: 3.3333333830038705%
       textAlignHorizontal: LEFT
       textAlignVertical: TOP
-    layout_WHN3IN:
+    layout_SPUYFN:
       mode: none
       sizing:
         horizontal: hug
         vertical: hug
-    layout_8O9C5I:
+    layout_E9G7I9:
       mode: row
       justifyContent: flex-end
       alignItems: center
@@ -2474,7 +2474,7 @@ globalVars:
       dimensions:
         width: 84
         height: 28
-    layout_AIJK8Q:
+    layout_TRGYHS:
       mode: row
       justifyContent: center
       alignItems: center
@@ -2483,7 +2483,7 @@ globalVars:
         vertical: fixed
       dimensions:
         height: 28
-    layout_68HIYO:
+    layout_XCH4WD:
       mode: column
       justifyContent: center
       alignItems: center
@@ -2491,9 +2491,9 @@ globalVars:
       sizing:
         horizontal: hug
         vertical: hug
-    fill_JDI9KG:
+    fill_V3S2R1:
       - rgba(0, 0, 0, 0.56)
-    layout_32UV4U:
+    layout_J4LBTJ:
       mode: none
       locationRelativeToParent:
         x: 1.3333358764648438
@@ -2501,7 +2501,7 @@ globalVars:
       dimensions:
         width: 13.5
         height: 13.666666984558105
-    layout_9LMA5U:
+    layout_4IFGT7:
       mode: none
       locationRelativeToParent:
         x: 3.3333358764648438
@@ -2509,7 +2509,7 @@ globalVars:
       dimensions:
         width: 9
         height: 9
-    layout_B8R1JC:
+    layout_LWC8VI:
       mode: column
       alignSelf: stretch
       gap: 10px
@@ -2517,18 +2517,18 @@ globalVars:
       sizing:
         horizontal: fill
         vertical: hug
-    stroke_0XBBDT:
+    stroke_ZFCAQE:
       colors:
         - rgba(12, 13, 14, 0.23)
       strokeWeight: 1px
-    layout_QEWYCY:
+    layout_C4YC49:
       mode: column
       alignSelf: stretch
       padding: 0px 8px
       sizing:
         horizontal: fill
         vertical: hug
-    layout_NLE38F:
+    layout_8XIUVU:
       mode: row
       alignItems: center
       alignSelf: stretch
@@ -2536,7 +2536,7 @@ globalVars:
       sizing:
         horizontal: fill
         vertical: hug
-    layout_OY4HPW:
+    layout_JF93QR:
       mode: row
       justifyContent: stretch
       alignItems: stretch
@@ -2547,7 +2547,7 @@ globalVars:
       dimensions:
         width: 20
         height: 1
-    layout_8EIWW2:
+    layout_OVNBYD:
       mode: row
       sizing:
         horizontal: hug
@@ -2556,9 +2556,9 @@ globalVars:
       locationRelativeToParent:
         x: 0
         'y': -7.5
-    fill_QPASQ0:
+    fill_W2ANLW:
       - '#9DA5AE'
-    layout_SCR950:
+    layout_3ODG44:
       mode: none
       locationRelativeToParent:
         x: 1.5
@@ -2566,7 +2566,7 @@ globalVars:
       dimensions:
         width: 13
         height: 13
-    layout_XDDSZK:
+    layout_BIVF3J:
       mode: none
       sizing:
         horizontal: fixed
@@ -2574,19 +2574,19 @@ globalVars:
       dimensions:
         width: 0.0000010490732620382914
         height: 24
-    style_04IJR6:
+    style_VMMLN1:
       fontFamily: Roboto
       fontWeight: 400
       fontSize: 10
       lineHeight: 1.4em
       textAlignHorizontal: LEFT
       textAlignVertical: CENTER
-    layout_JKIHZU:
+    layout_BTE3UB:
       mode: none
       sizing:
         horizontal: fill
         vertical: hug
-    layout_FMCS37:
+    layout_NTKB68:
       mode: none
       sizing:
         horizontal: fixed
@@ -2594,7 +2594,7 @@ globalVars:
       dimensions:
         width: 24
         height: 0
-    layout_MX3EF7:
+    layout_XOSRJO:
       mode: column
       justifyContent: center
       alignItems: center
@@ -2602,7 +2602,7 @@ globalVars:
       sizing:
         horizontal: fill
         vertical: hug
-    layout_MSKH8D:
+    layout_QEW81A:
       mode: column
       alignSelf: stretch
       padding: 8px 0px
@@ -2611,14 +2611,14 @@ globalVars:
         vertical: fixed
       dimensions:
         height: 272
-    layout_NBLI8A:
+    layout_YBSUH4:
       mode: column
       alignSelf: stretch
       padding: 8px 16px 4px
       sizing:
         horizontal: fill
         vertical: hug
-    style_TLLUCU:
+    style_AAPOP1:
       fontFamily: Roboto
       fontWeight: 400
       fontSize: 12
@@ -2626,9 +2626,9 @@ globalVars:
       letterSpacing: 3.3333333830038705%
       textAlignHorizontal: LEFT
       textAlignVertical: TOP
-    fill_T9RONL:
+    fill_FVT2A4:
       - '#69727D'
-    layout_GRLF1Q:
+    layout_RQBKN6:
       mode: column
       alignSelf: stretch
       sizing:
@@ -2636,14 +2636,14 @@ globalVars:
         vertical: fixed
       dimensions:
         height: 28
-    layout_4CB6BR:
+    layout_JSC2RI:
       mode: column
       justifyContent: center
       alignSelf: stretch
       sizing:
         horizontal: fill
         vertical: hug
-    layout_213PDE:
+    layout_5RHHID:
       mode: row
       alignItems: center
       alignSelf: stretch
@@ -2651,13 +2651,13 @@ globalVars:
       sizing:
         horizontal: fill
         vertical: hug
-    layout_LV46RJ:
+    layout_70KY72:
       mode: column
       padding: 0px 8px 0px 0px
       sizing:
         horizontal: hug
         vertical: hug
-    layout_SWJ9WL:
+    layout_IT89DE:
       mode: none
       locationRelativeToParent:
         x: 1.3333282470703125
@@ -2665,14 +2665,14 @@ globalVars:
       dimensions:
         width: 13.333333969116211
         height: 12.666666984558105
-    layout_2YMNX2:
+    layout_98NMNJ:
       mode: row
       alignItems: center
       gap: 8px
       sizing:
         horizontal: fill
         vertical: hug
-    layout_IWPDEQ:
+    layout_R1EWJB:
       mode: row
       justifyContent: center
       alignItems: center
@@ -2681,12 +2681,12 @@ globalVars:
         vertical: fixed
       dimensions:
         height: 20
-    layout_C1R3WO:
+    layout_X908CK:
       mode: column
       sizing:
         horizontal: fill
         vertical: hug
-    layout_BQVQOG:
+    layout_G2NRXP:
       mode: none
       locationRelativeToParent:
         x: 1.3333282470703125
@@ -2694,7 +2694,7 @@ globalVars:
       dimensions:
         width: 13.333333969116211
         height: 12.666666984558105
-    layout_ULO511:
+    layout_ELFDUQ:
       mode: column
       alignSelf: stretch
       padding: 8px 16px

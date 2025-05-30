@@ -2,29 +2,32 @@ export interface ElementorDocument {
   version: string;
   title: string;
   type: string;
-  content: ElementorSection[];
+  content: ElementorWidget[];
   settings: Record<string, any>;
-}
-
-export interface ElementorSection {
-  id: string;
-  elType: 'section';
-  settings: ElementorSectionSettings;
-  elements: ElementorColumn[];
-}
-
-export interface ElementorColumn {
-  id: string;
-  elType: 'column';
-  settings: ElementorColumnSettings;
-  elements: ElementorWidget[];
 }
 
 export interface ElementorWidget {
   id: string;
   elType: 'widget';
   widgetType: ElementorWidgetType;
-  settings: Record<string, any>;
+  settings: ElementorWidgetSettings;
+  elements: ElementorWidget[];
+  isInner: boolean;
+  styles: Record<string, ElementorStyle>;
+  version: string;
+}
+
+export interface ElementorStyle {
+  id: string;
+  label: string;
+  type: string;
+  variants: Array<{
+    meta: {
+      breakpoint: string;
+      state: null;
+    };
+    props: Record<string, any>;
+  }>;
 }
 
 export type ElementorWidgetType =
@@ -35,178 +38,86 @@ export type ElementorWidgetType =
   | 'e-button'
   | 'e-svg';
 
-export interface ElementorSectionSettings {
-  layout?: 'boxed' | 'full_width';
-  content_width?: 'boxed' | 'full_width';
-  gap?: 'default' | 'no' | 'narrow' | 'extended' | 'wide' | 'wider';
-  height?: 'default' | 'full' | 'min-height';
-  custom_height?: {
-    unit: string;
-    size: number;
+export interface ElementorWidgetSettings {
+  classes: {
+    $$type: string;
+    value: string[];
   };
-  background_background?: 'classic' | 'gradient';
-  background_color?: string;
-  background_image?: {
-    url: string;
-    id: number;
+  content?: string;
+}
+
+// Common style settings for all v4 widgets
+export interface CommonV4Styles {
+  typography?: {
+    family?: string;
+    size?: {
+      size: number;
+      unit: string;
+    };
+    weight?: number;
+    lineHeight?: {
+      size: number;
+      unit: string;
+    };
   };
-  padding?: {
-    unit: string;
-    top: number;
-    right: number;
-    bottom: number;
-    left: number;
-    isLinked: boolean;
+  size?: {
+    width?: {
+      size: number;
+      unit: string;
+    };
+    height?: {
+      size: number;
+      unit: string;
+    };
   };
-  margin?: {
-    unit: string;
-    top: number;
-    right: number;
-    bottom: number;
-    left: number;
-    isLinked: boolean;
+  spacing?: {
+    padding?: {
+      size: number;
+      unit: string;
+    };
+    margin?: {
+      size: number;
+      unit: string;
+    };
+    gap?: {
+      size: number;
+      unit: string;
+    };
   };
 }
 
-export interface ElementorColumnSettings {
-  _column_size?: number;
-  _inline_size?: number;
-  background_background?: 'classic' | 'gradient';
-  background_color?: string;
-  padding?: {
-    unit: string;
-    top: number;
-    right: number;
-    bottom: number;
-    left: number;
-    isLinked: boolean;
-  };
-  margin?: {
-    unit: string;
-    top: number;
-    right: number;
-    bottom: number;
-    left: number;
-    isLinked: boolean;
-  };
+// V4 Widget Types
+export interface FlexboxSettings extends ElementorWidgetSettings, CommonV4Styles {
+  direction?: 'row' | 'column';
+  justifyContent?: 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'space-evenly';
+  alignItems?: 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'baseline';
 }
 
-export interface ElementorHeadingSettings {
-  title?: string;
-  size?: 'default' | 'small' | 'medium' | 'large' | 'xl' | 'xxl';
-  header_size?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
-  title_color?: string;
-  typography_typography?: 'default' | 'custom';
-  typography_font_family?: string;
-  typography_font_size?: {
-    unit: string;
-    size: number;
-  };
-  typography_font_weight?: string | number;
-  typography_line_height?: {
-    unit: string;
-    size: number;
-  };
-  align?: 'left' | 'center' | 'right' | 'justify';
-  text_shadow_text_shadow_type?: 'yes' | '';
-  blend_mode?: 'normal' | 'multiply' | 'screen' | 'overlay';
-}
-
-export interface ElementorParagraphSettings {
+export interface EHeadingSettings extends ElementorWidgetSettings, CommonV4Styles {
   text?: string;
-  text_color?: string;
-  typography_typography?: 'default' | 'custom';
-  typography_font_family?: string;
-  typography_font_size?: {
-    unit: string;
-    size: number;
-  };
-  typography_font_weight?: string | number;
-  typography_line_height?: {
-    unit: string;
-    size: number;
-  };
-  align?: 'left' | 'center' | 'right' | 'justify';
+  level?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }
 
-export interface ElementorButtonSettings {
+export interface EParagraphSettings extends ElementorWidgetSettings, CommonV4Styles {
+  text?: string;
+}
+
+export interface EImageSettings extends ElementorWidgetSettings, CommonV4Styles {
+  url?: string;
+  alt?: string;
+  objectFit?: 'cover' | 'contain' | 'fill' | 'none';
+}
+
+export interface EButtonSettings extends ElementorWidgetSettings, CommonV4Styles {
   text?: string;
   link?: {
     url: string;
-    is_external: boolean;
-    nofollow: boolean;
+    target?: '_blank' | '_self';
+    rel?: string;
   };
-  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-  button_type?: 'default' | 'info' | 'success' | 'warning' | 'danger';
-  text_color?: string;
-  background_color?: string;
-  border_border?: 'none' | 'solid' | 'double' | 'dotted' | 'dashed' | 'groove';
-  border_color?: string;
-  border_width?: {
-    unit: string;
-    top: number;
-    right: number;
-    bottom: number;
-    left: number;
-    isLinked: boolean;
-  };
-  border_radius?: {
-    unit: string;
-    top: number;
-    right: number;
-    bottom: number;
-    left: number;
-    isLinked: boolean;
-  };
-  button_text_padding?: {
-    unit: string;
-    top: number;
-    right: number;
-    bottom: number;
-    left: number;
-    isLinked: boolean;
-  };
-  typography_typography?: 'default' | 'custom';
-  typography_font_family?: string;
-  typography_font_size?: {
-    unit: string;
-    size: number;
-  };
-  typography_font_weight?: string | number;
-  hover_color?: string;
-  hover_background_color?: string;
-  hover_border_color?: string;
 }
 
-export interface ElementorImageSettings {
-  image?: {
-    url: string;
-    id: number;
-    alt?: string;
-  };
-  image_size?: 'thumbnail' | 'medium' | 'large' | 'full' | 'custom';
-  width?: {
-    unit: string;
-    size: number;
-  };
-  max_width?: {
-    unit: string;
-    size: number;
-  };
-  height?: {
-    unit: string;
-    size: number;
-  };
-  object_fit?: 'fill' | 'cover' | 'contain' | 'scale-down' | 'none';
-  object_position?: string;
-  align?: 'left' | 'center' | 'right';
-  caption_source?: 'none' | 'attachment' | 'custom';
-  caption?: string;
-  link_to?: 'none' | 'file' | 'custom';
-  link?: {
-    url: string;
-    is_external: boolean;
-    nofollow: boolean;
-  };
-  open_lightbox?: 'default' | 'yes' | 'no';
+export interface ESvgSettings extends ElementorWidgetSettings, CommonV4Styles {
+  url?: string;
+  color?: string;
 } 

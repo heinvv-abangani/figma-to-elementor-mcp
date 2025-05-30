@@ -6,7 +6,7 @@
         "classes": {
           "$$type": "classes",
           "value": [
-            "e-129:93040-3fb1de"
+            "e-129:93040-0484bf"
           ]
         }
       },
@@ -17,7 +17,7 @@
             "classes": {
               "$$type": "classes",
               "value": [
-                "e-129:93042-adfa47"
+                "e-129:93042-b5133d"
               ]
             }
           },
@@ -26,8 +26,8 @@
           "widgetType": "flexbox",
           "elType": "widget",
           "styles": {
-            "e-129:93042-adfa47": {
-              "id": "e-129:93042-adfa47",
+            "e-129:93042-b5133d": {
+              "id": "e-129:93042-b5133d",
               "label": "local",
               "type": "class",
               "variants": [
@@ -60,8 +60,8 @@
       "widgetType": "flexbox",
       "elType": "widget",
       "styles": {
-        "e-129:93040-3fb1de": {
-          "id": "e-129:93040-3fb1de",
+        "e-129:93040-0484bf": {
+          "id": "e-129:93040-0484bf",
           "label": "local",
           "type": "class",
           "variants": [
